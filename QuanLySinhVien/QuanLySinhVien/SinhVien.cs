@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QuanLySinhVien
 {
@@ -31,9 +30,11 @@ namespace QuanLySinhVien
             NgayNhapHoc = DateTime.Now;
             DiaChi = "";
             SoDienThoai = "";
-           
+            CoVan = null;
+            Lop = null;
+            DanhSachDiem = new List<Diem>();
         }
-        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, DateTime ngayNhapHoc,string diaChi, string soDienThoai)
+        public SinhVien(string maSinhVien, string hoTen, string gioiTinh, DateTime ngaySinh, DateTime ngayNhapHoc,string diaChi, string soDienThoai,Lop lop,CoVanHocTap coVan,List<Diem>danhSachDiem)
         {
             this.MaSinhVien = maSinhVien;
             this.HoTen = hoTen;
@@ -42,9 +43,19 @@ namespace QuanLySinhVien
             this.NgayNhapHoc = ngayNhapHoc;
             this.DiaChi = diaChi;
             this.SoDienThoai = soDienThoai;
+            this.Lop = lop;
+            this.CoVan = coVan;
+            if (danhSachDiem != null)
+            {
+                this.DanhSachDiem = danhSachDiem;
+            }
+            else
+            {
+                this.DanhSachDiem = new List<Diem>();
+            }
+
         }
 
-        // Properties
         public string MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
@@ -55,17 +66,17 @@ namespace QuanLySinhVien
 
         internal Lop Lop { get => lop; set => lop = value; }
         internal CoVanHocTap CoVan { get => coVan; set => coVan = value; }
-        internal List<Diem> DsDiem { get => danhSachDiem; set => danhSachDiem = value; }
+        internal List<Diem> DanhSachDiem { get => danhSachDiem; set => danhSachDiem = value; }
 
        
         public double DiemTrungBinhHocTap
         {
             get
             {
-                if (DsDiem.Count == 0)
+                if (DanhSachDiem.Count == 0)
                     return 0;
                 else
-                    return DsDiem.Average(d => d.DiemTB);
+                    return DanhSachDiem.Average(d => d.DiemTB);
             }
         }
     }

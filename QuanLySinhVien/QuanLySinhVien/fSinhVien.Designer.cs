@@ -41,8 +41,16 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtSdt = new System.Windows.Forms.TextBox();
+            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -63,18 +71,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTenSV = new System.Windows.Forms.TextBox();
+            this.txtTenSinhVien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaSV = new System.Windows.Forms.TextBox();
+            this.txtMaSinhVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
@@ -107,35 +107,35 @@
             // quảnLýLớpToolStripMenuItem
             // 
             this.quảnLýLớpToolStripMenuItem.Name = "quảnLýLớpToolStripMenuItem";
-            this.quảnLýLớpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýLớpToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýLớpToolStripMenuItem.Text = "Quản lý lớp";
             this.quảnLýLớpToolStripMenuItem.Click += new System.EventHandler(this.quảnLýLớpToolStripMenuItem_Click);
             // 
             // quảnLýCVHTToolStripMenuItem
             // 
             this.quảnLýCVHTToolStripMenuItem.Name = "quảnLýCVHTToolStripMenuItem";
-            this.quảnLýCVHTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýCVHTToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýCVHTToolStripMenuItem.Text = "Quản lý CVHT";
             this.quảnLýCVHTToolStripMenuItem.Click += new System.EventHandler(this.quảnLýCVHTToolStripMenuItem_Click);
             // 
             // quảnLýMônHọcToolStripMenuItem
             // 
             this.quảnLýMônHọcToolStripMenuItem.Name = "quảnLýMônHọcToolStripMenuItem";
-            this.quảnLýMônHọcToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýMônHọcToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýMônHọcToolStripMenuItem.Text = "Quản lý môn học";
             this.quảnLýMônHọcToolStripMenuItem.Click += new System.EventHandler(this.quảnLýMônHọcToolStripMenuItem_Click);
             // 
             // quảnLýTàiKhoảnToolStripMenuItem
             // 
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
-            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
             this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
             // 
             // quảnLýĐiểmToolStripMenuItem
             // 
             this.quảnLýĐiểmToolStripMenuItem.Name = "quảnLýĐiểmToolStripMenuItem";
-            this.quảnLýĐiểmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýĐiểmToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýĐiểmToolStripMenuItem.Text = "Quản lý điểm";
             this.quảnLýĐiểmToolStripMenuItem.Click += new System.EventHandler(this.quảnLýĐiểmToolStripMenuItem_Click);
             // 
@@ -203,9 +203,57 @@
             this.dgvSinhVien.TabIndex = 0;
             this.dgvSinhVien.TabStop = false;
             // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "Mã SV";
+            this.MaSV.Name = "MaSV";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên sinh viên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // NgayNhapHoc
+            // 
+            this.NgayNhapHoc.DataPropertyName = "NgayNhapHoc";
+            this.NgayNhapHoc.HeaderText = "Ngày nhập học";
+            this.NgayNhapHoc.Name = "NgayNhapHoc";
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã lớp";
+            this.MaLop.Name = "MaLop";
+            // 
+            // MaCoVan
+            // 
+            this.MaCoVan.DataPropertyName = "MaCoVan";
+            this.MaCoVan.HeaderText = "Mã cố vấn";
+            this.MaCoVan.Name = "MaCoVan";
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtSdt);
+            this.panel2.Controls.Add(this.txtSoDienThoai);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnLoad);
             this.panel2.Controls.Add(this.btnSave);
@@ -226,9 +274,9 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtTenSV);
+            this.panel2.Controls.Add(this.txtTenSinhVien);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txtMaSV);
+            this.panel2.Controls.Add(this.txtMaSinhVien);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 24);
@@ -236,12 +284,12 @@
             this.panel2.Size = new System.Drawing.Size(800, 125);
             this.panel2.TabIndex = 2;
             // 
-            // txtSdt
+            // txtSoDienThoai
             // 
-            this.txtSdt.Location = new System.Drawing.Point(41, 92);
-            this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(100, 20);
-            this.txtSdt.TabIndex = 31;
+            this.txtSoDienThoai.Location = new System.Drawing.Point(41, 92);
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(100, 20);
+            this.txtSoDienThoai.TabIndex = 31;
             // 
             // label5
             // 
@@ -420,12 +468,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Ngày sinh";
             // 
-            // txtTenSV
+            // txtTenSinhVien
             // 
-            this.txtTenSV.Location = new System.Drawing.Point(206, 7);
-            this.txtTenSV.Name = "txtTenSV";
-            this.txtTenSV.Size = new System.Drawing.Size(247, 20);
-            this.txtTenSV.TabIndex = 3;
+            this.txtTenSinhVien.Location = new System.Drawing.Point(206, 7);
+            this.txtTenSinhVien.Name = "txtTenSinhVien";
+            this.txtTenSinhVien.Size = new System.Drawing.Size(247, 20);
+            this.txtTenSinhVien.TabIndex = 3;
             // 
             // label2
             // 
@@ -436,12 +484,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên SV:";
             // 
-            // txtMaSV
+            // txtMaSinhVien
             // 
-            this.txtMaSV.Location = new System.Drawing.Point(53, 7);
-            this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(100, 20);
-            this.txtMaSV.TabIndex = 1;
+            this.txtMaSinhVien.Location = new System.Drawing.Point(53, 7);
+            this.txtMaSinhVien.Name = "txtMaSinhVien";
+            this.txtMaSinhVien.Size = new System.Drawing.Size(100, 20);
+            this.txtMaSinhVien.TabIndex = 1;
             // 
             // label1
             // 
@@ -451,54 +499,6 @@
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SV:";
-            // 
-            // MaSV
-            // 
-            this.MaSV.DataPropertyName = "MaSV";
-            this.MaSV.HeaderText = "Mã SV";
-            this.MaSV.Name = "MaSV";
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Tên sinh viên";
-            this.HoTen.Name = "HoTen";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // NgayNhapHoc
-            // 
-            this.NgayNhapHoc.DataPropertyName = "NgayNhapHoc";
-            this.NgayNhapHoc.HeaderText = "Ngày nhập học";
-            this.NgayNhapHoc.Name = "NgayNhapHoc";
-            // 
-            // MaLop
-            // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã lớp";
-            this.MaLop.Name = "MaLop";
-            // 
-            // MaCoVan
-            // 
-            this.MaCoVan.DataPropertyName = "MaCoVan";
-            this.MaCoVan.HeaderText = "Mã cố vấn";
-            this.MaCoVan.Name = "MaCoVan";
             // 
             // fSinhVien
             // 
@@ -545,9 +545,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTenSV;
+        private System.Windows.Forms.TextBox txtTenSinhVien;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMaSV;
+        private System.Windows.Forms.TextBox txtMaSinhVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radNam;
@@ -562,7 +562,7 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýĐiểmToolStripMenuItem;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtSdt;
+        private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;

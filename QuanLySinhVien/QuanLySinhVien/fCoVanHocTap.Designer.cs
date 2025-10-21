@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSdt = new System.Windows.Forms.TextBox();
+            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             // 
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtSdt);
+            this.panel1.Controls.Add(this.txtSoDienThoai);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.btnSave);
@@ -107,12 +107,12 @@
             this.label7.TabIndex = 54;
             this.label7.Text = "Email:";
             // 
-            // txtSdt
+            // txtSoDienThoai
             // 
-            this.txtSdt.Location = new System.Drawing.Point(189, 48);
-            this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(100, 20);
-            this.txtSdt.TabIndex = 53;
+            this.txtSoDienThoai.Location = new System.Drawing.Point(189, 48);
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(100, 20);
+            this.txtSoDienThoai.TabIndex = 53;
             // 
             // label5
             // 
@@ -374,7 +374,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSdt;
+        private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCoVan;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;

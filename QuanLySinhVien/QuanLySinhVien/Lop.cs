@@ -13,22 +13,22 @@ namespace QuanLySinhVien
         private string maLop;
         private string tenLop;
         private List<SinhVien> danhSachSinhVien;
-        public int soLuong;
-        public Lop(string maLop, string tenLop, int soLuong)
+        private int soLuong;
+        public Lop(string maLop, string tenLop)
         {
             this.maLop = maLop;
             this.tenLop = tenLop;
-            this.soLuong = soLuong;
+            danhSachSinhVien = new List<SinhVien>();
         }
         public Lop()
         { 
             maLop= "";
             tenLop = "";
-            soLuong = 0;
+            danhSachSinhVien = new List<SinhVien>();
         }
         public string MaLop { get => maLop; set => maLop = value; }
         public string TenLop { get => tenLop; set => tenLop = value; }
-        public int SoLuong { get => soLuong; set => soLuong = value; }
+        public int SoLuong { get => danhSachSinhVien.Count; set => soLuong = value; }
         internal List<SinhVien> DanhSachSinhVien { get => danhSachSinhVien; set => danhSachSinhVien = value; }
     }
 }

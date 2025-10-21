@@ -21,6 +21,7 @@ namespace QuanLySinhVien
             this.soTinChi = soTinChi;
             this.soTietLyThuyet = soTietLyThuyet;
             this.soTietThucHanh = soTietThucHanh;
+            DanhSachDiem = new List<Diem>();
         }
         public MonHoc()
         {
@@ -29,11 +30,13 @@ namespace QuanLySinhVien
             soTinChi = 0;
             soTietLyThuyet = 0;
             soTietThucHanh = 0;
+            DanhSachDiem = new List<Diem>();
         }
         public string MaMonHoc { get => maMonHoc; set => maMonHoc = value; }
         public string TenMonHoc { get => tenMonHoc; set => tenMonHoc = value; }
         public int SoTinChi { get => soTinChi; set => soTinChi = value; }
         public int SoTietLyThuyet { get => soTietLyThuyet; set => soTietLyThuyet = value; }
         public int SoTietThucHanh { get => soTietThucHanh; set => soTietThucHanh = value; }
+        internal List<Diem> DanhSachDiem { get => danhSachDiem; set => danhSachDiem = value; }
     }
 }

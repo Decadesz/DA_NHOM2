@@ -108,6 +108,7 @@
     <Compile Include="fThongTinChiTiet.Designer.cs">
       <DependentUpon>fThongTinChiTiet.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoDuLieu.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="MonHoc.cs" />
     <Compile Include="Program.cs" />

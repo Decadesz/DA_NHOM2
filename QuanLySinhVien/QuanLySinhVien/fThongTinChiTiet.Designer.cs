@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLoaiTK = new System.Windows.Forms.TextBox();
+            this.txtLoaiTaiKhoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -69,12 +69,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên đăng nhập:";
             // 
-            // txtLoaiTK
+            // txtLoaiTaiKhoan
             // 
-            this.txtLoaiTK.Location = new System.Drawing.Point(28, 151);
-            this.txtLoaiTK.Name = "txtLoaiTK";
-            this.txtLoaiTK.Size = new System.Drawing.Size(172, 20);
-            this.txtLoaiTK.TabIndex = 9;
+            this.txtLoaiTaiKhoan.Location = new System.Drawing.Point(28, 151);
+            this.txtLoaiTaiKhoan.Name = "txtLoaiTaiKhoan";
+            this.txtLoaiTaiKhoan.Size = new System.Drawing.Size(172, 20);
+            this.txtLoaiTaiKhoan.TabIndex = 9;
             // 
             // label3
             // 
@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(275, 450);
-            this.Controls.Add(this.txtLoaiTK);
+            this.Controls.Add(this.txtLoaiTaiKhoan);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label2);
@@ -109,7 +109,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtLoaiTK;
+        private System.Windows.Forms.TextBox txtLoaiTaiKhoan;
         private System.Windows.Forms.Label label3;
     }
 }

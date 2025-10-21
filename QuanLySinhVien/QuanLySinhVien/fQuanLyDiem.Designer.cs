@@ -29,23 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.cboMaMonHoc = new System.Windows.Forms.ComboBox();
             this.cboMaSinhVien = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDiemThi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDiemGiuaKy = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDiemLop = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudPhanTramGiuaKy = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.nudSoTietLT = new System.Windows.Forms.NumericUpDown();
+            this.nudPhanTramCuoiKy = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.nudSoTinChi = new System.Windows.Forms.NumericUpDown();
+            this.nudPhanTramLop = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -65,33 +61,33 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTinChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramLop)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.btnLoad);
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.cboMaMonHoc);
             this.panel1.Controls.Add(this.cboMaSinhVien);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtDiemThi);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtDiemGiuaKy);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtDiemLop);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.nudPhanTramGiuaKy);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.nudSoTietLT);
+            this.panel1.Controls.Add(this.nudPhanTramCuoiKy);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.nudSoTinChi);
+            this.panel1.Controls.Add(this.nudPhanTramLop);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.btnEdit);
@@ -104,30 +100,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 149);
             this.panel1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "A+",
-            "A",
-            "B+",
-            "B",
-            "C",
-            "F"});
-            this.comboBox1.Location = new System.Drawing.Point(668, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 82;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(635, 44);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 13);
-            this.label10.TabIndex = 81;
-            this.label10.Text = "Loại";
             // 
             // cboMaMonHoc
             // 
@@ -145,28 +117,12 @@
             this.cboMaSinhVien.Size = new System.Drawing.Size(109, 21);
             this.cboMaSinhVien.TabIndex = 79;
             // 
-            // textBox4
+            // txtDiemThi
             // 
-            this.textBox4.Location = new System.Drawing.Point(552, 40);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(80, 20);
-            this.textBox4.TabIndex = 78;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(466, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
-            this.label9.TabIndex = 77;
-            this.label9.Text = "Điểm trung bình:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(379, 37);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(80, 20);
-            this.textBox3.TabIndex = 76;
+            this.txtDiemThi.Location = new System.Drawing.Point(379, 37);
+            this.txtDiemThi.Name = "txtDiemThi";
+            this.txtDiemThi.Size = new System.Drawing.Size(80, 20);
+            this.txtDiemThi.TabIndex = 76;
             // 
             // label8
             // 
@@ -177,12 +133,12 @@
             this.label8.TabIndex = 75;
             this.label8.Text = "Điểm thi:";
             // 
-            // textBox2
+            // txtDiemGiuaKy
             // 
-            this.textBox2.Location = new System.Drawing.Point(245, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(80, 20);
-            this.textBox2.TabIndex = 74;
+            this.txtDiemGiuaKy.Location = new System.Drawing.Point(245, 35);
+            this.txtDiemGiuaKy.Name = "txtDiemGiuaKy";
+            this.txtDiemGiuaKy.Size = new System.Drawing.Size(80, 20);
+            this.txtDiemGiuaKy.TabIndex = 74;
             // 
             // label7
             // 
@@ -193,12 +149,12 @@
             this.label7.TabIndex = 73;
             this.label7.Text = "Điểm giữa kỳ:";
             // 
-            // textBox1
+            // txtDiemLop
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 72;
+            this.txtDiemLop.Location = new System.Drawing.Point(69, 34);
+            this.txtDiemLop.Name = "txtDiemLop";
+            this.txtDiemLop.Size = new System.Drawing.Size(100, 20);
+            this.txtDiemLop.TabIndex = 72;
             // 
             // label5
             // 
@@ -209,12 +165,12 @@
             this.label5.TabIndex = 71;
             this.label5.Text = "Điểm lớp:";
             // 
-            // numericUpDown1
+            // nudPhanTramGiuaKy
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(709, 8);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(91, 20);
-            this.numericUpDown1.TabIndex = 70;
+            this.nudPhanTramGiuaKy.Location = new System.Drawing.Point(709, 8);
+            this.nudPhanTramGiuaKy.Name = "nudPhanTramGiuaKy";
+            this.nudPhanTramGiuaKy.Size = new System.Drawing.Size(91, 20);
+            this.nudPhanTramGiuaKy.TabIndex = 70;
             // 
             // label6
             // 
@@ -225,12 +181,12 @@
             this.label6.TabIndex = 69;
             this.label6.Text = "Phần trăm giữa kỳ:";
             // 
-            // nudSoTietLT
+            // nudPhanTramCuoiKy
             // 
-            this.nudSoTietLT.Location = new System.Drawing.Point(881, 12);
-            this.nudSoTietLT.Name = "nudSoTietLT";
-            this.nudSoTietLT.Size = new System.Drawing.Size(108, 20);
-            this.nudSoTietLT.TabIndex = 66;
+            this.nudPhanTramCuoiKy.Location = new System.Drawing.Point(881, 12);
+            this.nudPhanTramCuoiKy.Name = "nudPhanTramCuoiKy";
+            this.nudPhanTramCuoiKy.Size = new System.Drawing.Size(108, 20);
+            this.nudPhanTramCuoiKy.TabIndex = 66;
             // 
             // label4
             // 
@@ -241,12 +197,12 @@
             this.label4.TabIndex = 65;
             this.label4.Text = "Phần trăm thi:";
             // 
-            // nudSoTinChi
+            // nudPhanTramLop
             // 
-            this.nudSoTinChi.Location = new System.Drawing.Point(478, 8);
-            this.nudSoTinChi.Name = "nudSoTinChi";
-            this.nudSoTinChi.Size = new System.Drawing.Size(120, 20);
-            this.nudSoTinChi.TabIndex = 64;
+            this.nudPhanTramLop.Location = new System.Drawing.Point(478, 8);
+            this.nudPhanTramLop.Name = "nudPhanTramLop";
+            this.nudPhanTramLop.Size = new System.Drawing.Size(120, 20);
+            this.nudPhanTramLop.TabIndex = 64;
             // 
             // label3
             // 
@@ -410,6 +366,24 @@
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(917, 123);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 82;
+            this.btnLoad.Text = "Đọc";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(833, 123);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 81;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // fQuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,9 +395,9 @@
             this.Text = "Quản lý điểm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTinChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramLop)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiem)).EndInit();
             this.ResumeLayout(false);
@@ -433,17 +407,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDiemThi;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDiemGiuaKy;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDiemLop;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudPhanTramGiuaKy;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown nudSoTietLT;
+        private System.Windows.Forms.NumericUpDown nudPhanTramCuoiKy;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown nudSoTinChi;
+        private System.Windows.Forms.NumericUpDown nudPhanTramLop;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnEdit;
@@ -452,12 +426,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboMaMonHoc;
         private System.Windows.Forms.ComboBox cboMaSinhVien;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvDiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -469,5 +439,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -18,6 +18,40 @@ namespace QuanLySinhVien
         private string loai;
         private SinhVien sinhVien;
         private MonHoc monHoc;
+        public string MaSinhVien
+        {
+            get
+            {
+                if (SinhVien != null)
+                {
+                    if (SinhVien.MaSinhVien != null)
+                        return SinhVien.MaSinhVien;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string MaMonHoc
+        {
+            get
+            {
+                if (MonHoc != null)
+                {
+                    if (MonHoc.MaMonHoc != null)
+                        return MonHoc.MaMonHoc;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
         public double DiemTB
         {
             get

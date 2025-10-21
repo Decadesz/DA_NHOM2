@@ -13,7 +13,7 @@ namespace QuanLySinhVien
         DateTime ngaySinh;
         string gioiTinh;
         string diaChi;
-        private string sdt;
+        private string soDienThoai;
         private string email;
         private List<SinhVien> danhSachSinhVien;
         public CoVanHocTap()
@@ -24,18 +24,18 @@ namespace QuanLySinhVien
             GioiTinh = "";
             DiaChi = "";
             Email = "";
-
+            danhSachSinhVien = new List<SinhVien>();
         }
-        public CoVanHocTap(string maCoVan, string hoTen, DateTime ngaySinh, string gioiTinh, string diaChi,string sdt,string email)
+        public CoVanHocTap(string maCoVan, string hoTen, DateTime ngaySinh, string gioiTinh, string diaChi,string soDienThoai,string email)
         {
             this.MaCoVan = maCoVan;
             this.HoTen = hoTen;
             this.NgaySinh = ngaySinh;
             this.GioiTinh = gioiTinh;
             this.DiaChi = diaChi;
-            this.Sdt = sdt;
+            this.SoDienThoai = soDienThoai;
             this.Email = email;
-
+            danhSachSinhVien = new List<SinhVien>();
         }
 
         public string MaCoVan { get => maCoVan; set => maCoVan = value; }
@@ -43,7 +43,7 @@ namespace QuanLySinhVien
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
-        public string Sdt { get => sdt; set => sdt = value; }
+        public string SoDienThoai { get => soDienThoai; set => soDienThoai = value; }
         public string Email { get => email; set => email = value; }
         internal List<SinhVien> DanhSachSinhVien { get => danhSachSinhVien; set => danhSachSinhVien = value; }
     }

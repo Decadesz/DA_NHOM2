@@ -38,9 +38,11 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.nudSoTietTH = new System.Windows.Forms.NumericUpDown();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.nudSoTietThucHanh = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.nudSoTietLT = new System.Windows.Forms.NumericUpDown();
+            this.nudSoTietLyThuyet = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.nudSoTinChi = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +65,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietTH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietThucHanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLyThuyet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTinChi)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
@@ -157,9 +157,9 @@
             // 
             this.panel4.Controls.Add(this.btnLoad);
             this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Controls.Add(this.nudSoTietTH);
+            this.panel4.Controls.Add(this.nudSoTietThucHanh);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.nudSoTietLT);
+            this.panel4.Controls.Add(this.nudSoTietLyThuyet);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.nudSoTinChi);
             this.panel4.Controls.Add(this.label3);
@@ -177,12 +177,30 @@
             this.panel4.Size = new System.Drawing.Size(800, 132);
             this.panel4.TabIndex = 2;
             // 
-            // nudSoTietTH
+            // btnLoad
             // 
-            this.nudSoTietTH.Location = new System.Drawing.Point(293, 48);
-            this.nudSoTietTH.Name = "nudSoTietTH";
-            this.nudSoTietTH.Size = new System.Drawing.Size(120, 20);
-            this.nudSoTietTH.TabIndex = 54;
+            this.btnLoad.Location = new System.Drawing.Point(722, 103);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 56;
+            this.btnLoad.Text = "Đọc";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(638, 103);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 55;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // nudSoTietThucHanh
+            // 
+            this.nudSoTietThucHanh.Location = new System.Drawing.Point(293, 48);
+            this.nudSoTietThucHanh.Name = "nudSoTietThucHanh";
+            this.nudSoTietThucHanh.Size = new System.Drawing.Size(120, 20);
+            this.nudSoTietThucHanh.TabIndex = 54;
             // 
             // label5
             // 
@@ -193,12 +211,12 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "Tiết thực hành:";
             // 
-            // nudSoTietLT
+            // nudSoTietLyThuyet
             // 
-            this.nudSoTietLT.Location = new System.Drawing.Point(81, 48);
-            this.nudSoTietLT.Name = "nudSoTietLT";
-            this.nudSoTietLT.Size = new System.Drawing.Size(120, 20);
-            this.nudSoTietLT.TabIndex = 52;
+            this.nudSoTietLyThuyet.Location = new System.Drawing.Point(81, 48);
+            this.nudSoTietLyThuyet.Name = "nudSoTietLyThuyet";
+            this.nudSoTietLyThuyet.Size = new System.Drawing.Size(120, 20);
+            this.nudSoTietLyThuyet.TabIndex = 52;
             // 
             // label4
             // 
@@ -324,24 +342,6 @@
             this.dgvMonHoc.TabIndex = 2;
             this.dgvMonHoc.TabStop = false;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(722, 103);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 56;
-            this.btnLoad.Text = "Đọc";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(638, 103);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 55;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // MaMonHoc
             // 
             this.MaMonHoc.DataPropertyName = "MaMonHoc";
@@ -386,8 +386,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietTH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietThucHanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLyThuyet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTinChi)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).EndInit();
@@ -416,9 +416,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaMonHoc;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nudSoTietTH;
+        private System.Windows.Forms.NumericUpDown nudSoTietThucHanh;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown nudSoTietLT;
+        private System.Windows.Forms.NumericUpDown nudSoTietLyThuyet;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudSoTinChi;
         private System.Windows.Forms.Label label3;
