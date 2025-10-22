@@ -57,10 +57,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
             this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTietLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTietTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTietLyThuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTietThucHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
@@ -327,10 +327,10 @@
             this.dgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaMonHoc,
-            this.TenMh,
+            this.TenMonHoc,
             this.SoTinChi,
-            this.SoTietLT,
-            this.SoTietTH});
+            this.SoTietLyThuyet,
+            this.SoTietThucHanh});
             this.dgvMonHoc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvMonHoc.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMonHoc.Location = new System.Drawing.Point(0, 0);
@@ -348,11 +348,11 @@
             this.MaMonHoc.HeaderText = "Mã môn học";
             this.MaMonHoc.Name = "MaMonHoc";
             // 
-            // TenMh
+            // TenMonHoc
             // 
-            this.TenMh.DataPropertyName = "TenMH";
-            this.TenMh.HeaderText = "Tên môn học";
-            this.TenMh.Name = "TenMh";
+            this.TenMonHoc.DataPropertyName = "TenMonHoc";
+            this.TenMonHoc.HeaderText = "Tên môn học";
+            this.TenMonHoc.Name = "TenMonHoc";
             // 
             // SoTinChi
             // 
@@ -360,17 +360,17 @@
             this.SoTinChi.HeaderText = "Số tín chỉ";
             this.SoTinChi.Name = "SoTinChi";
             // 
-            // SoTietLT
+            // SoTietLyThuyet
             // 
-            this.SoTietLT.DataPropertyName = "SoTietLT";
-            this.SoTietLT.HeaderText = "Tiết lý thuyết";
-            this.SoTietLT.Name = "SoTietLT";
+            this.SoTietLyThuyet.DataPropertyName = "SoTietLyThuyet";
+            this.SoTietLyThuyet.HeaderText = "Tiết lý thuyết";
+            this.SoTietLyThuyet.Name = "SoTietLyThuyet";
             // 
-            // SoTietTH
+            // SoTietThucHanh
             // 
-            this.SoTietTH.DataPropertyName = "SoTietTH";
-            this.SoTietTH.HeaderText = "Tiết thực hành";
-            this.SoTietTH.Name = "SoTietTH";
+            this.SoTietThucHanh.DataPropertyName = "SoTietThucHanh";
+            this.SoTietThucHanh.HeaderText = "Tiết thực hành";
+            this.SoTietThucHanh.Name = "SoTietThucHanh";
             // 
             // fQuanLyMonHoc
             // 
@@ -426,9 +426,9 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenMh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTietLT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTietTH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTietLyThuyet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTietThucHanh;
     }
 }

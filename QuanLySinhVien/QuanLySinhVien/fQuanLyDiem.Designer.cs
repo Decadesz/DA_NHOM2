@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.cboMaMonHoc = new System.Windows.Forms.ComboBox();
             this.cboMaSinhVien = new System.Windows.Forms.ComboBox();
             this.txtDiemThi = new System.Windows.Forms.TextBox();
@@ -53,16 +55,14 @@
             this.dgvDiem = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.PhanTramLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhanTramGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhanTramCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).BeginInit();
@@ -100,6 +100,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 149);
             this.panel1.TabIndex = 0;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(917, 123);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 82;
+            this.btnLoad.Text = "Đọc";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(833, 123);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 81;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // cboMaMonHoc
             // 
@@ -171,6 +189,11 @@
             this.nudPhanTramGiuaKy.Name = "nudPhanTramGiuaKy";
             this.nudPhanTramGiuaKy.Size = new System.Drawing.Size(91, 20);
             this.nudPhanTramGiuaKy.TabIndex = 70;
+            this.nudPhanTramGiuaKy.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // label6
             // 
@@ -187,6 +210,11 @@
             this.nudPhanTramCuoiKy.Name = "nudPhanTramCuoiKy";
             this.nudPhanTramCuoiKy.Size = new System.Drawing.Size(108, 20);
             this.nudPhanTramCuoiKy.TabIndex = 66;
+            this.nudPhanTramCuoiKy.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -203,6 +231,11 @@
             this.nudPhanTramLop.Name = "nudPhanTramLop";
             this.nudPhanTramLop.Size = new System.Drawing.Size(120, 20);
             this.nudPhanTramLop.TabIndex = 64;
+            this.nudPhanTramLop.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -278,28 +311,25 @@
             // 
             // dgvDiem
             // 
-            this.dgvDiem.AllowUserToAddRows = false;
-            this.dgvDiem.AllowUserToDeleteRows = false;
             this.dgvDiem.AllowUserToResizeColumns = false;
             this.dgvDiem.AllowUserToResizeRows = false;
             this.dgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
+            this.PhanTramLop,
+            this.PhanTramGiuaKy,
+            this.PhanTramCuoiKy,
+            this.DiemLop,
+            this.DiemGiuaKy,
+            this.DiemThi,
+            this.DiemTB,
+            this.Loai});
             this.dgvDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDiem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDiem.Location = new System.Drawing.Point(0, 6);
             this.dgvDiem.MultiSelect = false;
             this.dgvDiem.Name = "dgvDiem";
-            this.dgvDiem.ReadOnly = true;
             this.dgvDiem.RowHeadersVisible = false;
             this.dgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiem.Size = new System.Drawing.Size(992, 295);
@@ -308,81 +338,63 @@
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "MaSinhVien";
             this.Column1.HeaderText = "Mã SV";
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "MaMonHoc";
             this.Column2.HeaderText = "Mã môn học";
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
-            // Column3
+            // PhanTramLop
             // 
-            this.Column3.HeaderText = "%Lớp";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.PhanTramLop.DataPropertyName = "PhanTramLop";
+            this.PhanTramLop.HeaderText = "%Lớp";
+            this.PhanTramLop.Name = "PhanTramLop";
             // 
-            // Column4
+            // PhanTramGiuaKy
             // 
-            this.Column4.HeaderText = "%Giữa kỳ";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.PhanTramGiuaKy.DataPropertyName = "PhanTramGiuaKy";
+            this.PhanTramGiuaKy.HeaderText = "%Giữa kỳ";
+            this.PhanTramGiuaKy.Name = "PhanTramGiuaKy";
             // 
-            // Column5
+            // PhanTramCuoiKy
             // 
-            this.Column5.HeaderText = "%Thi";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.PhanTramCuoiKy.DataPropertyName = "PhanTramCuoiKy";
+            this.PhanTramCuoiKy.HeaderText = "%Thi";
+            this.PhanTramCuoiKy.Name = "PhanTramCuoiKy";
             // 
-            // Column6
+            // DiemLop
             // 
-            this.Column6.HeaderText = "Điểm lớp";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.DiemLop.DataPropertyName = "DiemLop";
+            this.DiemLop.HeaderText = "Điểm lớp";
+            this.DiemLop.Name = "DiemLop";
             // 
-            // Column7
+            // DiemGiuaKy
             // 
-            this.Column7.HeaderText = "Điểm gk";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.DiemGiuaKy.DataPropertyName = "DiemGiuaKy";
+            this.DiemGiuaKy.HeaderText = "Điểm gk";
+            this.DiemGiuaKy.Name = "DiemGiuaKy";
             // 
-            // Column8
+            // DiemThi
             // 
-            this.Column8.HeaderText = "Điểm thi";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.DiemThi.DataPropertyName = "DiemThi";
+            this.DiemThi.HeaderText = "Điểm thi";
+            this.DiemThi.Name = "DiemThi";
             // 
-            // Column9
+            // DiemTB
             // 
-            this.Column9.HeaderText = "Điểm TB";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
+            this.DiemTB.DataPropertyName = "DiemTB";
+            this.DiemTB.HeaderText = "Điểm TB";
+            this.DiemTB.Name = "DiemTB";
             // 
-            // Column10
+            // Loai
             // 
-            this.Column10.HeaderText = "Loại";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(917, 123);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 82;
-            this.btnLoad.Text = "Đọc";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(833, 123);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 81;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.Loai.DataPropertyName = "Loai";
+            this.Loai.HeaderText = "Loại";
+            this.Loai.Name = "Loai";
             // 
             // fQuanLyDiem
             // 
@@ -429,17 +441,17 @@
         private System.Windows.Forms.ComboBox cboMaMonHoc;
         private System.Windows.Forms.ComboBox cboMaSinhVien;
         private System.Windows.Forms.DataGridView dgvDiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramGiuaKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramCuoiKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
     }
 }

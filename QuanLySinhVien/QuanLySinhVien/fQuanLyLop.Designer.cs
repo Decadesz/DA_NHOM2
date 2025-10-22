@@ -29,25 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtTenLop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaLop = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvLop = new System.Windows.Forms.DataGridView();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).BeginInit();
             this.SuspendLayout();
@@ -60,8 +57,6 @@
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.nudSoLuong);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtTenLop);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtMaLop);
@@ -71,6 +66,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(713, 77);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 35;
+            this.btnLoad.Text = "Đọc";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(629, 77);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 34;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnRefresh
             // 
@@ -107,22 +120,6 @@
             this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // nudSoLuong
-            // 
-            this.nudSoLuong.Location = new System.Drawing.Point(393, 13);
-            this.nudSoLuong.Name = "nudSoLuong";
-            this.nudSoLuong.Size = new System.Drawing.Size(120, 20);
-            this.nudSoLuong.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(335, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Số lượng:";
             // 
             // txtTenLop
             // 
@@ -182,24 +179,6 @@
             this.dgvLop.Size = new System.Drawing.Size(800, 347);
             this.dgvLop.TabIndex = 2;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(713, 77);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 35;
-            this.btnLoad.Text = "Đọc";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(629, 77);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 34;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // MaLop
             // 
             this.MaLop.DataPropertyName = "MaLop";
@@ -235,7 +214,6 @@
             this.Text = "fQuanLyLop";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).EndInit();
             this.ResumeLayout(false);
@@ -246,12 +224,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenLop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaLop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nudSoLuong;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;

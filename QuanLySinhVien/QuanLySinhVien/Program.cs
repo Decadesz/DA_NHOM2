@@ -19,6 +19,7 @@ namespace QuanLySinhVien
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            KhoDuLieu.LoadDuLieu();
             Application.Run(new fDangNhap());
         }
     }

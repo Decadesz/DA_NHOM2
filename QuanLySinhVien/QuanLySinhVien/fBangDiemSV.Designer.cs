@@ -274,8 +274,6 @@
             // 
             // dgvBangDiem
             // 
-            this.dgvBangDiem.AllowUserToAddRows = false;
-            this.dgvBangDiem.AllowUserToDeleteRows = false;
             this.dgvBangDiem.AllowUserToResizeColumns = false;
             this.dgvBangDiem.AllowUserToResizeRows = false;
             this.dgvBangDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -295,7 +293,6 @@
             this.dgvBangDiem.Location = new System.Drawing.Point(0, 3);
             this.dgvBangDiem.MultiSelect = false;
             this.dgvBangDiem.Name = "dgvBangDiem";
-            this.dgvBangDiem.ReadOnly = true;
             this.dgvBangDiem.RowHeadersVisible = false;
             this.dgvBangDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBangDiem.Size = new System.Drawing.Size(1005, 339);
@@ -306,61 +303,51 @@
             // 
             this.Column1.HeaderText = "Mã SV";
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Mã môn học";
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "%Lớp";
             this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "%Giữa kỳ";
             this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "%Thi";
             this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Điểm lớp";
             this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Điểm gk";
             this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Điểm thi";
             this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Điểm TB";
             this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Loại";
             this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
             // 
             // fBangDiemSV
             // 

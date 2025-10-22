@@ -18,7 +18,7 @@ namespace QuanLySinhVien
         public static List<Diem> DanhSachDiem { get; private set; } = new List<Diem>();
 
         //Sinh Vien
-        public static void LoadSinhVien(SinhVien sv)
+        public static void LoadSinhVien()
         {
             DanhSachSinhVien.Clear();
             if (!File.Exists("danhSachSinhVien.txt"))
@@ -229,7 +229,7 @@ namespace QuanLySinhVien
             LoadLop();
             LoadCoVan();
             LoadMonHoc();
-            LoadSinhVien(null);
+            LoadSinhVien();
             LoadDiem();
         }
         public static void SaveDuLieu()
