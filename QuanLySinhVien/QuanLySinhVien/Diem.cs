@@ -35,14 +35,14 @@ namespace QuanLySinhVien
                 }
             }
         }
-        public string MaMonHoc
+        public string TenMonHoc
         {
             get
             {
                 if (MonHoc != null)
                 {
-                    if (MonHoc.MaMonHoc != null)
-                        return MonHoc.MaMonHoc;
+                    if (MonHoc.TenMonHoc != null)
+                        return MonHoc.TenMonHoc;
                     else
                         return "";
                 }

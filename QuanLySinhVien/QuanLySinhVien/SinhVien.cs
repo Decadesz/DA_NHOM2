@@ -20,7 +20,40 @@ namespace QuanLySinhVien
         private Lop lop;
         private CoVanHocTap coVan;
         private List<Diem> danhSachDiem;
-
+        public string TenLop
+        {
+            get
+            {
+                if (Lop != null)
+                {
+                    if (Lop.TenLop != null)
+                        return Lop.TenLop;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string TenCoVan
+        {
+            get
+            {
+                if (CoVan != null)
+                {
+                    if (CoVan.HoTen != null)
+                        return CoVan.HoTen;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
         public SinhVien()
         {
             MaSinhVien = "";

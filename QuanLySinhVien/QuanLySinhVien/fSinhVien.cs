@@ -120,6 +120,9 @@ namespace QuanLySinhVien
                 coVan,
                 new List<Diem>()
                 );
+            ////gán lại sinh viên của cố vấn học tập nào và lớp nào để xài trong datagridview
+            sinhVien.Lop = lop;
+            sinhVien.CoVan= coVan;
             KhoDuLieu.DanhSachSinhVien.Add(sinhVien);
             if (lop != null)
             {

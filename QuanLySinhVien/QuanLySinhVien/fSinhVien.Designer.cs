@@ -73,8 +73,8 @@
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
@@ -191,8 +191,8 @@
             this.GioiTinh,
             this.DiaChi,
             this.NgayNhapHoc,
-            this.MaLop,
-            this.MaCoVan});
+            this.TenLop,
+            this.TenCoVan});
             this.dgvSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvSinhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvSinhVien.Location = new System.Drawing.Point(0, 131);
@@ -488,17 +488,17 @@
             this.NgayNhapHoc.HeaderText = "Ngày nhập học";
             this.NgayNhapHoc.Name = "NgayNhapHoc";
             // 
-            // MaLop
+            // TenLop
             // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã lớp";
-            this.MaLop.Name = "MaLop";
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Tên lớp";
+            this.TenLop.Name = "TenLop";
             // 
-            // MaCoVan
+            // TenCoVan
             // 
-            this.MaCoVan.DataPropertyName = "MaCoVan";
-            this.MaCoVan.HeaderText = "Mã cố vấn";
-            this.MaCoVan.Name = "MaCoVan";
+            this.TenCoVan.DataPropertyName = "TenCoVan";
+            this.TenCoVan.HeaderText = "Tên cố vấn";
+            this.TenCoVan.Name = "TenCoVan";
             // 
             // fSinhVien
             // 
@@ -570,7 +570,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhapHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCoVan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenCoVan;
     }
 }

@@ -49,7 +49,7 @@ namespace QuanLySinhVien
             MonHoc monHoc=cboMaMonHoc.SelectedItem as MonHoc;
             if(sinhVien==null)
             {
-                MessageBox.Show("Vui lòng chọn sinh viên!");
+                MessageBox.Show("Vui lòng chọn sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if(monHoc==null)
@@ -66,6 +66,9 @@ namespace QuanLySinhVien
                 double.Parse(txtDiemGiuaKy.Text),
                 double.Parse(txtDiemThi.Text)
                 );
+            //gán lại điểm của sinh viên nào và điểm môn nào để xài trong datagridview
+            diem.SinhVien = sinhVien;
+            diem.MonHoc = monHoc;
             KhoDuLieu.DanhSachDiem.Add(diem);
             sinhVien.DanhSachDiem.Add(diem);
             monHoc.DanhSachDiem.Add(diem);
@@ -86,7 +89,7 @@ namespace QuanLySinhVien
             diem.DiemLop=double.Parse(txtDiemLop.Text);
             diem.DiemGiuaKy=double.Parse(txtDiemGiuaKy.Text);
             diem.DiemCuoiKy=double.Parse(txtDiemThi.Text);
-            MessageBox.Show("đã sửa điểm");
+            MessageBox.Show("đã sửa điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             bindingSource.ResetBindings(false);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -157,7 +160,7 @@ namespace QuanLySinhVien
             cboMaMonHoc.ValueMember = "MaMonHoc";
 
             cboMaSinhVien.DataSource = KhoDuLieu.DanhSachSinhVien;
-            cboMaSinhVien.DisplayMember = "TenSinhVien";
+            cboMaSinhVien.DisplayMember = "MaSinhVien";
             cboMaSinhVien.ValueMember = "MaSinhVien";
         }
 
