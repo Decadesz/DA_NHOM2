@@ -35,6 +35,11 @@ namespace QuanLySinhVien
             btnLoad.Click += BtnLoad_Click;
             btnRefresh.Click += BtnRefresh_Click;
             dgvSinhVien.SelectionChanged += DgvSinhVien_SelectionChanged;
+            //Tắt chức năng quản lý tài khoản nếu không phải tài khoản lại phong dao tao
+            if (KhoDuLieu.TaiKhoanHienTai.LoaiTaiKhoanDangNhap != "Phong Dao Tao")
+            {
+                quảnLýTàiKhoảnToolStripMenuItem.Visible = false;
+            }
         }
         private bool kiemTraDauVao()
         {
@@ -120,7 +125,7 @@ namespace QuanLySinhVien
                 coVan,
                 new List<Diem>()
                 );
-            ////gán lại sinh viên của cố vấn học tập nào và lớp nào để xài trong datagridview
+            //gán lại sinh viên của cố vấn học tập nào và lớp nào để xài trong datagridview
             sinhVien.Lop = lop;
             sinhVien.CoVan= coVan;
             KhoDuLieu.DanhSachSinhVien.Add(sinhVien);

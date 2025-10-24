@@ -88,8 +88,7 @@ namespace QuanLySinhVien
             }
 
             string tenMoi = txtTenDangNhap.Text;
-            bool trungTen = KhoDuLieu.DanhSachTaiKhoan.Any(t =>
-                t.TenDangNhap.Equals(tenMoi, StringComparison.OrdinalIgnoreCase) && t != taiKhoan);
+            bool trungTen = KhoDuLieu.DanhSachTaiKhoan.Any(t =>t.TenDangNhap.Equals(tenMoi, StringComparison.OrdinalIgnoreCase) && t != taiKhoan);
             if (trungTen)
             {
                 MessageBox.Show("Tên đăng nhập đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
