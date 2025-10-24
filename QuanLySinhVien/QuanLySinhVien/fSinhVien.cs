@@ -191,7 +191,7 @@ namespace QuanLySinhVien
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
+            SinhVien sinhVien = dgvSinhVien.CurrentRow.DataBoundItem as SinhVien;
             if (MessageBox.Show($"Bạn có chắc muốn xóa sinh viên {sinhVien.HoTen}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);

@@ -142,7 +142,7 @@ namespace QuanLySinhVien
         }
         private void DgvLop_SelectionChanged(object sender, EventArgs e)
         {
-            Lop lop=dgvLop.CurrentRow?.DataBoundItem as Lop;
+            Lop lop=dgvLop.CurrentRow.DataBoundItem as Lop;
             if(lop==null)
             {
                 return;

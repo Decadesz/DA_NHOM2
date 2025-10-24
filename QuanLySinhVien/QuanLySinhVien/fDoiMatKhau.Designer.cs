@@ -94,6 +94,7 @@
             this.btnResetPass.TabIndex = 16;
             this.btnResetPass.Text = "Cập nhật";
             this.btnResetPass.UseVisualStyleBackColor = true;
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // fDoiMatKhau
             // 

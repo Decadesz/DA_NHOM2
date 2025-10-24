@@ -19,10 +19,43 @@ namespace QuanLySinhVien
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fSinhVien f= new fSinhVien();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string tenDangNhap = txtUserName.Text;
+            string matKhau = txtPass.Text;
+
+            if (string.IsNullOrWhiteSpace(tenDangNhap))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(string .IsNullOrWhiteSpace(matKhau))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ mật khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+           
+            TaiKhoanDangNhap taiKhoan = KhoDuLieu.DanhSachTaiKhoan.FirstOrDefault(t =>t.TenDangNhap.Equals(tenDangNhap, StringComparison.OrdinalIgnoreCase) &&t.MatKhau == matKhau);
+
+            if (taiKhoan != null)
+            {
+                KhoDuLieu.TaiKhoanHienTai = taiKhoan;
+                MessageBox.Show($"Đăng nhập thành công! Xin chào {taiKhoan.TenDangNhap} ({taiKhoan.LoaiTaiKhoanDangNhap})","Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fSinhVien f = new fSinhVien();
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    
+
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+            KhoDuLieu.LoadTaiKhoan();
         }
     }
 }

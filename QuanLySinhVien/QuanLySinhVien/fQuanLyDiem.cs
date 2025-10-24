@@ -12,7 +12,7 @@ namespace QuanLySinhVien
 {
     public partial class fQuanLyDiem : Form
     {
-        BindingSource bindingSource=new BindingSource();
+        private BindingSource bindingSource=new BindingSource();
         public fQuanLyDiem()
         {
             InitializeComponent();

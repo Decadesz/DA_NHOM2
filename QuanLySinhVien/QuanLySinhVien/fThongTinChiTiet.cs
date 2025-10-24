@@ -15,6 +15,8 @@ namespace QuanLySinhVien
         public fThongTinChiTiet()
         {
             InitializeComponent();
+            txtUserName.Text = KhoDuLieu.TaiKhoanHienTai.TenDangNhap;
+            txtLoaiTaiKhoan.Text = KhoDuLieu.TaiKhoanHienTai.LoaiTaiKhoanDangNhap;
         }
     }
 }

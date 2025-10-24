@@ -62,7 +62,7 @@
             this.PhanTramCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -325,7 +325,7 @@
             this.PhanTramCuoiKy,
             this.DiemLop,
             this.DiemGiuaKy,
-            this.DiemThi,
+            this.DiemCuoiKy,
             this.DiemTB,
             this.Loai});
             this.dgvDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -386,11 +386,11 @@
             this.DiemGiuaKy.HeaderText = "Điểm gk";
             this.DiemGiuaKy.Name = "DiemGiuaKy";
             // 
-            // DiemThi
+            // DiemCuoiKy
             // 
-            this.DiemThi.DataPropertyName = "DiemThi";
-            this.DiemThi.HeaderText = "Điểm thi";
-            this.DiemThi.Name = "DiemThi";
+            this.DiemCuoiKy.DataPropertyName = "DiemCuoiKy";
+            this.DiemCuoiKy.HeaderText = "Điểm thi";
+            this.DiemCuoiKy.Name = "DiemCuoiKy";
             // 
             // DiemTB
             // 
@@ -460,7 +460,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramCuoiKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemCuoiKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
     }

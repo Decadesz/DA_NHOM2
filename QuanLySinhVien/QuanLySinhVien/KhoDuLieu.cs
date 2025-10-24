@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Hàm lưu trữ dữ liệu tĩnh cho toàn bộ ứng dụng
+//thu vien doc ghi file
 using System.IO;
 
 namespace QuanLySinhVien
@@ -16,6 +16,9 @@ namespace QuanLySinhVien
         public static List<CoVanHocTap> DanhSachCoVan { get; private set; } = new List<CoVanHocTap>();
         public static List<MonHoc> DanhSachMonHoc { get; private set; } = new List<MonHoc>();
         public static List<Diem> DanhSachDiem { get; private set; } = new List<Diem>();
+        public static List<TaiKhoanDangNhap> DanhSachTaiKhoan { get; private set; } = new List<TaiKhoanDangNhap>();
+        public static TaiKhoanDangNhap TaiKhoanHienTai { get; set; }
+
 
         //Sinh Vien
         public static void LoadSinhVien()
@@ -223,6 +226,32 @@ namespace QuanLySinhVien
                 }
             }
         }
+        //Tai khoan
+        public static void LoadTaiKhoan()
+        {
+            DanhSachTaiKhoan.Clear();
+            if (!File.Exists("taiKhoan.txt"))
+                return;
+            foreach (var line in File.ReadAllLines("taiKhoan.txt"))
+            {
+                var parts = line.Split(',');
+                if (parts.Length >= 3)
+                {
+                    TaiKhoanDangNhap tk = new TaiKhoanDangNhap(parts[0], parts[1], parts[2]);
+                    DanhSachTaiKhoan.Add(tk);
+                }
+            }
+        }
+        public static void SaveTaiKhoan()
+        {
+            using (StreamWriter writer = new StreamWriter("taiKhoan.txt"))
+            {
+                foreach (var tk in DanhSachTaiKhoan)
+                {
+                    writer.WriteLine($"{tk.TenDangNhap},{tk.MatKhau},{tk.LoaiTaiKhoanDangNhap}");
+                }
+            }
+        }
         //Ham load va save toan bo du lieu moi khi chay ung dung va thoat ung dung
         public static void LoadDuLieu()
         {
@@ -231,6 +260,7 @@ namespace QuanLySinhVien
             LoadMonHoc();
             LoadSinhVien();
             LoadDiem();
+            LoadTaiKhoan();
         }
         public static void SaveDuLieu()
         {
@@ -239,6 +269,7 @@ namespace QuanLySinhVien
             SaveMonHoc();
             SaveSinhVien();
             SaveDiem();
+            SaveTaiKhoan();
         }
     }
 }
