@@ -18,12 +18,26 @@ namespace QuanLySinhVien
             InitializeComponent();
             caiDatDieuKhien();
         }
+        private void anXoaSua()
+        {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+        private void hienXoaSua()
+        {
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+        }
         private void caiDatDieuKhien()
         {
 
             dgvLop.AutoGenerateColumns = false;
             bindingSource.DataSource = KhoDuLieu.DanhSachLop;
             dgvLop.DataSource = bindingSource;
+            if(KhoDuLieu.DanhSachLop.Count==0)
+            {
+                anXoaSua();
+            }
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -66,6 +80,7 @@ namespace QuanLySinhVien
             Lop lop = new Lop(txtMaLop.Text,txtTenLop.Text);
             KhoDuLieu.DanhSachLop.Add(lop);
             MessageBox.Show("Thêm lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hienXoaSua();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -102,6 +117,10 @@ namespace QuanLySinhVien
             {
                 KhoDuLieu.DanhSachLop.Remove(lop);
                 MessageBox.Show("Xóa lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(KhoDuLieu.DanhSachLop.Count==0)
+                {
+                    anXoaSua();
+                }
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }

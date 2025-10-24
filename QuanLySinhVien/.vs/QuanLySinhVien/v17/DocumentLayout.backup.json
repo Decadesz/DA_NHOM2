@@ -3,32 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fquanlydiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fquanlydiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fquanlytaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fquanlytaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fquanlymonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fquanlymonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fcovanhoctap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fcovanhoctap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fquanlylop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fquanlylop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\fsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\fsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,92 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "fQuanLyDiem.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyDiem.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\fQuanLyDiem.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyDiem.cs*",
-              "RelativeToolTip": "QuanLySinhVien\\fQuanLyDiem.cs*",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAAFAAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:18:29.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "fQuanLyTaiKhoan.cs",
               "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyTaiKhoan.cs",
               "RelativeDocumentMoniker": "QuanLySinhVien\\fQuanLyTaiKhoan.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyTaiKhoan.cs",
-              "RelativeToolTip": "QuanLySinhVien\\fQuanLyTaiKhoan.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE8AAAA/AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyTaiKhoan.cs*",
+              "RelativeToolTip": "QuanLySinhVien\\fQuanLyTaiKhoan.cs*",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAwIMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:17:46.551Z",
+              "WhenOpened": "2025-10-24T12:10:41.404Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fQuanLyMonHoc.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyMonHoc.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\fQuanLyMonHoc.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyMonHoc.cs",
-              "RelativeToolTip": "QuanLySinhVien\\fQuanLyMonHoc.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAFQAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:16:50.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fCoVanHocTap.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fCoVanHocTap.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\fCoVanHocTap.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fCoVanHocTap.cs",
-              "RelativeToolTip": "QuanLySinhVien\\fCoVanHocTap.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAAAGYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:16:05.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "fQuanLyLop.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyLop.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\fQuanLyLop.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fQuanLyLop.cs",
-              "RelativeToolTip": "QuanLySinhVien\\fQuanLyLop.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAQwEoAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:15:39.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "fSinhVien.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fSinhVien.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\fSinhVien.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fSinhVien.cs",
-              "RelativeToolTip": "QuanLySinhVien\\fSinhVien.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAJQAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:12:51.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "fSinhVien.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fSinhVien.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\fSinhVien.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\fSinhVien.cs [Design]",
-              "RelativeToolTip": "QuanLySinhVien\\fSinhVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T11:12:49.729Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

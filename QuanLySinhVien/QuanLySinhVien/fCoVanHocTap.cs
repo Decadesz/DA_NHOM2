@@ -19,12 +19,26 @@ namespace QuanLySinhVien
             caiDatDieuKhien();
            
         }
+        private void anXoaSua()
+        {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+        private void hienXoaSua()
+        {
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+        }
         private void caiDatDieuKhien()
         {
 
             dgvCoVan.AutoGenerateColumns = false;
             bindingSource.DataSource = KhoDuLieu.DanhSachCoVan;
             dgvCoVan.DataSource = bindingSource;
+            if(KhoDuLieu.DanhSachCoVan.Count==0)
+            {
+                anXoaSua();
+            }
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -100,6 +114,7 @@ namespace QuanLySinhVien
                 );
             KhoDuLieu.DanhSachCoVan.Add( coVan );
             MessageBox.Show("Đã thêm cố vấn mới!");
+            hienXoaSua();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -138,6 +153,11 @@ namespace QuanLySinhVien
             if (MessageBox.Show($"Xóa{coVan.HoTen }?","Xác nhận",MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 KhoDuLieu.DanhSachCoVan.Remove(coVan);
+                MessageBox.Show("Xóa cố vấn học tập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (KhoDuLieu.DanhSachCoVan.Count == 0)
+                {
+                    anXoaSua();
+                }
                 bindingSource.ResetBindings(false);
             }    
         }

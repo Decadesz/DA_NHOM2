@@ -19,12 +19,26 @@ namespace QuanLySinhVien
             InitializeComponent();
             caiDatDieuKhien();
         }
+        private void anXoaSua()
+        {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+        private void hienXoaSua()
+        {
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+        }
         private void caiDatDieuKhien()
         {
 
             dgvTaiKhoan.AutoGenerateColumns = false;
             bindingSource.DataSource = KhoDuLieu.DanhSachTaiKhoan;
             dgvTaiKhoan.DataSource = bindingSource;
+            if(KhoDuLieu.DanhSachTaiKhoan.Count==0)
+            {
+                anXoaSua();
+            }
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -72,6 +86,7 @@ namespace QuanLySinhVien
 
             KhoDuLieu.DanhSachTaiKhoan.Add(taiKhoan);
             MessageBox.Show("Thêm tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hienXoaSua();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -111,6 +126,10 @@ namespace QuanLySinhVien
             {
                 KhoDuLieu.DanhSachTaiKhoan.Remove(taiKhoan);
                 MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (KhoDuLieu.DanhSachTaiKhoan.Count == 0)
+                {
+                    anXoaSua();
+                }
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }

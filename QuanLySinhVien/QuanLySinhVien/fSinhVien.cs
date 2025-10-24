@@ -21,12 +21,26 @@ namespace QuanLySinhVien
             napDuLieuComboBox();
 
         }
+        private void anXoaSua()
+        {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+        private void hienXoaSua()
+        {
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+        }
         private void caiDatDieuKhien()
         {
 
             dgvSinhVien.AutoGenerateColumns = false;
             bindingSource.DataSource = KhoDuLieu.DanhSachSinhVien;
             dgvSinhVien.DataSource = bindingSource;
+            if(KhoDuLieu.DanhSachSinhVien.Count==0)
+            {
+                anXoaSua();
+            }
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -141,6 +155,7 @@ namespace QuanLySinhVien
                 coVan.DanhSachSinhVien.Add(sinhVien);
             }
             MessageBox.Show("Thêm sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hienXoaSua();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -200,12 +215,26 @@ namespace QuanLySinhVien
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
+            if (sinhVien ==null)
+            {
+                return;
+            }
             if (MessageBox.Show($"Bạn có chắc muốn xóa sinh viên {sinhVien.HoTen}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);
-                sinhVien.CoVan.DanhSachSinhVien.Remove(sinhVien);
+                if (sinhVien.Lop != null)
+                {
+                    sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);
+                }
+                if (sinhVien.CoVan != null)
+                {
+                    sinhVien.CoVan.DanhSachSinhVien.Remove(sinhVien);
+                }
                 KhoDuLieu.DanhSachSinhVien.Remove(sinhVien);
                 MessageBox.Show("Xóa sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(KhoDuLieu.DanhSachSinhVien.Count==0)
+                {
+                    anXoaSua();
+                }
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }

@@ -19,12 +19,26 @@ namespace QuanLySinhVien
             caiDatDieuKhien();
             napDuLieuComboBox();
         }
+        private void anXoaSua()
+        {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+        private void hienXoaSua()
+        {
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+        }
         private void caiDatDieuKhien()
         {
 
             dgvDiem.AutoGenerateColumns = false;
             bindingSource.DataSource = KhoDuLieu.DanhSachDiem;
             dgvDiem.DataSource = bindingSource;
+            if(KhoDuLieu.DanhSachDiem.Count==0)
+            {
+                anXoaSua();
+            }
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -73,6 +87,7 @@ namespace QuanLySinhVien
             sinhVien.DanhSachDiem.Add(diem);
             monHoc.DanhSachDiem.Add(diem);
             MessageBox.Show("Đã thêm danh sách điểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            hienXoaSua();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -104,6 +119,11 @@ namespace QuanLySinhVien
                 diem.SinhVien.DanhSachDiem.Remove(diem);
                 diem.MonHoc.DanhSachDiem.Remove(diem);
                 KhoDuLieu.DanhSachDiem.Remove(diem);
+                MessageBox.Show("Xóa điểm sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (KhoDuLieu.DanhSachDiem.Count==0)
+                {
+                    anXoaSua();
+                }
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
