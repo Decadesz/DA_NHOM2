@@ -41,6 +41,7 @@ namespace QuanLySinhVien
             {
                 anXoaSua();
             }
+            cboSearch.SelectedIndex= 0;
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -48,12 +49,52 @@ namespace QuanLySinhVien
             btnSave.Click += BtnSave_Click;
             btnLoad.Click += BtnLoad_Click;
             btnRefresh.Click += BtnRefresh_Click;
+            cboSearch.Click += CboSearch_Click;
+            btnSearch.Click += BtnSearch_Click;
             dgvSinhVien.SelectionChanged += DgvSinhVien_SelectionChanged;
             //Tắt chức năng quản lý tài khoản nếu không phải tài khoản lại phong dao tao
             if (KhoDuLieu.TaiKhoanHienTai.LoaiTaiKhoanDangNhap != "Phong Dao Tao")
             {
                 quảnLýTàiKhoảnToolStripMenuItem.Visible = false;
             }
+        }
+        private void BtnSearch_Click(object sender,EventArgs e)
+        {
+            CboSearch_Click(sender, e);
+        }
+        private void CboSearch_Click(object sender,EventArgs e)
+        {
+            string timKiem=txtSearch.Text.Trim().ToLower();
+            if(string.IsNullOrEmpty(timKiem) || cboSearch.SelectedIndex == 0)
+            {
+                bindingSource.DataSource = KhoDuLieu.DanhSachSinhVien;
+                dgvSinhVien.DataSource = bindingSource;
+                return;
+            }
+            List<SinhVien> ketQua=new List<SinhVien>();
+            switch(cboSearch.SelectedItem.ToString())
+            {
+                case "Mã sinh viên":
+                    ketQua = KhoDuLieu.DanhSachSinhVien.Where(s => !string.IsNullOrEmpty(s.MaSinhVien) && s.MaSinhVien.ToLower().Contains(timKiem)).ToList();
+                    break;
+                case "Tên sinh viên":
+                    ketQua = KhoDuLieu.DanhSachSinhVien.Where(s => !string.IsNullOrEmpty(s.HoTen) && s.HoTen.ToLower().Contains(timKiem)).ToList();
+                    break;
+                case "Giới tính":
+                    ketQua = KhoDuLieu.DanhSachSinhVien.Where(s => !string.IsNullOrEmpty(s.GioiTinh) && s.GioiTinh.ToLower().Contains(timKiem)).ToList();
+                    break;
+                case "Tên lớp":
+                    ketQua = KhoDuLieu.DanhSachSinhVien.Where(s => !string.IsNullOrEmpty(s.TenLop) && s.TenLop.ToLower().Contains(timKiem)).ToList();
+                    break;
+                case "Tên cố vấn":
+                    ketQua = KhoDuLieu.DanhSachSinhVien.Where(s => !string.IsNullOrEmpty(s.TenCoVan) && s.TenCoVan.ToLower().Contains(timKiem)).ToList();
+                    break;
+                default:
+                    ketQua = KhoDuLieu.DanhSachSinhVien;
+                    break;
+            }
+            bindingSource.DataSource = ketQua;
+            dgvSinhVien.DataSource = bindingSource;
         }
         private bool kiemTraDauVao()
         {
@@ -272,7 +313,7 @@ namespace QuanLySinhVien
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
-            SinhVien sinhVien = dgvSinhVien.CurrentRow.DataBoundItem as SinhVien;
+            SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
             if (sinhVien == null)
             {
                 return;

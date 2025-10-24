@@ -41,6 +41,14 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
+            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,14 +75,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSinhVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
@@ -88,7 +91,7 @@
             this.chứcNăngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1113, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -176,7 +179,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 426);
+            this.panel1.Size = new System.Drawing.Size(1113, 418);
             this.panel1.TabIndex = 1;
             // 
             // dgvSinhVien
@@ -195,16 +198,67 @@
             this.TenCoVan});
             this.dgvSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvSinhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSinhVien.Location = new System.Drawing.Point(0, 131);
+            this.dgvSinhVien.Location = new System.Drawing.Point(0, 123);
             this.dgvSinhVien.Name = "dgvSinhVien";
             this.dgvSinhVien.RowHeadersVisible = false;
             this.dgvSinhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSinhVien.Size = new System.Drawing.Size(800, 295);
+            this.dgvSinhVien.Size = new System.Drawing.Size(1113, 295);
             this.dgvSinhVien.TabIndex = 0;
             this.dgvSinhVien.TabStop = false;
             // 
+            // MaSinhVien
+            // 
+            this.MaSinhVien.DataPropertyName = "MaSinhVien";
+            this.MaSinhVien.HeaderText = "Mã SV";
+            this.MaSinhVien.Name = "MaSinhVien";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên sinh viên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // NgayNhapHoc
+            // 
+            this.NgayNhapHoc.DataPropertyName = "NgayNhapHoc";
+            this.NgayNhapHoc.HeaderText = "Ngày nhập học";
+            this.NgayNhapHoc.Name = "NgayNhapHoc";
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Tên lớp";
+            this.TenLop.Name = "TenLop";
+            // 
+            // TenCoVan
+            // 
+            this.TenCoVan.DataPropertyName = "TenCoVan";
+            this.TenCoVan.HeaderText = "Tên cố vấn";
+            this.TenCoVan.Name = "TenCoVan";
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.txtSearch);
+            this.panel2.Controls.Add(this.cboSearch);
             this.panel2.Controls.Add(this.txtSoDienThoai);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnLoad);
@@ -233,7 +287,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 125);
+            this.panel2.Size = new System.Drawing.Size(1113, 125);
             this.panel2.TabIndex = 2;
             // 
             // txtSoDienThoai
@@ -452,59 +506,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SV:";
             // 
-            // MaSinhVien
+            // cboSearch
             // 
-            this.MaSinhVien.DataPropertyName = "MaSinhVien";
-            this.MaSinhVien.HeaderText = "Mã SV";
-            this.MaSinhVien.Name = "MaSinhVien";
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã sinh viên",
+            "Tên sinh viên",
+            "Giới tính",
+            "Tên lớp",
+            "Tên cố vấn"});
+            this.cboSearch.Location = new System.Drawing.Point(916, 24);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 32;
             // 
-            // HoTen
+            // txtSearch
             // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Tên sinh viên";
-            this.HoTen.Name = "HoTen";
+            this.txtSearch.Location = new System.Drawing.Point(916, 51);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 33;
             // 
-            // NgaySinh
+            // btnSearch
             // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // NgayNhapHoc
-            // 
-            this.NgayNhapHoc.DataPropertyName = "NgayNhapHoc";
-            this.NgayNhapHoc.HeaderText = "Ngày nhập học";
-            this.NgayNhapHoc.Name = "NgayNhapHoc";
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            this.TenLop.HeaderText = "Tên lớp";
-            this.TenLop.Name = "TenLop";
-            // 
-            // TenCoVan
-            // 
-            this.TenCoVan.DataPropertyName = "TenCoVan";
-            this.TenCoVan.HeaderText = "Tên cố vấn";
-            this.TenCoVan.Name = "TenCoVan";
+            this.btnSearch.Location = new System.Drawing.Point(1022, 51);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 34;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // fSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1113, 442);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -572,5 +609,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayNhapHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenCoVan;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
     }
 }
