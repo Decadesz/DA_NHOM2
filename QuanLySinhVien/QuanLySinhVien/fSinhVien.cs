@@ -108,10 +108,13 @@ namespace QuanLySinhVien
             //ep kieu an toan
             Lop lop =cboTenLop.SelectedItem as Lop;
             CoVanHocTap coVan = cboTenCoVan.SelectedItem as CoVanHocTap;
-            if(lop.SoLuong>=Lop.siSoToiDa)
+            if (lop != null)
             {
-                MessageBox.Show("Lớp đã đạt sĩ số tối đa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (lop.SoLuong >= Lop.siSoToiDa)
+                {
+                    MessageBox.Show("Lớp đã đạt sĩ số tối đa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             SinhVien sinhVien= new SinhVien(
                 txtMaSinhVien.Text,
@@ -143,7 +146,7 @@ namespace QuanLySinhVien
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            SinhVien sinhVien = dgvSinhVien.CurrentRow.DataBoundItem as SinhVien;
+            SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
             if (sinhVien == null)
             {
                 return;
@@ -196,7 +199,7 @@ namespace QuanLySinhVien
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            SinhVien sinhVien = dgvSinhVien.CurrentRow.DataBoundItem as SinhVien;
+            SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
             if (MessageBox.Show($"Bạn có chắc muốn xóa sinh viên {sinhVien.HoTen}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);

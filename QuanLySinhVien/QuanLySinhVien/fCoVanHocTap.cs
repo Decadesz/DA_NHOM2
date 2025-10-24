@@ -105,7 +105,7 @@ namespace QuanLySinhVien
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            CoVanHocTap coVan=dgvCoVan.CurrentRow.DataBoundItem as CoVanHocTap;
+            CoVanHocTap coVan=dgvCoVan.CurrentRow?.DataBoundItem as CoVanHocTap;
             if(coVan==null)
             {
                 return;
@@ -130,7 +130,7 @@ namespace QuanLySinhVien
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            CoVanHocTap coVan=dgvCoVan.CurrentRow.DataBoundItem as CoVanHocTap;
+            CoVanHocTap coVan=dgvCoVan.CurrentRow?.DataBoundItem as CoVanHocTap;
             if(coVan==null)
             {
                 return;
@@ -172,7 +172,7 @@ namespace QuanLySinhVien
         }
         private void DgvCoVan_SelectionChanged(object sender, EventArgs e)
         {
-            CoVanHocTap coVan =dgvCoVan.CurrentRow.DataBoundItem as CoVanHocTap;
+            CoVanHocTap coVan =dgvCoVan.CurrentRow?.DataBoundItem as CoVanHocTap;
             if (coVan == null)
             {
                 return;

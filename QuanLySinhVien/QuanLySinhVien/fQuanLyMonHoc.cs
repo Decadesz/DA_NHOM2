@@ -82,7 +82,7 @@ namespace QuanLySinhVien
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            MonHoc monHoc = dgvMonHoc.CurrentRow.DataBoundItem as MonHoc;
+            MonHoc monHoc = dgvMonHoc.CurrentRow?.DataBoundItem as MonHoc;
             if(monHoc==null)
             {
                 return;
@@ -107,7 +107,7 @@ namespace QuanLySinhVien
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            MonHoc monHoc = dgvMonHoc.CurrentRow.DataBoundItem as MonHoc;
+            MonHoc monHoc = dgvMonHoc.CurrentRow?.DataBoundItem as MonHoc;
             if(monHoc == null)
             {
                 return;
@@ -140,7 +140,7 @@ namespace QuanLySinhVien
         }
         private void DgvMonHoc_SelectionChanged(object sender, EventArgs e)
         {
-            MonHoc monHoc=dgvMonHoc.CurrentRow.DataBoundItem as MonHoc;
+            MonHoc monHoc=dgvMonHoc.CurrentRow?.DataBoundItem as MonHoc;
             if (monHoc == null)
             {
                 return;

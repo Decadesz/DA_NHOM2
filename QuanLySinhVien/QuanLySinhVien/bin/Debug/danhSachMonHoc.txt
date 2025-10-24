@@ -1,4 +1,0 @@
-MH1,Nhập môn lập trình,3,45,0
-MH2,Thực hành nhập môn lập trình,1,0,30
-MH3,Kỹ thuật lập trình,3,45,0
-MH4,Thực hành kỹ thuật lập trình,1,0,30

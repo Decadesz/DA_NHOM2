@@ -78,7 +78,7 @@ namespace QuanLySinhVien
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            Diem diem=dgvDiem.CurrentRow.DataBoundItem as Diem;
+            Diem diem=dgvDiem.CurrentRow?.DataBoundItem as Diem;
             if(diem==null)
             {
                 return;
@@ -94,7 +94,7 @@ namespace QuanLySinhVien
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            Diem diem = dgvDiem.CurrentRow.DataBoundItem as Diem;
+            Diem diem = dgvDiem.CurrentRow?.DataBoundItem as Diem;
             if(diem==null ) 
             { 
                 return;

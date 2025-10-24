@@ -77,7 +77,7 @@ namespace QuanLySinhVien
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow.DataBoundItem as TaiKhoanDangNhap;
+            TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow?.DataBoundItem as TaiKhoanDangNhap;
             if (taiKhoan == null)
             {
                 return;
@@ -104,7 +104,7 @@ namespace QuanLySinhVien
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow.DataBoundItem as TaiKhoanDangNhap;
+            TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow?.DataBoundItem as TaiKhoanDangNhap;
             if (taiKhoan == null) return;
 
             if (MessageBox.Show($"Bạn có chắc muốn xóa tài khoản '{taiKhoan.TenDangNhap}'?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -148,7 +148,7 @@ namespace QuanLySinhVien
         }
         private void DgvTaiKhoan_SelectionChanged(object sender, EventArgs e)
         {
-            TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow.DataBoundItem as TaiKhoanDangNhap;
+            TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow?.DataBoundItem as TaiKhoanDangNhap;
             if (taiKhoan == null) return;
 
             txtTenDangNhap.Text = taiKhoan.TenDangNhap;

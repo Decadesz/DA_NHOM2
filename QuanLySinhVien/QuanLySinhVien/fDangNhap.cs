@@ -21,7 +21,17 @@ namespace QuanLySinhVien
         {
             string tenDangNhap = txtUserName.Text;
             string matKhau = txtPass.Text;
-
+            //Nếu không có file hoặc danh sách tài khoản file đọc rỗng thì tự tạo 1 tài khoản mặc định
+            if (KhoDuLieu.DanhSachTaiKhoan.Count==0)
+            {
+                TaiKhoanDangNhap taiKhoanReset=new TaiKhoanDangNhap();
+                taiKhoanReset.TenDangNhap = "1";
+                taiKhoanReset.MatKhau = "1";
+                taiKhoanReset.LoaiTaiKhoanDangNhap = "Phong Dao Tao";
+                KhoDuLieu.DanhSachTaiKhoan.Add(taiKhoanReset);
+                KhoDuLieu.SaveTaiKhoan();
+                KhoDuLieu.LoadTaiKhoan();
+            }
             if (string.IsNullOrWhiteSpace(tenDangNhap))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,7 +45,6 @@ namespace QuanLySinhVien
 
            
             TaiKhoanDangNhap taiKhoan = KhoDuLieu.DanhSachTaiKhoan.FirstOrDefault(t =>t.TenDangNhap.Equals(tenDangNhap, StringComparison.OrdinalIgnoreCase) &&t.MatKhau == matKhau);
-
             if (taiKhoan != null)
             {
                 KhoDuLieu.TaiKhoanHienTai = taiKhoan;
