@@ -19,7 +19,16 @@ namespace QuanLySinhVien
             InitializeComponent();
             caiDatDieuKhien();
             napDuLieuComboBox();
+            lamMoi();
 
+        }
+        private void lamMoi()
+        {
+            sapXepSinhVienTheoMa();
+            sapXepSinhVienTheoLop();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = KhoDuLieu.DanhSachSinhVien;
+            dgvSinhVien.Refresh();
         }
         private void anXoaSua()
         {
@@ -57,6 +66,14 @@ namespace QuanLySinhVien
             {
                 quảnLýTàiKhoảnToolStripMenuItem.Visible = false;
             }
+        }
+        private void sapXepSinhVienTheoLop()
+        {
+            KhoDuLieu.DanhSachSinhVien.Sort((a, b) => string.Compare(a.TenLop, b.TenLop, StringComparison.Ordinal));
+        }
+        private void sapXepSinhVienTheoMa()
+        {
+            KhoDuLieu.DanhSachSinhVien.Sort((a, b) => string.Compare(a.MaSinhVien, b.MaSinhVien, StringComparison.Ordinal));
         }
         private void BtnSearch_Click(object sender,EventArgs e)
         {
@@ -197,6 +214,7 @@ namespace QuanLySinhVien
             }
             MessageBox.Show("Thêm sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hienXoaSua();
+            lamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -238,7 +256,7 @@ namespace QuanLySinhVien
             //Cập nhật lớp
             if (lopCu != lopMoi)
             {
-                
+
                 if (lopCu != null)
                 {
                     lopCu.DanhSachSinhVien.Remove(sinhVien);
@@ -250,6 +268,7 @@ namespace QuanLySinhVien
                     lopMoi.SoLuong++;
                 }
             }
+            lamMoi();
             bindingSource.ResetBindings(false);
             MessageBox.Show("Cập nhật sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -276,6 +295,7 @@ namespace QuanLySinhVien
                 {
                     anXoaSua();
                 }
+                lamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
@@ -310,6 +330,7 @@ namespace QuanLySinhVien
         {
             bindingSource.ResetBindings(false);
             napDuLieuComboBox();
+            lamMoi();
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
@@ -334,6 +355,7 @@ namespace QuanLySinhVien
             }
             cboTenCoVan.SelectedItem = sinhVien.CoVan;
             cboTenLop.SelectedItem = sinhVien.Lop;
+            
         }
         private void napDuLieuComboBox()
         {
