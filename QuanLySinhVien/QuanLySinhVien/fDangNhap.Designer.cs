@@ -88,6 +88,7 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.Name = "fDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.ResumeLayout(false);

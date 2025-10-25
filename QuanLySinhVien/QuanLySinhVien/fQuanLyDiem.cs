@@ -210,7 +210,7 @@ namespace QuanLySinhVien
             cboMaMonHoc.DisplayMember = "TenMonHoc";
             cboMaMonHoc.ValueMember = "MaMonHoc";
 
-            cboMaSinhVien.DataSource = KhoDuLieu.DanhSachDiem;
+            cboMaSinhVien.DataSource = KhoDuLieu.DanhSachSinhVien;
             cboMaSinhVien.DisplayMember = "MaSinhVien";
             cboMaSinhVien.ValueMember = "MaSinhVien";
         }
