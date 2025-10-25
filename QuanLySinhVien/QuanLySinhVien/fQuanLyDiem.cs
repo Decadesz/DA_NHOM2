@@ -46,7 +46,38 @@ namespace QuanLySinhVien
             btnSave.Click += BtnSave_Click;
             btnLoad.Click += BtnLoad_Click;
             btnRefresh.Click += BtnRefresh_Click;
+            cboSearch.Click += CboSearch_Click;
+            btnSearch.Click += BtnSearch_Click;
             dgvDiem.SelectionChanged += DgvDiem_SelectionChanged;
+        }
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            CboSearch_Click(sender, e);
+        }
+        private void CboSearch_Click(object sender, EventArgs e)
+        {
+            string timKiem = txtSearch.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(timKiem) || cboSearch.SelectedIndex == 0)
+            {
+                bindingSource.DataSource = KhoDuLieu.DanhSachDiem;
+                dgvDiem.DataSource = bindingSource;
+                return;
+            }
+            List<Diem> ketQua = new List<Diem>();
+            switch (cboSearch.SelectedItem.ToString())
+            {
+                case "Mã sinh viên":
+                    ketQua = KhoDuLieu.DanhSachDiem.Where(d => !string.IsNullOrEmpty(d.MaSinhVien) && d.MaSinhVien.ToLower().Contains(timKiem)).ToList();
+                    break;
+                case "Tên môn học":
+                    ketQua = KhoDuLieu.DanhSachDiem.Where(d => !string.IsNullOrEmpty(d.TenMonHoc) && d.TenMonHoc.ToLower().Contains(timKiem)).ToList();
+                    break;
+                default:
+                    ketQua = KhoDuLieu.DanhSachDiem;
+                    break;
+            }
+            bindingSource.DataSource = ketQua;
+            dgvDiem.DataSource = bindingSource;
         }
         private void ClearInput()
         {
@@ -159,7 +190,7 @@ namespace QuanLySinhVien
         }
         private void DgvDiem_SelectionChanged(object sender, EventArgs e)
         {
-            Diem diem=dgvDiem.CurrentRow.DataBoundItem as Diem;
+            Diem diem=dgvDiem.CurrentRow?.DataBoundItem as Diem;
             if(diem==null)
             {
                 return;
@@ -179,7 +210,7 @@ namespace QuanLySinhVien
             cboMaMonHoc.DisplayMember = "TenMonHoc";
             cboMaMonHoc.ValueMember = "MaMonHoc";
 
-            cboMaSinhVien.DataSource = KhoDuLieu.DanhSachSinhVien;
+            cboMaSinhVien.DataSource = KhoDuLieu.DanhSachDiem;
             cboMaSinhVien.DisplayMember = "MaSinhVien";
             cboMaSinhVien.ValueMember = "MaSinhVien";
         }

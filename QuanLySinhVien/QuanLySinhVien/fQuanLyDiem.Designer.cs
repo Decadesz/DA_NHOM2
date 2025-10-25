@@ -54,7 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
-            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +64,10 @@
             this.DiemCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).BeginInit();
@@ -76,6 +79,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.cboSearch);
             this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.cboMaMonHoc);
@@ -251,7 +257,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(494, 108);
+            this.btnRefresh.Location = new System.Drawing.Point(273, 118);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 62;
@@ -260,7 +266,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(332, 108);
+            this.btnEdit.Location = new System.Drawing.Point(111, 118);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 61;
@@ -269,7 +275,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(410, 108);
+            this.btnDelete.Location = new System.Drawing.Point(189, 118);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 60;
@@ -278,7 +284,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(251, 108);
+            this.btnAdd.Location = new System.Drawing.Point(30, 118);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 59;
@@ -338,10 +344,6 @@
             this.dgvDiem.Size = new System.Drawing.Size(992, 295);
             this.dgvDiem.TabIndex = 1;
             this.dgvDiem.TabStop = false;
-            // 
-            // khoDuLieuBindingSource
-            // 
-            this.khoDuLieuBindingSource.DataSource = typeof(QuanLySinhVien.KhoDuLieu);
             // 
             // MaSinhVien
             // 
@@ -404,6 +406,38 @@
             this.Loai.HeaderText = "Loại";
             this.Loai.Name = "Loai";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(684, 120);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 85;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(578, 120);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 84;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã sinh viên",
+            "Tên môn học"});
+            this.cboSearch.Location = new System.Drawing.Point(578, 93);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 83;
+            // 
+            // khoDuLieuBindingSource
+            // 
+            this.khoDuLieuBindingSource.DataSource = typeof(QuanLySinhVien.KhoDuLieu);
+            // 
             // fQuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,5 +497,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemCuoiKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
     }
 }

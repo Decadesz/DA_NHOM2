@@ -2,3 +2,5 @@ MH1,Nhập môn lập trình,3,45,0
 MH2,Thực hành nhập môn lập trình,1,0,30
 MH3,Kỹ thuật lập trình,3,45,0
 MH4,Thực hành kỹ thuật lập trình,1,0,30
+MH5,Nhập môn cấu trúc dữ liệu,3,45,0
+MH6,Thực hành cấu trúc dữ liệu,1,0,30
