@@ -89,8 +89,31 @@ namespace QuanLySinhVien
             txtDiemGiuaKy.Text = "0";
             txtDiemThi.Text = "0";
         }
+        private bool kiemTraDauVao()
+        {
+            if (string.IsNullOrWhiteSpace(txtDiemLop.Text))
+            {
+                MessageBox.Show("Điểm lớp không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtDiemGiuaKy.Text))
+            {
+                MessageBox.Show("Điểm giữa kỳ không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtDiemThi.Text))
+            {
+                MessageBox.Show("Điểm giữa kỳ không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            if (!kiemTraDauVao())
+            {
+                return;
+            }
             SinhVien sinhVien=cboMaSinhVien.SelectedItem as SinhVien;
             MonHoc monHoc=cboMaMonHoc.SelectedItem as MonHoc;
             if(sinhVien==null)
@@ -103,6 +126,7 @@ namespace QuanLySinhVien
                 MessageBox.Show("Vui lòng chọn môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+          
             Diem diem = new Diem
                 (
                 (int)nudPhanTramLop.Value,

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cboSearch = new System.Windows.Forms.ComboBox();
@@ -68,7 +69,6 @@
             this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).BeginInit();
@@ -111,6 +111,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 149);
             this.panel1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(575, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Tìm kiếm";
             // 
             // btnSearch
             // 
@@ -439,15 +448,6 @@
             // khoDuLieuBindingSource
             // 
             this.khoDuLieuBindingSource.DataSource = typeof(QuanLySinhVien.KhoDuLieu);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(575, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
-            this.label9.TabIndex = 86;
-            this.label9.Text = "Tìm kiếm";
             // 
             // fQuanLyDiem
             // 
