@@ -61,6 +61,10 @@
             this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTietLyThuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTietThucHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
@@ -79,7 +83,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 132);
+            this.panel1.Size = new System.Drawing.Size(1025, 132);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -88,7 +92,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 132);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 0);
+            this.panel3.Size = new System.Drawing.Size(1025, 0);
             this.panel3.TabIndex = 3;
             // 
             // dgvSinhVien
@@ -113,7 +117,7 @@
             this.dgvSinhVien.ReadOnly = true;
             this.dgvSinhVien.RowHeadersVisible = false;
             this.dgvSinhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSinhVien.Size = new System.Drawing.Size(800, 328);
+            this.dgvSinhVien.Size = new System.Drawing.Size(1025, 328);
             this.dgvSinhVien.TabIndex = 1;
             this.dgvSinhVien.TabStop = false;
             // 
@@ -155,8 +159,12 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.btnLoad);
+            this.panel4.Controls.Add(this.btnSearch);
+            this.panel4.Controls.Add(this.txtSearch);
             this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.cboSearch);
             this.panel4.Controls.Add(this.nudSoTietThucHanh);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.nudSoTietLyThuyet);
@@ -174,12 +182,12 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(800, 132);
+            this.panel4.Size = new System.Drawing.Size(1025, 132);
             this.panel4.TabIndex = 2;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(722, 103);
+            this.btnLoad.Location = new System.Drawing.Point(950, 109);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 56;
@@ -188,7 +196,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(638, 103);
+            this.btnSave.Location = new System.Drawing.Point(866, 109);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 55;
@@ -317,7 +325,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 132);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 318);
+            this.panel2.Size = new System.Drawing.Size(1025, 318);
             this.panel2.TabIndex = 1;
             // 
             // dgvMonHoc
@@ -338,7 +346,7 @@
             this.dgvMonHoc.Name = "dgvMonHoc";
             this.dgvMonHoc.RowHeadersVisible = false;
             this.dgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMonHoc.Size = new System.Drawing.Size(800, 318);
+            this.dgvMonHoc.Size = new System.Drawing.Size(1025, 318);
             this.dgvMonHoc.TabIndex = 2;
             this.dgvMonHoc.TabStop = false;
             // 
@@ -372,11 +380,48 @@
             this.SoTietThucHanh.HeaderText = "Tiết thực hành";
             this.SoTietThucHanh.Name = "SoTietThucHanh";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(569, 63);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 95;
+            this.label10.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(687, 106);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 94;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(572, 106);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 93;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã môn học",
+            "Tên môn học"});
+            this.cboSearch.Location = new System.Drawing.Point(572, 79);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 92;
+            // 
             // fQuanLyMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1025, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyMonHoc";
@@ -430,5 +475,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTietLyThuyet;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTietThucHanh;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
     }
 }

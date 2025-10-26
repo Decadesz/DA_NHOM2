@@ -46,6 +46,10 @@
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiTaiKhoanDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
@@ -53,6 +57,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.cboSearch);
             this.panel1.Controls.Add(this.cboLoaiTaiKhoan);
             this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.btnSave);
@@ -68,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(1032, 100);
             this.panel1.TabIndex = 0;
             // 
             // cboLoaiTaiKhoan
@@ -84,7 +92,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(722, 77);
+            this.btnLoad.Location = new System.Drawing.Point(954, 77);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 58;
@@ -93,7 +101,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(638, 77);
+            this.btnSave.Location = new System.Drawing.Point(870, 77);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 57;
@@ -183,7 +191,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 350);
+            this.panel2.Size = new System.Drawing.Size(1032, 350);
             this.panel2.TabIndex = 1;
             // 
             // dgvTaiKhoan
@@ -202,7 +210,7 @@
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersVisible = false;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(800, 344);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1032, 344);
             this.dgvTaiKhoan.TabIndex = 1;
             this.dgvTaiKhoan.TabStop = false;
             // 
@@ -227,11 +235,48 @@
             this.LoaiTaiKhoanDangNhap.Name = "LoaiTaiKhoanDangNhap";
             this.LoaiTaiKhoanDangNhap.Width = 300;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(628, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 91;
+            this.label10.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(737, 43);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 90;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(631, 43);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 89;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Tên đăng nhập",
+            "Loại tài khoản"});
+            this.cboSearch.Location = new System.Drawing.Point(631, 16);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 88;
+            // 
             // fQuanLyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1032, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyTaiKhoan";
@@ -264,5 +309,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTaiKhoanDangNhap;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
     }
 }

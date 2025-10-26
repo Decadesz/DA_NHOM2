@@ -18,6 +18,35 @@ namespace QuanLySinhVien
             InitializeComponent();
             caiDatDieuKhien();
         }
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            CboSearch_Click(sender, e);
+        }
+        private void CboSearch_Click(object sender, EventArgs e)
+        {
+            string timKiem = txtSearch.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(timKiem) || cboSearch.SelectedIndex == 0)
+            {
+                bindingSource.DataSource = KhoDuLieu.DanhSachLop;
+                dgvLop.DataSource = bindingSource;
+                return;
+            }
+            List<Lop> ketQua = new List<Lop>();
+            switch (cboSearch.SelectedItem.ToString())
+            {
+                case "Mã lớp":
+                    ketQua = KhoDuLieu.DanhSachLop.Where(l => !string.IsNullOrEmpty(l.MaLop) && l.MaLop.ToLower().Contains(timKiem)).ToList();
+                    break;
+                case "Tên lớp":
+                    ketQua = KhoDuLieu.DanhSachLop.Where(l => !string.IsNullOrEmpty(l.TenLop) && l.TenLop.ToLower().Contains(timKiem)).ToList();
+                    break;
+                default:
+                    ketQua = KhoDuLieu.DanhSachLop;
+                    break;
+            }
+            bindingSource.DataSource = ketQua;
+            dgvLop.DataSource = bindingSource;
+        }
         private void anXoaSua()
         {
             btnEdit.Enabled = false;
@@ -46,6 +75,9 @@ namespace QuanLySinhVien
             btnLoad.Click += BtnLoad_Click;
             btnRefresh.Click += BtnRefresh_Click;
             dgvLop.SelectionChanged += DgvLop_SelectionChanged;
+            cboSearch.Click += CboSearch_Click;
+            btnSearch.Click += BtnSearch_Click;
+            cboSearch.SelectedIndex = 0;
         }
         private bool kiemTraDauVao()
         {

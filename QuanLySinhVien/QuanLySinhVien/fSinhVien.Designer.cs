@@ -50,6 +50,9 @@
             this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
@@ -75,9 +78,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSinhVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboSearch = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
@@ -256,6 +257,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.cboSearch);
@@ -289,6 +291,37 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1113, 125);
             this.panel2.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(1022, 51);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 34;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(916, 51);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 33;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã sinh viên",
+            "Tên sinh viên",
+            "Giới tính",
+            "Tên lớp",
+            "Tên cố vấn"});
+            this.cboSearch.Location = new System.Drawing.Point(916, 24);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 32;
             // 
             // txtSoDienThoai
             // 
@@ -506,36 +539,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SV:";
             // 
-            // cboSearch
+            // label10
             // 
-            this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Items.AddRange(new object[] {
-            "Tất cả",
-            "Mã sinh viên",
-            "Tên sinh viên",
-            "Giới tính",
-            "Tên lớp",
-            "Tên cố vấn"});
-            this.cboSearch.Location = new System.Drawing.Point(916, 24);
-            this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(121, 21);
-            this.cboSearch.TabIndex = 32;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(916, 51);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch.TabIndex = 33;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(1022, 51);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 34;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(913, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 87;
+            this.label10.Text = "Tìm kiếm";
             // 
             // fSinhVien
             // 
@@ -612,5 +623,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.Label label10;
     }
 }

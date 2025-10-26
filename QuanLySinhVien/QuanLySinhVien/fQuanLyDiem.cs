@@ -39,6 +39,7 @@ namespace QuanLySinhVien
             {
                 anXoaSua();
             }
+            cboSearch.SelectedIndex = 0;
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -84,9 +85,9 @@ namespace QuanLySinhVien
             nudPhanTramLop.Value = 10;
             nudPhanTramGiuaKy.Value = 30;
             nudPhanTramCuoiKy.Value = 60;
-            txtDiemLop.Text = "";
-            txtDiemGiuaKy.Text = "";
-            txtDiemThi.Text = "";
+            txtDiemLop.Text = "0";
+            txtDiemGiuaKy.Text = "0";
+            txtDiemThi.Text = "0";
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
