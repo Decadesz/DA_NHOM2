@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 namespace QuanLySinhVien
 {
     public partial class fSinhVien : Form
@@ -69,11 +68,12 @@ namespace QuanLySinhVien
         }
         private void sapXepSinhVienTheoLop()
         {
+            //phai dung dinh dang D23_TH01 khong duoc xai D23_TH1
             KhoDuLieu.DanhSachSinhVien.Sort((a, b) => string.Compare(a.TenLop, b.TenLop, StringComparison.Ordinal));
         }
         private void sapXepSinhVienTheoMa()
         {
-            KhoDuLieu.DanhSachSinhVien.Sort((a, b) => string.Compare(a.MaSinhVien, b.MaSinhVien, StringComparison.Ordinal));
+            KhoDuLieu.DanhSachSinhVien.Sort((a,b) => string.Compare(a.MaSinhVien,b.MaSinhVien, StringComparison.Ordinal));
         }
         private void BtnSearch_Click(object sender,EventArgs e)
         {

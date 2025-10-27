@@ -18,6 +18,18 @@ namespace QuanLySinhVien
             InitializeComponent();
             caiDatDieuKhien();
             napDuLieuComboBox();
+            lamMoi();
+        }
+        private void sapXepDiemTheoMaSinhVien()
+        {
+            KhoDuLieu.DanhSachDiem.Sort((a, b) => string.Compare(a.MaSinhVien, b.MaSinhVien, StringComparison.CurrentCultureIgnoreCase));
+        }
+        private void lamMoi()
+        {
+            sapXepDiemTheoMaSinhVien();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = KhoDuLieu.DanhSachDiem;
+            dgvDiem.Refresh();
         }
         private void anXoaSua()
         {
@@ -144,6 +156,7 @@ namespace QuanLySinhVien
             monHoc.DanhSachDiem.Add(diem);
             MessageBox.Show("Đã thêm danh sách điểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hienXoaSua();
+            lamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -161,6 +174,7 @@ namespace QuanLySinhVien
             diem.DiemGiuaKy=double.Parse(txtDiemGiuaKy.Text);
             diem.DiemCuoiKy=double.Parse(txtDiemThi.Text);
             MessageBox.Show("đã sửa điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lamMoi();
             bindingSource.ResetBindings(false);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -180,6 +194,7 @@ namespace QuanLySinhVien
                 {
                     anXoaSua();
                 }
+                lamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }

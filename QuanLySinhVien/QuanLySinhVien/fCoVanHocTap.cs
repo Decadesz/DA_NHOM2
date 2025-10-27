@@ -17,7 +17,18 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             caiDatDieuKhien();
-           
+            lamMoi();
+        }
+        private void sapXepCoVanTheoMa()
+        {
+            KhoDuLieu.DanhSachCoVan.Sort((a, b) => string.Compare(a.MaCoVan, b.MaCoVan, StringComparison.CurrentCultureIgnoreCase));
+        }
+        private void lamMoi()
+        {
+            sapXepCoVanTheoMa();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = KhoDuLieu.DanhSachCoVan;
+            dgvCoVan.Refresh();
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -147,6 +158,7 @@ namespace QuanLySinhVien
             KhoDuLieu.DanhSachCoVan.Add( coVan );
             MessageBox.Show("Đã thêm cố vấn mới!");
             hienXoaSua();
+            lamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -172,6 +184,7 @@ namespace QuanLySinhVien
             coVan.NgaySinh = dtpNgaySinh.Value;
             coVan.SoDienThoai=txtSoDienThoai.Text;
             coVan.Email= txtEmail.Text;
+            lamMoi();
             bindingSource.ResetBindings(false);
 
         }
@@ -185,6 +198,7 @@ namespace QuanLySinhVien
             if (MessageBox.Show($"Xóa{coVan.HoTen }?","Xác nhận",MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 KhoDuLieu.DanhSachCoVan.Remove(coVan);
+                lamMoi();
                 MessageBox.Show("Xóa cố vấn học tập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (KhoDuLieu.DanhSachCoVan.Count == 0)
                 {

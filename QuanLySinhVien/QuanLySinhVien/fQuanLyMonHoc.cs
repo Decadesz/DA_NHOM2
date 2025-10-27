@@ -17,6 +17,18 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             caiDatDieuKhien();
+            lamMoi();
+        }
+        private void sapXepMonHocTheoMa()
+        {
+            KhoDuLieu.DanhSachMonHoc.Sort((a, b) => string.Compare(a.MaMonHoc, b.MaMonHoc, StringComparison.CurrentCultureIgnoreCase));
+        }
+        private void lamMoi()
+        {
+            sapXepMonHocTheoMa();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = KhoDuLieu.DanhSachMonHoc;
+            dgvMonHoc.Refresh();
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -67,6 +79,7 @@ namespace QuanLySinhVien
             {
                 anXoaSua();
             }
+
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -124,6 +137,7 @@ namespace QuanLySinhVien
             KhoDuLieu.DanhSachMonHoc.Add(monHoc);
             MessageBox.Show("Thêm môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hienXoaSua();
+            lamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -134,23 +148,24 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            
-                string maMonHocCu = monHoc.MaMonHoc;
-                string maMonHocMoi = txtMaMonHoc.Text;
-                bool trungMa = KhoDuLieu.DanhSachMonHoc.Any(m => m.MaMonHoc.Equals(maMonHocMoi, StringComparison.OrdinalIgnoreCase) && m.MaMonHoc != maMonHocCu);
 
-                if (trungMa)
-                {
-                    MessageBox.Show("Mã môn học đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+            string maMonHocCu = monHoc.MaMonHoc;
+            string maMonHocMoi = txtMaMonHoc.Text;
+            bool trungMa = KhoDuLieu.DanhSachMonHoc.Any(m => m.MaMonHoc.Equals(maMonHocMoi, StringComparison.OrdinalIgnoreCase) && m.MaMonHoc != maMonHocCu);
 
-                monHoc.TenMonHoc = txtTenMonHoc.Text;
-                monHoc.SoTinChi = (int)nudSoTinChi.Value;
-                monHoc.SoTietLyThuyet = (int)nudSoTietLyThuyet.Value;
-                monHoc.SoTietThucHanh= (int)nudSoTietThucHanh.Value;
-                bindingSource.ResetBindings(false);
-                MessageBox.Show("Cập nhật thông tin môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (trungMa)
+            {
+                MessageBox.Show("Mã môn học đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            monHoc.MaMonHoc = txtMaMonHoc.Text;
+            monHoc.TenMonHoc = txtTenMonHoc.Text;
+            monHoc.SoTinChi = (int)nudSoTinChi.Value;
+            monHoc.SoTietLyThuyet = (int)nudSoTietLyThuyet.Value;
+            monHoc.SoTietThucHanh = (int)nudSoTietThucHanh.Value;
+            lamMoi();
+            bindingSource.ResetBindings(false);
+            MessageBox.Show("Cập nhật thông tin môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -160,17 +175,18 @@ namespace QuanLySinhVien
                 return;
             }
             
-                if (MessageBox.Show($"Xóa môn học {monHoc.TenMonHoc}?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    KhoDuLieu.DanhSachMonHoc.Remove(monHoc);
+            if (MessageBox.Show($"Xóa môn học {monHoc.TenMonHoc}?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                KhoDuLieu.DanhSachMonHoc.Remove(monHoc);
                 MessageBox.Show("Xóa môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if(KhoDuLieu.DanhSachMonHoc.Count==0)
                 {
                     anXoaSua();
                 }
+                lamMoi();
                 bindingSource.ResetBindings(false);
-                    ClearInput();
-                }
+                ClearInput();
+            }
             
         }
         private void BtnSave_Click(object sender, EventArgs e)
@@ -187,6 +203,7 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
+            lamMoi();
             bindingSource.ResetBindings(false);
         }
         private void DgvMonHoc_SelectionChanged(object sender, EventArgs e)

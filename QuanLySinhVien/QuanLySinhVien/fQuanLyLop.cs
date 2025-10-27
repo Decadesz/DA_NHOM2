@@ -17,6 +17,18 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             caiDatDieuKhien();
+            lamMoi();
+        }
+        private void sapXepLopTheoMa()
+        {
+            KhoDuLieu.DanhSachLop.Sort((a, b) => string.Compare(a.MaLop, b.MaLop, StringComparison.CurrentCultureIgnoreCase));
+        }
+        private void lamMoi()
+        {
+            sapXepLopTheoMa();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = KhoDuLieu.DanhSachLop;
+            dgvLop.Refresh();
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -113,6 +125,7 @@ namespace QuanLySinhVien
             KhoDuLieu.DanhSachLop.Add(lop);
             MessageBox.Show("Thêm lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hienXoaSua();
+            lamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -136,6 +149,7 @@ namespace QuanLySinhVien
             lop.MaLop = txtMaLop.Text;
             lop.TenLop= txtTenLop.Text;
             MessageBox.Show("Sửa lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lamMoi();
             bindingSource.ResetBindings(false);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -153,6 +167,7 @@ namespace QuanLySinhVien
                 {
                     anXoaSua();
                 }
+                lamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
