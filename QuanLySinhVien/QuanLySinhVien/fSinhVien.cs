@@ -327,9 +327,9 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            bindingSource.ResetBindings(false);
             napDuLieuComboBox();
             lamMoi();
+            bindingSource.ResetBindings(false);   
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
@@ -358,12 +358,14 @@ namespace QuanLySinhVien
         }
         private void napDuLieuComboBox()
         {
-            
+
+            cboTenLop.DataSource = null;
             cboTenLop.DataSource = KhoDuLieu.DanhSachLop;
             cboTenLop.DisplayMember = "TenLop";
             cboTenLop.ValueMember = "MaLop";
 
-            
+
+            cboTenLop.DataSource = null;
             cboTenCoVan.DataSource = KhoDuLieu.DanhSachCoVan;
             cboTenCoVan.DisplayMember = "HoTen";
             cboTenCoVan.ValueMember = "MaCoVan";
@@ -436,5 +438,7 @@ namespace QuanLySinhVien
             f.ShowDialog();
             this.Show();
         }
+
+
     }
 }

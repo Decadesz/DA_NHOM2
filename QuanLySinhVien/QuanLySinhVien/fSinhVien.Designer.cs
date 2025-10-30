@@ -159,27 +159,27 @@
             this.đổiMậtKhẩuToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.chứcNăngToolStripMenuItem.Text = "Tài khoản";
             // 
             // thôngTinChiTiếtToolStripMenuItem
             // 
             this.thôngTinChiTiếtToolStripMenuItem.Name = "thôngTinChiTiếtToolStripMenuItem";
-            this.thôngTinChiTiếtToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.thôngTinChiTiếtToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.thôngTinChiTiếtToolStripMenuItem.Text = "Thông tin chi tiết";
             this.thôngTinChiTiếtToolStripMenuItem.Click += new System.EventHandler(this.thôngTinChiTiếtToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.thoátToolStripMenuItem.Text = "Đăng xuất";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 

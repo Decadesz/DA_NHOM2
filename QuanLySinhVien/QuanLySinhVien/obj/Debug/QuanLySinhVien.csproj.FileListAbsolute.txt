@@ -17,3 +17,4 @@ C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fBangDiemSV.resources
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fThongTinChiTiet.resources
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fDoiMatKhau.resources
+C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe.config
