@@ -100,16 +100,30 @@ namespace QuanLySinhVien
         internal Lop Lop { get => lop; set => lop = value; }
         internal CoVanHocTap CoVan { get => coVan; set => coVan = value; }
         internal List<Diem> DanhSachDiem { get => danhSachDiem; set => danhSachDiem = value; }
+        public int SoTinChiTichLuy
+        {
+            get
+            {
+                if (DanhSachDiem == null || DanhSachDiem.Count == 0)
+                { 
+                    return 0;
+                }
+                return DanhSachDiem
+                    .Where(d => d.DiemTB >= 5 && d.MonHoc != null && d.Loai != "F")
+                    .Sum(d => d.MonHoc.SoTinChi);
+            }
+        }
 
-       
+
         public double DiemTrungBinhHocTap
         {
             get
             {
-                if (DanhSachDiem.Count == 0)
-                    return 0;
-                else
-                    return DanhSachDiem.Average(d => d.DiemTB);
+                int tongTin = SoTinChiTichLuy;
+                if (tongTin == 0) return 0;
+                return DanhSachDiem
+                    .Where(d => d.DiemTB >= 5)
+                    .Sum(d => d.DiemTongMonHoc) / tongTin;
             }
         }
     }

@@ -36,7 +36,7 @@
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cboMaMonHoc = new System.Windows.Forms.ComboBox();
+            this.cboTenMonHoc = new System.Windows.Forms.ComboBox();
             this.cboMaSinhVien = new System.Windows.Forms.ComboBox();
             this.txtDiemThi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.cboSearch);
             this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.cboMaMonHoc);
+            this.panel1.Controls.Add(this.cboTenMonHoc);
             this.panel1.Controls.Add(this.cboMaSinhVien);
             this.panel1.Controls.Add(this.txtDiemThi);
             this.panel1.Controls.Add(this.label8);
@@ -167,13 +167,13 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // cboMaMonHoc
+            // cboTenMonHoc
             // 
-            this.cboMaMonHoc.FormattingEnabled = true;
-            this.cboMaMonHoc.Location = new System.Drawing.Point(273, 8);
-            this.cboMaMonHoc.Name = "cboMaMonHoc";
-            this.cboMaMonHoc.Size = new System.Drawing.Size(121, 21);
-            this.cboMaMonHoc.TabIndex = 80;
+            this.cboTenMonHoc.FormattingEnabled = true;
+            this.cboTenMonHoc.Location = new System.Drawing.Point(273, 8);
+            this.cboTenMonHoc.Name = "cboTenMonHoc";
+            this.cboTenMonHoc.Size = new System.Drawing.Size(121, 21);
+            this.cboTenMonHoc.TabIndex = 80;
             // 
             // cboMaSinhVien
             // 
@@ -492,7 +492,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cboMaMonHoc;
+        private System.Windows.Forms.ComboBox cboTenMonHoc;
         private System.Windows.Forms.ComboBox cboMaSinhVien;
         private System.Windows.Forms.DataGridView dgvDiem;
         private System.Windows.Forms.Button btnLoad;

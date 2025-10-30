@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CoVanHocTap.cs" />
     <Compile Include="Diem.cs" />
+    <Compile Include="DiemSinhVien.cs" />
     <Compile Include="fBangDiemSV.cs">
       <SubType>Form</SubType>
     </Compile>

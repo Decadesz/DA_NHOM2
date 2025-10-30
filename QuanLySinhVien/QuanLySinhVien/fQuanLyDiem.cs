@@ -127,7 +127,7 @@ namespace QuanLySinhVien
                 return;
             }
             SinhVien sinhVien=cboMaSinhVien.SelectedItem as SinhVien;
-            MonHoc monHoc=cboMaMonHoc.SelectedItem as MonHoc;
+            MonHoc monHoc=cboTenMonHoc.SelectedItem as MonHoc;
             if(sinhVien==null)
             {
                 MessageBox.Show("Vui lòng chọn sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -235,8 +235,8 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            cboMaSinhVien.SelectedItem = diem.SinhVien;
-            cboMaMonHoc.SelectedItem = diem.MonHoc;
+            cboMaSinhVien.SelectedValue = diem.SinhVien.MaSinhVien;
+            cboTenMonHoc.SelectedValue = diem.MonHoc.MaMonHoc;
             nudPhanTramLop.Value = diem.PhanTramLop;
             nudPhanTramGiuaKy.Value=diem.PhanTramGiuaKy;
             nudPhanTramCuoiKy.Value = diem.PhanTramCuoiKy;
@@ -246,9 +246,9 @@ namespace QuanLySinhVien
         }
         private void napDuLieuComboBox()
         {
-            cboMaMonHoc.DataSource = KhoDuLieu.DanhSachMonHoc;
-            cboMaMonHoc.DisplayMember = "TenMonHoc";
-            cboMaMonHoc.ValueMember = "MaMonHoc";
+            cboTenMonHoc.DataSource = KhoDuLieu.DanhSachMonHoc;
+            cboTenMonHoc.DisplayMember = "TenMonHoc";
+            cboTenMonHoc.ValueMember = "MaMonHoc";
 
             cboMaSinhVien.DataSource = KhoDuLieu.DanhSachSinhVien;
             cboMaSinhVien.DisplayMember = "MaSinhVien";

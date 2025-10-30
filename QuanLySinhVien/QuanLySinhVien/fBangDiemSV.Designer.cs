@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtMaSinhVien = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -36,19 +37,20 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDiemTrungBinhHocTap = new System.Windows.Forms.DataGridView();
             this.dgvBangDiem = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.DiemTrungBinhHocTap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiemTrungBinhHocTap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangDiem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +68,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1005, 108);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(211, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 103;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtMaSinhVien
             // 
@@ -121,7 +132,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvDiemTrungBinhHocTap);
             this.panel2.Controls.Add(this.dgvBangDiem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 108);
@@ -129,20 +140,16 @@
             this.panel2.Size = new System.Drawing.Size(1005, 342);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvDiemTrungBinhHocTap
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(625, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(145, 150);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Điểm trung bình học tập";
-            this.Column3.Name = "Column3";
+            this.dgvDiemTrungBinhHocTap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDiemTrungBinhHocTap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DiemTrungBinhHocTap});
+            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(860, 1);
+            this.dgvDiemTrungBinhHocTap.Name = "dgvDiemTrungBinhHocTap";
+            this.dgvDiemTrungBinhHocTap.ReadOnly = true;
+            this.dgvDiemTrungBinhHocTap.Size = new System.Drawing.Size(145, 150);
+            this.dgvDiemTrungBinhHocTap.TabIndex = 3;
             // 
             // dgvBangDiem
             // 
@@ -150,60 +157,78 @@
             this.dgvBangDiem.AllowUserToResizeRows = false;
             this.dgvBangDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBangDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column11,
-            this.Column2,
-            this.Column12,
-            this.Column9,
-            this.Column10});
+            this.MaSinhVien,
+            this.TenSinhVien,
+            this.MaMonHoc,
+            this.TenMonHoc,
+            this.SoTiet,
+            this.SoTinChi,
+            this.DiemTrungBinh,
+            this.Loai});
             this.dgvBangDiem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBangDiem.Location = new System.Drawing.Point(0, 3);
             this.dgvBangDiem.MultiSelect = false;
             this.dgvBangDiem.Name = "dgvBangDiem";
+            this.dgvBangDiem.ReadOnly = true;
             this.dgvBangDiem.RowHeadersVisible = false;
             this.dgvBangDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBangDiem.Size = new System.Drawing.Size(603, 339);
+            this.dgvBangDiem.Size = new System.Drawing.Size(804, 339);
             this.dgvBangDiem.TabIndex = 2;
             this.dgvBangDiem.TabStop = false;
             // 
-            // Column1
+            // DiemTrungBinhHocTap
             // 
-            this.Column1.HeaderText = "Mã SV";
-            this.Column1.Name = "Column1";
+            this.DiemTrungBinhHocTap.DataPropertyName = "DiemTrungBinhHocTap";
+            this.DiemTrungBinhHocTap.HeaderText = "Điểm trung bình học tập";
+            this.DiemTrungBinhHocTap.Name = "DiemTrungBinhHocTap";
             // 
-            // Column11
+            // MaSinhVien
             // 
-            this.Column11.HeaderText = "Tên sinh viên";
-            this.Column11.Name = "Column11";
+            this.MaSinhVien.DataPropertyName = "MaSinhVien";
+            this.MaSinhVien.HeaderText = "Mã SV";
+            this.MaSinhVien.Name = "MaSinhVien";
             // 
-            // Column2
+            // TenSinhVien
             // 
-            this.Column2.HeaderText = "Mã môn học";
-            this.Column2.Name = "Column2";
+            this.TenSinhVien.DataPropertyName = "TenSinhVien";
+            this.TenSinhVien.HeaderText = "Tên sinh viên";
+            this.TenSinhVien.Name = "TenSinhVien";
             // 
-            // Column12
+            // MaMonHoc
             // 
-            this.Column12.HeaderText = "Tên môn học";
-            this.Column12.Name = "Column12";
+            this.MaMonHoc.DataPropertyName = "MaMonHoc";
+            this.MaMonHoc.HeaderText = "Mã môn học";
+            this.MaMonHoc.Name = "MaMonHoc";
             // 
-            // Column9
+            // TenMonHoc
             // 
-            this.Column9.HeaderText = "Điểm tổng kết";
-            this.Column9.Name = "Column9";
+            this.TenMonHoc.DataPropertyName = "TenMonHoc";
+            this.TenMonHoc.HeaderText = "Tên môn học";
+            this.TenMonHoc.Name = "TenMonHoc";
             // 
-            // Column10
+            // SoTiet
             // 
-            this.Column10.HeaderText = "Điểm chữ";
-            this.Column10.Name = "Column10";
+            this.SoTiet.DataPropertyName = "SoTiet";
+            this.SoTiet.HeaderText = "Số tiết";
+            this.SoTiet.Name = "SoTiet";
             // 
-            // btnSearch
+            // SoTinChi
             // 
-            this.btnSearch.Location = new System.Drawing.Point(211, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 103;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.SoTinChi.DataPropertyName = "SoTinChi";
+            this.SoTinChi.HeaderText = "Số tín chỉ";
+            this.SoTinChi.Name = "SoTinChi";
+            // 
+            // DiemTrungBinh
+            // 
+            this.DiemTrungBinh.DataPropertyName = "DiemTrungBinh";
+            this.DiemTrungBinh.HeaderText = "Điểm tổng kết";
+            this.DiemTrungBinh.Name = "DiemTrungBinh";
+            // 
+            // Loai
+            // 
+            this.Loai.DataPropertyName = "Loai";
+            this.Loai.HeaderText = "Điểm chữ";
+            this.Loai.Name = "Loai";
             // 
             // fBangDiemSV
             // 
@@ -217,7 +242,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiemTrungBinhHocTap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangDiem)).EndInit();
             this.ResumeLayout(false);
 
@@ -233,15 +258,17 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvBangDiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.TextBox txtMaSinhVien;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView dgvDiemTrungBinhHocTap;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinhHocTap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
     }
 }

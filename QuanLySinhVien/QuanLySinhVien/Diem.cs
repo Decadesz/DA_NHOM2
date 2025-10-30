@@ -52,6 +52,23 @@ namespace QuanLySinhVien
                 }
             }
         }
+        public int SoTinChiCuaMon
+        {
+            get
+            {
+                if (MonHoc != null)
+                {
+                    if (MonHoc.SoTinChi != 0)
+                        return MonHoc.SoTinChi;
+                    else
+                        return 0;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
         public double DiemTB
         {
             get
@@ -118,5 +135,6 @@ namespace QuanLySinhVien
         public double DiemCuoiKy { get => diemCuoiKy; set => diemCuoiKy = value; }
         internal SinhVien SinhVien { get => sinhVien; set => sinhVien = value; }
         internal MonHoc MonHoc { get => monHoc; set => monHoc = value; }
+        public double DiemTongMonHoc{ get => DiemTB * SoTinChiCuaMon; }
     }
 }
