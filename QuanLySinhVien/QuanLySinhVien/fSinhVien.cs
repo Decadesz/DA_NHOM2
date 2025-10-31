@@ -365,7 +365,7 @@ namespace QuanLySinhVien
             cboTenLop.ValueMember = "MaLop";
 
 
-            cboTenLop.DataSource = null;
+            cboTenCoVan.DataSource = null;
             cboTenCoVan.DataSource = KhoDuLieu.DanhSachCoVan;
             cboTenCoVan.DisplayMember = "HoTen";
             cboTenCoVan.ValueMember = "MaCoVan";
