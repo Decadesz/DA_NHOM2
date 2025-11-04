@@ -139,7 +139,7 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            if(KhoDuLieu.DanhSachCoVan.Any(c=>c.MaCoVan== txtMaCoVan.Text))
+            if(KhoDuLieu.DanhSachCoVan.Any(c=>c.MaCoVan== txtMaCoVan.Text.ToUpper()))
             {
                     MessageBox.Show("Mã cố vấn đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -147,7 +147,7 @@ namespace QuanLySinhVien
             string gioiTinh = radNam.Checked ? "Nam" : "Nữ";
             CoVanHocTap coVan = new CoVanHocTap
                 (
-                txtMaCoVan.Text,
+                txtMaCoVan.Text.ToUpper(),
                 txtTenCoVan.Text,
                 dtpNgaySinh.Value,
                 gioiTinh,
@@ -169,8 +169,8 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            string maCoVanCu = coVan.MaCoVan;
-            string maCoVanMoi = txtMaCoVan.Text;
+            string maCoVanCu = coVan.MaCoVan.ToUpper();
+            string maCoVanMoi = txtMaCoVan.Text.ToUpper();
             bool trungMa = KhoDuLieu.DanhSachCoVan.Any(cv => cv.MaCoVan.Equals(maCoVanMoi, StringComparison.OrdinalIgnoreCase) && cv.MaCoVan != maCoVanCu);
 
             if (trungMa)

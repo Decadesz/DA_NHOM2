@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
+            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +69,6 @@
             this.DiemCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).BeginInit();
@@ -384,6 +384,10 @@
             this.dgvDiem.TabIndex = 1;
             this.dgvDiem.TabStop = false;
             // 
+            // khoDuLieuBindingSource
+            // 
+            this.khoDuLieuBindingSource.DataSource = typeof(QuanLySinhVien.KhoDuLieu);
+            // 
             // MaSinhVien
             // 
             this.MaSinhVien.DataPropertyName = "MaSinhVien";
@@ -442,12 +446,8 @@
             // Loai
             // 
             this.Loai.DataPropertyName = "Loai";
-            this.Loai.HeaderText = "Loại";
+            this.Loai.HeaderText = "Điểm chữ";
             this.Loai.Name = "Loai";
-            // 
-            // khoDuLieuBindingSource
-            // 
-            this.khoDuLieuBindingSource.DataSource = typeof(QuanLySinhVien.KhoDuLieu);
             // 
             // fQuanLyDiem
             // 
@@ -498,6 +498,10 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.BindingSource khoDuLieuBindingSource;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramLop;
@@ -508,9 +512,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemCuoiKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox cboSearch;
-        private System.Windows.Forms.Label label9;
     }
 }

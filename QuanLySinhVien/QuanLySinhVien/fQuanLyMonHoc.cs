@@ -121,14 +121,14 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            if(KhoDuLieu.DanhSachMonHoc.Any(m => m.MaMonHoc == txtMaMonHoc.Text.Trim()))
+            if(KhoDuLieu.DanhSachMonHoc.Any(m => m.MaMonHoc == txtMaMonHoc.Text.ToUpper()))
             {
                 MessageBox.Show("Mã môn học đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             MonHoc monHoc = new MonHoc
                 (
-                txtMaMonHoc.Text,
+                txtMaMonHoc.Text.ToUpper(),
                 txtTenMonHoc.Text,
                 (int)nudSoTinChi.Value,
                 (int)nudSoTietLyThuyet.Value,
@@ -149,8 +149,8 @@ namespace QuanLySinhVien
                 return;
             }
 
-            string maMonHocCu = monHoc.MaMonHoc;
-            string maMonHocMoi = txtMaMonHoc.Text;
+            string maMonHocCu = monHoc.MaMonHoc.ToUpper();
+            string maMonHocMoi = txtMaMonHoc.Text.ToUpper();
             bool trungMa = KhoDuLieu.DanhSachMonHoc.Any(m => m.MaMonHoc.Equals(maMonHocMoi, StringComparison.OrdinalIgnoreCase) && m.MaMonHoc != maMonHocCu);
 
             if (trungMa)
@@ -158,7 +158,7 @@ namespace QuanLySinhVien
                 MessageBox.Show("Mã môn học đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            monHoc.MaMonHoc = txtMaMonHoc.Text;
+            monHoc.MaMonHoc = txtMaMonHoc.Text.ToUpper();
             monHoc.TenMonHoc = txtTenMonHoc.Text;
             monHoc.SoTinChi = (int)nudSoTinChi.Value;
             monHoc.SoTietLyThuyet = (int)nudSoTietLyThuyet.Value;

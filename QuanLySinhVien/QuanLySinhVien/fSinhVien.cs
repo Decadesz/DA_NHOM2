@@ -173,7 +173,7 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            if(KhoDuLieu.DanhSachSinhVien.Any(sv => sv.MaSinhVien == txtMaSinhVien.Text))
+            if(KhoDuLieu.DanhSachSinhVien.Any(sv => sv.MaSinhVien == txtMaSinhVien.Text.ToUpper()))
             {
                 MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -191,8 +191,8 @@ namespace QuanLySinhVien
                 }
             }
             SinhVien sinhVien= new SinhVien(
-                txtMaSinhVien.Text,
-                txtTenSinhVien.Text,
+                txtMaSinhVien.Text.ToUpper(),
+                txtTenSinhVien.Text.ToUpper(),
                 gioiTinh,
                 dtpNgaySinh.Value,
                 dtpNgayNhapHoc.Value,
@@ -235,15 +235,15 @@ namespace QuanLySinhVien
                 MessageBox.Show("Lớp đã đạt sĩ số tối đa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             // Kiểm tra trùng mã sinh viên
-            string maSVCu = sinhVien.MaSinhVien;
-            string maSVmoi = txtMaSinhVien.Text.Trim();
+            string maSVCu = sinhVien.MaSinhVien.ToUpper();
+            string maSVmoi = txtMaSinhVien.Text.ToUpper();
             bool trungMa = KhoDuLieu.DanhSachSinhVien.Any(sv => sv.MaSinhVien == maSVmoi && sv.MaSinhVien != maSVCu);
             if (trungMa)
             {
                 MessageBox.Show("Mã sinh viên đã tồn tại! Vui lòng nhập mã khác.","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            sinhVien.MaSinhVien = txtMaSinhVien.Text;
+            sinhVien.MaSinhVien = txtMaSinhVien.Text.ToUpper();
             sinhVien.HoTen = txtTenSinhVien.Text;
             sinhVien.GioiTinh = radNam.Checked ? "Nam" : "Nữ";
             sinhVien.NgaySinh = dtpNgaySinh.Value;

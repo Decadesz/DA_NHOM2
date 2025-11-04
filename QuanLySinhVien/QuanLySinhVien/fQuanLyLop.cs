@@ -116,12 +116,12 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            if(KhoDuLieu.DanhSachLop.Any(l=>l.MaLop==txtMaLop.Text))
+            if(KhoDuLieu.DanhSachLop.Any(l=>l.MaLop==txtMaLop.Text.ToUpper()))
             {
                 MessageBox.Show("Mã lớp đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Lop lop = new Lop(txtMaLop.Text,txtTenLop.Text);
+            Lop lop = new Lop(txtMaLop.Text.ToUpper(),txtTenLop.Text);
             KhoDuLieu.DanhSachLop.Add(lop);
             MessageBox.Show("Thêm lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             hienXoaSua();
@@ -137,16 +137,16 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            string lopCu = lop.MaLop;
-            string lopMoi = txtMaLop.Text;
-            bool trungMa = KhoDuLieu.DanhSachLop.Any(l => l.MaLop.Equals(lopMoi, StringComparison.OrdinalIgnoreCase) && l.MaLop != lopMoi);
+            string lopCu = lop.MaLop.ToUpper();
+            string lopMoi = txtMaLop.Text.ToUpper();
+            bool trungMa = KhoDuLieu.DanhSachLop.Any(l => l.MaLop.Equals(lopMoi, StringComparison.OrdinalIgnoreCase) && l.MaLop != lopCu);
 
             if (trungMa)
             {
                 MessageBox.Show("Mã lớp đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            lop.MaLop = txtMaLop.Text;
+            lop.MaLop = txtMaLop.Text.ToUpper();
             lop.TenLop= txtTenLop.Text;
             MessageBox.Show("Sửa lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             lamMoi();

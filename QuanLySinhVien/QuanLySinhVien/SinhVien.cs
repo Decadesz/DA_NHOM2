@@ -121,9 +121,10 @@ namespace QuanLySinhVien
             {
                 int tongTin = SoTinChiTichLuy;
                 if (tongTin == 0) return 0;
-                return DanhSachDiem
+                double diemTrungBinh= DanhSachDiem
                     .Where(d => d.DiemTB >= 5)
                     .Sum(d => d.DiemTongMonHoc) / tongTin;
+                return Math.Round(diemTrungBinh,2);
             }
         }
     }

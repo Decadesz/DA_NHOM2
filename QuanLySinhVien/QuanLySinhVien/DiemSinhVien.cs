@@ -8,7 +8,6 @@ namespace QuanLySinhVien
 {
     internal class DiemSinhVien
     {
-
         private string maSinhVien;
         private string tenSinhVien;
         private string maMonHoc;
@@ -28,7 +27,6 @@ namespace QuanLySinhVien
         public string TenSinhVien { get => tenSinhVien; set => tenSinhVien = value; }
         public string MaMonHoc { get => maMonHoc; set => maMonHoc = value; }
         public double DiemTrungBinhHocTap { get => diemTrungBinhHocTap; set => diemTrungBinhHocTap = value; }
-
         public DiemSinhVien(string maSinhVien,string tenSinhVien,string maMonHoc, string tenMonHoc, double diemTrungBinh, int soTinChi, int soTiet, string loai)
         {
             this.MaSinhVien = maSinhVien;
@@ -39,7 +37,6 @@ namespace QuanLySinhVien
             this.SoTinChi = soTinChi;
             this.SoTiet = soTiet;
             this.Loai = loai;
-            
         }
         public DiemSinhVien()
         {

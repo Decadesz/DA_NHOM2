@@ -21,7 +21,7 @@ namespace QuanLySinhVien
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            string maSinhVien = txtMaSinhVien.Text;
+            string maSinhVien = txtMaSinhVien.Text.ToUpper();
             if (string.IsNullOrEmpty(maSinhVien))
             {
                 return;

@@ -104,14 +104,14 @@ namespace QuanLySinhVien
         {
             if (!kiemTraDauVao()) return;
 
-            if (KhoDuLieu.DanhSachTaiKhoan.Any(t => t.TenDangNhap.Equals(txtTenDangNhap.Text, StringComparison.OrdinalIgnoreCase)))
+            if (KhoDuLieu.DanhSachTaiKhoan.Any(t => t.TenDangNhap.Equals(txtTenDangNhap.Text.ToUpper(), StringComparison.OrdinalIgnoreCase)))
             {
                 MessageBox.Show("Tên đăng nhập đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             TaiKhoanDangNhap taiKhoan = new TaiKhoanDangNhap(
-                txtTenDangNhap.Text,
+                txtTenDangNhap.Text.ToUpper(),
                 txtMatKhau.Text,
                 cboLoaiTaiKhoan.Text
             );
@@ -134,7 +134,7 @@ namespace QuanLySinhVien
                 return;
             }
 
-            string tenMoi = txtTenDangNhap.Text;
+            string tenMoi = txtTenDangNhap.Text.ToUpper();
             bool trungTen = KhoDuLieu.DanhSachTaiKhoan.Any(t =>t.TenDangNhap.Equals(tenMoi, StringComparison.OrdinalIgnoreCase) && t != taiKhoan);
             if (trungTen)
             {
