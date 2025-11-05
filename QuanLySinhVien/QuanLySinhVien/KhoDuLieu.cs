@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 //thu vien doc ghi file
 using System.IO;
+//thư viện xài cho DateTime để không bị lỗi định dạng ngày tháng khi xài máy khác
+using System.Globalization;
 
 namespace QuanLySinhVien
 {
@@ -31,6 +33,9 @@ namespace QuanLySinhVien
                 var parts = line.Split(',');
                 if (parts.Length >= 9)
                 {
+                    //InvariantCulture để không cần quan tâm về định dạng ngày tháng của hệ thống trên máy khác
+                    DateTime ngaySinh = DateTime.ParseExact(parts[3].Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime ngayNhapHoc = DateTime.ParseExact(parts[4].Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     Lop lop = DanhSachLop.FirstOrDefault(l => l.MaLop == parts[7]);
                     if (lop == null)
                     {
@@ -39,14 +44,14 @@ namespace QuanLySinhVien
                     CoVanHocTap coVan = DanhSachCoVan.FirstOrDefault(c => c.MaCoVan == parts[8]);
                     if (coVan == null)
                     {
-                        coVan = new CoVanHocTap(parts[8], "khong ro", DateTime.Now, "khong ro", "khong ro", "khong ro", "khong ro");
+                        coVan = new CoVanHocTap(parts[8], "khong ro", ngaySinh, "khong ro", "khong ro", "khong ro", "khong ro");
                     };
                     SinhVien sinhVien = new SinhVien(
                         parts[0],
                         parts[1],
                         parts[2],
-                        DateTime.Parse(parts[3]),
-                        DateTime.Parse(parts[4]),
+                        ngaySinh,
+                        ngayNhapHoc,
                         parts[5],
                         parts[6],
                         lop,
@@ -67,7 +72,7 @@ namespace QuanLySinhVien
             {
                 foreach (var sv in DanhSachSinhVien)
                 {
-                    writer.WriteLine($"{sv.MaSinhVien},{sv.HoTen},{sv.GioiTinh},{sv.NgaySinh},{sv.NgayNhapHoc},{sv.DiaChi},{sv.SoDienThoai},{sv.Lop?.MaLop},{sv.CoVan?.MaCoVan}");
+                    writer.WriteLine($"{sv.MaSinhVien},{sv.HoTen},{sv.GioiTinh},{sv.NgaySinh.ToString("dd/MM/yyyy")},{sv.NgayNhapHoc},{sv.DiaChi},{sv.SoDienThoai},{sv.Lop?.MaLop},{sv.CoVan?.MaCoVan}");
                 }
             }
         }
@@ -203,10 +208,11 @@ namespace QuanLySinhVien
                 var parts = line.Split(',');
                 if (parts.Length >= 7)
                 {
+                    DateTime ngay = DateTime.ParseExact(parts[2].Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     CoVanHocTap coVan = new CoVanHocTap(
                         parts[0],
                         parts[1],
-                        DateTime.Parse(parts[2]),
+                        ngay,
                         parts[3],
                         parts[4],
                         parts[5],
@@ -222,7 +228,7 @@ namespace QuanLySinhVien
             {
                 foreach (var cv in DanhSachCoVan)
                 {
-                    writer.WriteLine($"{cv.MaCoVan},{cv.HoTen},{cv.NgaySinh},{cv.GioiTinh},{cv.DiaChi},{cv.SoDienThoai},{cv.Email}");
+                    writer.WriteLine($"{cv.MaCoVan},{cv.HoTen},{cv.NgaySinh.ToString("dd/MM/yyyy")},{cv.GioiTinh},{cv.DiaChi},{cv.SoDienThoai},{cv.Email}");
                 }
             }
         }
