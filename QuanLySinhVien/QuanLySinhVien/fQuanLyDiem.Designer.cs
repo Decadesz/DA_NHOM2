@@ -61,14 +61,16 @@
             this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTinChiCuaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemThang4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KetQua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramCuoiKy)).BeginInit();
@@ -109,7 +111,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 149);
+            this.panel1.Size = new System.Drawing.Size(1204, 149);
             this.panel1.TabIndex = 0;
             // 
             // label9
@@ -354,7 +356,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 149);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(992, 301);
+            this.panel2.Size = new System.Drawing.Size(1204, 301);
             this.panel2.TabIndex = 1;
             // 
             // dgvDiem
@@ -365,14 +367,16 @@
             this.dgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSinhVien,
             this.TenMonHoc,
+            this.SoTinChiCuaMon,
             this.PhanTramLop,
             this.PhanTramGiuaKy,
             this.PhanTramCuoiKy,
             this.DiemLop,
             this.DiemGiuaKy,
             this.DiemCuoiKy,
-            this.DiemTB,
-            this.Loai});
+            this.DiemTrungBinh,
+            this.DiemThang4,
+            this.KetQua});
             this.dgvDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDiem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDiem.Location = new System.Drawing.Point(0, 6);
@@ -380,7 +384,7 @@
             this.dgvDiem.Name = "dgvDiem";
             this.dgvDiem.RowHeadersVisible = false;
             this.dgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiem.Size = new System.Drawing.Size(992, 295);
+            this.dgvDiem.Size = new System.Drawing.Size(1204, 295);
             this.dgvDiem.TabIndex = 1;
             this.dgvDiem.TabStop = false;
             // 
@@ -400,6 +404,12 @@
             this.TenMonHoc.HeaderText = "Tên môn học";
             this.TenMonHoc.Name = "TenMonHoc";
             this.TenMonHoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SoTinChiCuaMon
+            // 
+            this.SoTinChiCuaMon.DataPropertyName = "SoTinChiCuaMon";
+            this.SoTinChiCuaMon.HeaderText = "Số tín chỉ";
+            this.SoTinChiCuaMon.Name = "SoTinChiCuaMon";
             // 
             // PhanTramLop
             // 
@@ -437,23 +447,29 @@
             this.DiemCuoiKy.HeaderText = "Điểm thi";
             this.DiemCuoiKy.Name = "DiemCuoiKy";
             // 
-            // DiemTB
+            // DiemTrungBinh
             // 
-            this.DiemTB.DataPropertyName = "DiemTB";
-            this.DiemTB.HeaderText = "Điểm TB";
-            this.DiemTB.Name = "DiemTB";
+            this.DiemTrungBinh.DataPropertyName = "DiemTrungBinh";
+            this.DiemTrungBinh.HeaderText = "Điểm tổng kết";
+            this.DiemTrungBinh.Name = "DiemTrungBinh";
             // 
-            // Loai
+            // DiemThang4
             // 
-            this.Loai.DataPropertyName = "Loai";
-            this.Loai.HeaderText = "Điểm chữ";
-            this.Loai.Name = "Loai";
+            this.DiemThang4.DataPropertyName = "DiemThang4";
+            this.DiemThang4.HeaderText = "Điểm chữ";
+            this.DiemThang4.Name = "DiemThang4";
+            // 
+            // KetQua
+            // 
+            this.KetQua.DataPropertyName = "KetQua";
+            this.KetQua.HeaderText = "Kết quả";
+            this.KetQua.Name = "KetQua";
             // 
             // fQuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 450);
+            this.ClientSize = new System.Drawing.Size(1204, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyDiem";
@@ -504,13 +520,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChiCuaMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramGiuaKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramCuoiKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemCuoiKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThang4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KetQua;
     }
 }

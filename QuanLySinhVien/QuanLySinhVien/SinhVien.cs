@@ -15,8 +15,9 @@ namespace QuanLySinhVien
         private DateTime ngayNhapHoc;
         private string diaChi;
         private string soDienThoai;
+        private double diemTrungBinhHocTap;
+        private int soTinChiTichLuy;
 
-        
         private Lop lop;
         private CoVanHocTap coVan;
         private List<Diem> danhSachDiem;
@@ -100,32 +101,30 @@ namespace QuanLySinhVien
         internal Lop Lop { get => lop; set => lop = value; }
         internal CoVanHocTap CoVan { get => coVan; set => coVan = value; }
         internal List<Diem> DanhSachDiem { get => danhSachDiem; set => danhSachDiem = value; }
-        public int SoTinChiTichLuy
+        public int TinhSoTinChiTichLuy()
         {
-            get
-            {
+            
                 if (DanhSachDiem == null || DanhSachDiem.Count == 0)
                 { 
                     return 0;
                 }
                 return DanhSachDiem
-                    .Where(d => d.DiemTB >= 5 && d.MonHoc != null && d.Loai != "F")
+                    .Where(d => d.DiemTrungBinh >= 5 && d.MonHoc != null && d.DiemThang4 != "F")
                     .Sum(d => d.MonHoc.SoTinChi);
-            }
         }
 
 
-        public double DiemTrungBinhHocTap
+        public double TinhDiemTrungBinhHocTap()
         {
-            get
-            {
                 int tongTin = SoTinChiTichLuy;
                 if (tongTin == 0) return 0;
                 double diemTrungBinh= DanhSachDiem
-                    .Where(d => d.DiemTB >= 5)
+                    .Where(d => d.DiemTrungBinh >= 5)
                     .Sum(d => d.DiemTongMonHoc) / tongTin;
                 return Math.Round(diemTrungBinh,2);
-            }
         }
+
+        public double DiemTrungBinhHocTap { get => TinhDiemTrungBinhHocTap(); }
+        public int SoTinChiTichLuy { get => TinhSoTinChiTichLuy(); }
     }
 }

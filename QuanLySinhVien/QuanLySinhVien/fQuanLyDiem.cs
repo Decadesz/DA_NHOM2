@@ -118,6 +118,21 @@ namespace QuanLySinhVien
                 MessageBox.Show("Điểm giữa kỳ không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if (double.Parse(txtDiemLop.Text)>10 || double.Parse(txtDiemLop.Text)<0)
+            {
+                MessageBox.Show("Điểm lớp không được lớn hơn 10 hoặc nhỏ hơn 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (double.Parse(txtDiemGiuaKy.Text) > 10 || double.Parse(txtDiemGiuaKy.Text) < 0)
+            {
+                MessageBox.Show("Điểm giữa kỳ không được lớn hơn 10 hoặc nhỏ hơn 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (double.Parse(txtDiemThi.Text) > 10 || double.Parse(txtDiemThi.Text) < 0)
+            {
+                MessageBox.Show("Điểm cuối kỳ không được lớn hơn 10 hoặc nhỏ hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -164,6 +179,10 @@ namespace QuanLySinhVien
         {
             Diem diem=dgvDiem.CurrentRow?.DataBoundItem as Diem;
             if(diem==null)
+            {
+                return;
+            }
+            if (!kiemTraDauVao())
             {
                 return;
             }

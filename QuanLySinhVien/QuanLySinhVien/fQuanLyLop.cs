@@ -137,6 +137,10 @@ namespace QuanLySinhVien
             {
                 return;
             }
+            if(!kiemTraDauVao())
+            {
+                return;
+            }
             string lopCu = lop.MaLop.ToUpper();
             string lopMoi = txtMaLop.Text.ToUpper();
             bool trungMa = KhoDuLieu.DanhSachLop.Any(l => l.MaLop.Equals(lopMoi, StringComparison.OrdinalIgnoreCase) && l.MaLop != lopCu);

@@ -169,6 +169,10 @@ namespace QuanLySinhVien
             {
                 return;
             }
+            if(!kiemTraDauVao())
+            {
+                return;
+            }
             string maCoVanCu = coVan.MaCoVan.ToUpper();
             string maCoVanMoi = txtMaCoVan.Text.ToUpper();
             bool trungMa = KhoDuLieu.DanhSachCoVan.Any(cv => cv.MaCoVan.Equals(maCoVanMoi, StringComparison.OrdinalIgnoreCase) && cv.MaCoVan != maCoVanCu);

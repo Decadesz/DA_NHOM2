@@ -17,6 +17,8 @@ namespace QuanLySinhVien
         private int soTiet;
         private string loai;
         private double diemTrungBinhHocTap;
+        private int soTinChiTichLuy;
+        private string ketQua;
 
         public string MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string TenMonHoc { get => tenMonHoc; set => tenMonHoc = value; }
@@ -27,6 +29,9 @@ namespace QuanLySinhVien
         public string TenSinhVien { get => tenSinhVien; set => tenSinhVien = value; }
         public string MaMonHoc { get => maMonHoc; set => maMonHoc = value; }
         public double DiemTrungBinhHocTap { get => diemTrungBinhHocTap; set => diemTrungBinhHocTap = value; }
+        public int SoTinChiTichLuy { get => soTinChiTichLuy; set => soTinChiTichLuy = value; }
+        public string KetQua { get => ketQua; set => ketQua = value; }
+
         public DiemSinhVien(string maSinhVien,string tenSinhVien,string maMonHoc, string tenMonHoc, double diemTrungBinh, int soTinChi, int soTiet, string loai)
         {
             this.MaSinhVien = maSinhVien;

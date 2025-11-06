@@ -14,8 +14,9 @@ namespace QuanLySinhVien
         private double diemLop;
         private double diemGiuaKy;
         private double diemCuoiKy;
-        private double diemTB;
-        private string loai;
+        private double diemTrungBinh;
+        private string diemThang4;
+        private string ketQua;
         private SinhVien sinhVien;
         private MonHoc monHoc;
         public string MaSinhVien
@@ -69,15 +70,7 @@ namespace QuanLySinhVien
                 }
             }
         }
-        public double DiemTB
-        {
-            get
-            {
-
-                diemTB = (diemLop * phanTramLop / 100) + (diemGiuaKy * phanTramGiuaKy / 100) + (diemCuoiKy * phanTramCuoiKy / 100);
-                return diemTB;
-            }
-        }
+        
         public Diem()
         {
             PhanTramLop = 0;
@@ -96,35 +89,47 @@ namespace QuanLySinhVien
             this.DiemGiuaKy=diemGiuaKy;
             this.DiemCuoiKy=diemCuoiKy;
         }
-        public string Loai
+        public double tinhDiemTrungBinh()
         {
-            get
+            return (diemLop * phanTramLop / 100) + (diemGiuaKy * phanTramGiuaKy / 100) + (diemCuoiKy * phanTramCuoiKy / 100);
+           
+        }
+        public string tinhDiemThang4()
+        {
+            if (DiemTrungBinh >= 9)
             {
-                if(DiemTB >= 9)
-                {
-                    loai = "A+";
-                }
-                else if (DiemTB >= 8)
-                {
-                    loai = "A";
-                }
-                else if (DiemTB >= 7)
-                {
-                    loai = "B+";
-                }
-                else if(DiemTB>=6)
-                {
-                    loai = "B";
-                }
-                else if(DiemTB>=5)
-                {
-                    loai= "C+";
-                }
-                else
-                {
-                    loai = "F";
-                }
-                return loai;
+                return "A+";
+            }
+            else if (DiemTrungBinh >= 8)
+            {
+                return "A";
+            }
+            else if (DiemTrungBinh >= 7)
+            {
+                return "B+";
+            }
+            else if (DiemTrungBinh >= 6)
+            {
+                return "B";
+            }
+            else if (DiemTrungBinh >= 5)
+            {
+                return "C+";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+        public string TinhKetQua()
+        {
+            if (DiemTrungBinh >= 5)
+            {
+                return "Đậu";
+            }
+            else
+            {
+                return "Rớt";
             }
         }
         public int PhanTramLop { get => phanTramLop; set => phanTramLop = value; }
@@ -135,6 +140,9 @@ namespace QuanLySinhVien
         public double DiemCuoiKy { get => diemCuoiKy; set => diemCuoiKy = value; }
         internal SinhVien SinhVien { get => sinhVien; set => sinhVien = value; }
         internal MonHoc MonHoc { get => monHoc; set => monHoc = value; }
-        public double DiemTongMonHoc{ get => DiemTB * SoTinChiCuaMon; }
+        public double DiemTongMonHoc{ get => DiemTrungBinh * SoTinChiCuaMon; }
+        public string KetQua { get => TinhKetQua();  }
+        public double DiemTrungBinh { get => tinhDiemTrungBinh(); }
+        public string DiemThang4 { get => tinhDiemThang4(); }
     }
 }

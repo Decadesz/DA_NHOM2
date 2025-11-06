@@ -35,10 +35,11 @@ namespace QuanLySinhVien
                     TenSinhVien=d.SinhVien.HoTen,
                     MaMonHoc=d.MonHoc.MaMonHoc,
                     TenMonHoc = d.TenMonHoc,
-                    DiemTrungBinh = Math.Round(d.DiemTB, 2),
+                    DiemTrungBinh = Math.Round(d.DiemTrungBinh, 2),
                     SoTinChi = d.MonHoc.SoTinChi,
                     SoTiet = d.MonHoc.SoTietLyThuyet + d.MonHoc.SoTietThucHanh,
-                    Loai = d.Loai
+                    Loai = d.DiemThang4,
+                    KetQua = d.KetQua
                 })
                 .ToList();
 
@@ -47,7 +48,8 @@ namespace QuanLySinhVien
                 .Where(dtb => dtb.MaSinhVien == maSinhVien)
                 .Select(dtb => new DiemSinhVien
                 {
-                    DiemTrungBinhHocTap = Math.Round(dtb.DiemTrungBinhHocTap,2)
+                    DiemTrungBinhHocTap = Math.Round(dtb.DiemTrungBinhHocTap, 2),
+                    SoTinChiTichLuy = dtb.SoTinChiTichLuy
                 })
                 .ToList();
             dgvDiemTrungBinhHocTap.DataSource = diemTrungBinhHocTap;

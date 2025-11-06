@@ -148,7 +148,10 @@ namespace QuanLySinhVien
             {
                 return;
             }
-
+            if(!kiemTraDauVao())
+            {
+                return;
+            }
             string maMonHocCu = monHoc.MaMonHoc.ToUpper();
             string maMonHocMoi = txtMaMonHoc.Text.ToUpper();
             bool trungMa = KhoDuLieu.DanhSachMonHoc.Any(m => m.MaMonHoc.Equals(maMonHocMoi, StringComparison.OrdinalIgnoreCase) && m.MaMonHoc != maMonHocCu);

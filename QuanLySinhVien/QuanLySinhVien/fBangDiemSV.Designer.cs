@@ -38,8 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDiemTrungBinhHocTap = new System.Windows.Forms.DataGridView();
-            this.dgvBangDiem = new System.Windows.Forms.DataGridView();
             this.DiemTrungBinhHocTap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTinChiTichLuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvBangDiem = new System.Windows.Forms.DataGridView();
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KetQua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemTrungBinhHocTap)).BeginInit();
@@ -66,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1005, 108);
+            this.panel1.Size = new System.Drawing.Size(1289, 108);
             this.panel1.TabIndex = 0;
             // 
             // btnSearch
@@ -137,19 +139,34 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 342);
+            this.panel2.Size = new System.Drawing.Size(1289, 342);
             this.panel2.TabIndex = 1;
             // 
             // dgvDiemTrungBinhHocTap
             // 
             this.dgvDiemTrungBinhHocTap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiemTrungBinhHocTap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DiemTrungBinhHocTap});
-            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(860, 1);
+            this.DiemTrungBinhHocTap,
+            this.SoTinChiTichLuy});
+            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(1043, 0);
             this.dgvDiemTrungBinhHocTap.Name = "dgvDiemTrungBinhHocTap";
             this.dgvDiemTrungBinhHocTap.ReadOnly = true;
-            this.dgvDiemTrungBinhHocTap.Size = new System.Drawing.Size(145, 150);
+            this.dgvDiemTrungBinhHocTap.Size = new System.Drawing.Size(243, 150);
             this.dgvDiemTrungBinhHocTap.TabIndex = 3;
+            // 
+            // DiemTrungBinhHocTap
+            // 
+            this.DiemTrungBinhHocTap.DataPropertyName = "DiemTrungBinhHocTap";
+            this.DiemTrungBinhHocTap.HeaderText = "Điểm trung bình học tập";
+            this.DiemTrungBinhHocTap.Name = "DiemTrungBinhHocTap";
+            this.DiemTrungBinhHocTap.ReadOnly = true;
+            // 
+            // SoTinChiTichLuy
+            // 
+            this.SoTinChiTichLuy.DataPropertyName = "SoTinChiTichLuy";
+            this.SoTinChiTichLuy.HeaderText = "Số tín chỉ đã tích lũy";
+            this.SoTinChiTichLuy.Name = "SoTinChiTichLuy";
+            this.SoTinChiTichLuy.ReadOnly = true;
             // 
             // dgvBangDiem
             // 
@@ -164,7 +181,8 @@
             this.SoTiet,
             this.SoTinChi,
             this.DiemTrungBinh,
-            this.Loai});
+            this.Loai,
+            this.KetQua});
             this.dgvBangDiem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBangDiem.Location = new System.Drawing.Point(0, 3);
             this.dgvBangDiem.MultiSelect = false;
@@ -172,69 +190,78 @@
             this.dgvBangDiem.ReadOnly = true;
             this.dgvBangDiem.RowHeadersVisible = false;
             this.dgvBangDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBangDiem.Size = new System.Drawing.Size(804, 339);
+            this.dgvBangDiem.Size = new System.Drawing.Size(896, 339);
             this.dgvBangDiem.TabIndex = 2;
             this.dgvBangDiem.TabStop = false;
-            // 
-            // DiemTrungBinhHocTap
-            // 
-            this.DiemTrungBinhHocTap.DataPropertyName = "DiemTrungBinhHocTap";
-            this.DiemTrungBinhHocTap.HeaderText = "Điểm trung bình học tập";
-            this.DiemTrungBinhHocTap.Name = "DiemTrungBinhHocTap";
             // 
             // MaSinhVien
             // 
             this.MaSinhVien.DataPropertyName = "MaSinhVien";
             this.MaSinhVien.HeaderText = "Mã SV";
             this.MaSinhVien.Name = "MaSinhVien";
+            this.MaSinhVien.ReadOnly = true;
             // 
             // TenSinhVien
             // 
             this.TenSinhVien.DataPropertyName = "TenSinhVien";
             this.TenSinhVien.HeaderText = "Tên sinh viên";
             this.TenSinhVien.Name = "TenSinhVien";
+            this.TenSinhVien.ReadOnly = true;
             // 
             // MaMonHoc
             // 
             this.MaMonHoc.DataPropertyName = "MaMonHoc";
             this.MaMonHoc.HeaderText = "Mã môn học";
             this.MaMonHoc.Name = "MaMonHoc";
+            this.MaMonHoc.ReadOnly = true;
             // 
             // TenMonHoc
             // 
             this.TenMonHoc.DataPropertyName = "TenMonHoc";
             this.TenMonHoc.HeaderText = "Tên môn học";
             this.TenMonHoc.Name = "TenMonHoc";
+            this.TenMonHoc.ReadOnly = true;
             // 
             // SoTiet
             // 
             this.SoTiet.DataPropertyName = "SoTiet";
             this.SoTiet.HeaderText = "Số tiết";
             this.SoTiet.Name = "SoTiet";
+            this.SoTiet.ReadOnly = true;
             // 
             // SoTinChi
             // 
             this.SoTinChi.DataPropertyName = "SoTinChi";
             this.SoTinChi.HeaderText = "Số tín chỉ";
             this.SoTinChi.Name = "SoTinChi";
+            this.SoTinChi.ReadOnly = true;
             // 
             // DiemTrungBinh
             // 
             this.DiemTrungBinh.DataPropertyName = "DiemTrungBinh";
             this.DiemTrungBinh.HeaderText = "Điểm tổng kết";
             this.DiemTrungBinh.Name = "DiemTrungBinh";
+            this.DiemTrungBinh.ReadOnly = true;
             // 
             // Loai
             // 
             this.Loai.DataPropertyName = "Loai";
             this.Loai.HeaderText = "Điểm chữ";
             this.Loai.Name = "Loai";
+            this.Loai.ReadOnly = true;
+            // 
+            // KetQua
+            // 
+            this.KetQua.DataPropertyName = "KetQua";
+            this.KetQua.HeaderText = "Kết quả";
+            this.KetQua.Name = "KetQua";
+            this.KetQua.ReadOnly = true;
             // 
             // fBangDiemSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.ClientSize = new System.Drawing.Size(1289, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fBangDiemSV";
@@ -262,6 +289,7 @@
         private System.Windows.Forms.DataGridView dgvDiemTrungBinhHocTap;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinhHocTap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChiTichLuy;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMonHoc;
@@ -270,5 +298,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KetQua;
     }
 }
