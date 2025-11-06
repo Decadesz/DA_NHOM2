@@ -49,7 +49,8 @@ namespace QuanLySinhVien
             {
                 KhoDuLieu.TaiKhoanHienTai = taiKhoan;
                 MessageBox.Show($"Đăng nhập thành công! Xin chào {taiKhoan.TenDangNhap} ({taiKhoan.LoaiTaiKhoanDangNhap})","Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    fSinhVien f = new fSinhVien();
+                
+                    fGiaoDienNgoai f = new fGiaoDienNgoai();
                     this.Hide();
                     f.ShowDialog();
                     this.Show();

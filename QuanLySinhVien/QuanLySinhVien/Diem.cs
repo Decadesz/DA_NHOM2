@@ -15,7 +15,7 @@ namespace QuanLySinhVien
         private double diemGiuaKy;
         private double diemCuoiKy;
         private double diemTrungBinh;
-        private string diemThang4;
+        private string diemThangChu;
         private string ketQua;
         private SinhVien sinhVien;
         private MonHoc monHoc;
@@ -94,7 +94,7 @@ namespace QuanLySinhVien
             return (diemLop * phanTramLop / 100) + (diemGiuaKy * phanTramGiuaKy / 100) + (diemCuoiKy * phanTramCuoiKy / 100);
            
         }
-        public string tinhDiemThang4()
+        public string tinhDiemThangChu()
         {
             if (DiemTrungBinh >= 9)
             {
@@ -143,6 +143,6 @@ namespace QuanLySinhVien
         public double DiemTongMonHoc{ get => DiemTrungBinh * SoTinChiCuaMon; }
         public string KetQua { get => TinhKetQua();  }
         public double DiemTrungBinh { get => tinhDiemTrungBinh(); }
-        public string DiemThang4 { get => tinhDiemThang4(); }
+        public string DiemThangChu { get => tinhDiemThangChu(); }
     }
 }

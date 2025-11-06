@@ -139,7 +139,7 @@ namespace QuanLySinhVien
                     return 0;
                 }
                 return DanhSachDiem
-                    .Where(d => d.DiemTrungBinh >= 5 && d.MonHoc != null && d.DiemThang4 != "F")
+                    .Where(d => d.DiemTrungBinh >= 5 && d.MonHoc != null && d.DiemThangChu != "F")
                     .Sum(d => d.MonHoc.SoTinChi);
         }
 

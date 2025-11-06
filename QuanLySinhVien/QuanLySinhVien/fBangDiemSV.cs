@@ -38,7 +38,7 @@ namespace QuanLySinhVien
                     DiemTrungBinh = Math.Round(d.DiemTrungBinh, 2),
                     SoTinChi = d.MonHoc.SoTinChi,
                     SoTiet = d.MonHoc.SoTietLyThuyet + d.MonHoc.SoTietThucHanh,
-                    Loai = d.DiemThang4,
+                    Loai = d.DiemThangChu,
                     KetQua = d.KetQua
                   
                 })

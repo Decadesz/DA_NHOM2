@@ -38,6 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDiemTrungBinhHocTap = new System.Windows.Forms.DataGridView();
+            this.DiemTrungBinhHocTap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTinChiTichLuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XepLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvBangDiem = new System.Windows.Forms.DataGridView();
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +51,6 @@
             this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KetQua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemTrungBinhHocTap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTinChiTichLuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XepLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemTrungBinhHocTap)).BeginInit();
@@ -140,7 +140,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1289, 342);
+            this.panel2.Size = new System.Drawing.Size(1289, 547);
             this.panel2.TabIndex = 1;
             // 
             // dgvDiemTrungBinhHocTap
@@ -150,11 +150,32 @@
             this.DiemTrungBinhHocTap,
             this.SoTinChiTichLuy,
             this.XepLoai});
-            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(929, 1);
+            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(922, 1);
             this.dgvDiemTrungBinhHocTap.Name = "dgvDiemTrungBinhHocTap";
             this.dgvDiemTrungBinhHocTap.ReadOnly = true;
             this.dgvDiemTrungBinhHocTap.Size = new System.Drawing.Size(337, 150);
             this.dgvDiemTrungBinhHocTap.TabIndex = 3;
+            // 
+            // DiemTrungBinhHocTap
+            // 
+            this.DiemTrungBinhHocTap.DataPropertyName = "DiemTrungBinhHocTap";
+            this.DiemTrungBinhHocTap.HeaderText = "Điểm trung bình học tập";
+            this.DiemTrungBinhHocTap.Name = "DiemTrungBinhHocTap";
+            this.DiemTrungBinhHocTap.ReadOnly = true;
+            // 
+            // SoTinChiTichLuy
+            // 
+            this.SoTinChiTichLuy.DataPropertyName = "SoTinChiTichLuy";
+            this.SoTinChiTichLuy.HeaderText = "Số tín chỉ đã tích lũy";
+            this.SoTinChiTichLuy.Name = "SoTinChiTichLuy";
+            this.SoTinChiTichLuy.ReadOnly = true;
+            // 
+            // XepLoai
+            // 
+            this.XepLoai.DataPropertyName = "XepLoai";
+            this.XepLoai.HeaderText = "Xếp loại";
+            this.XepLoai.Name = "XepLoai";
+            this.XepLoai.ReadOnly = true;
             // 
             // dgvBangDiem
             // 
@@ -245,32 +266,11 @@
             this.KetQua.Name = "KetQua";
             this.KetQua.ReadOnly = true;
             // 
-            // DiemTrungBinhHocTap
-            // 
-            this.DiemTrungBinhHocTap.DataPropertyName = "DiemTrungBinhHocTap";
-            this.DiemTrungBinhHocTap.HeaderText = "Điểm trung bình học tập";
-            this.DiemTrungBinhHocTap.Name = "DiemTrungBinhHocTap";
-            this.DiemTrungBinhHocTap.ReadOnly = true;
-            // 
-            // SoTinChiTichLuy
-            // 
-            this.SoTinChiTichLuy.DataPropertyName = "SoTinChiTichLuy";
-            this.SoTinChiTichLuy.HeaderText = "Số tín chỉ đã tích lũy";
-            this.SoTinChiTichLuy.Name = "SoTinChiTichLuy";
-            this.SoTinChiTichLuy.ReadOnly = true;
-            // 
-            // XepLoai
-            // 
-            this.XepLoai.DataPropertyName = "XepLoai";
-            this.XepLoai.HeaderText = "Xếp loại";
-            this.XepLoai.Name = "XepLoai";
-            this.XepLoai.ReadOnly = true;
-            // 
             // fBangDiemSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1289, 450);
+            this.ClientSize = new System.Drawing.Size(1289, 655);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fBangDiemSV";

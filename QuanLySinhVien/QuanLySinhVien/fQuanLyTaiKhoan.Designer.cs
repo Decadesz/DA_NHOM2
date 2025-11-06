@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.cboLoaiTaiKhoan = new System.Windows.Forms.ComboBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -46,10 +50,6 @@
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiTaiKhoanDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
@@ -79,12 +79,50 @@
             this.panel1.Size = new System.Drawing.Size(1032, 100);
             this.panel1.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(628, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 91;
+            this.label10.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(737, 43);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 90;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(631, 43);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 89;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Tên đăng nhập",
+            "Loại tài khoản"});
+            this.cboSearch.Location = new System.Drawing.Point(631, 16);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 88;
+            // 
             // cboLoaiTaiKhoan
             // 
             this.cboLoaiTaiKhoan.FormattingEnabled = true;
             this.cboLoaiTaiKhoan.Items.AddRange(new object[] {
             "Giang Vien",
-            "Phong Dao Tao"});
+            "Phong Dao Tao",
+            "Sinh Vien"});
             this.cboLoaiTaiKhoan.Location = new System.Drawing.Point(456, 12);
             this.cboLoaiTaiKhoan.Name = "cboLoaiTaiKhoan";
             this.cboLoaiTaiKhoan.Size = new System.Drawing.Size(121, 21);
@@ -234,43 +272,6 @@
             this.LoaiTaiKhoanDangNhap.HeaderText = "Loại tài khoản";
             this.LoaiTaiKhoanDangNhap.Name = "LoaiTaiKhoanDangNhap";
             this.LoaiTaiKhoanDangNhap.Width = 300;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(628, 2);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 91;
-            this.label10.Text = "Tìm kiếm";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(737, 43);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 90;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(631, 43);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch.TabIndex = 89;
-            // 
-            // cboSearch
-            // 
-            this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Items.AddRange(new object[] {
-            "Tất cả",
-            "Tên đăng nhập",
-            "Loại tài khoản"});
-            this.cboSearch.Location = new System.Drawing.Point(631, 16);
-            this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(121, 21);
-            this.cboSearch.TabIndex = 88;
             // 
             // fQuanLyTaiKhoan
             // 

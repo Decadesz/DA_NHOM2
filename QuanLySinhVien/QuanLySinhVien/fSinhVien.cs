@@ -60,13 +60,6 @@ namespace QuanLySinhVien
             cboSearch.Click += CboSearch_Click;
             btnSearch.Click += BtnSearch_Click;
             dgvSinhVien.SelectionChanged += DgvSinhVien_SelectionChanged;
-            //Tắt chức năng quản lý nếu không phải tài khoản lại phong dao tao
-            if (KhoDuLieu.TaiKhoanHienTai.LoaiTaiKhoanDangNhap != "Phong Dao Tao")
-            {
-                quảnLýTàiKhoảnToolStripMenuItem.Visible = false;
-                quảnLýMônHọcToolStripMenuItem.Visible = false;
-                quảnLýĐiểmToolStripMenuItem.Visible = false;
-            }
         }
         private void sapXepSinhVienTheoLop()
         {
