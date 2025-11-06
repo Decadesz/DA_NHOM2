@@ -40,6 +40,7 @@ namespace QuanLySinhVien
                     SoTiet = d.MonHoc.SoTietLyThuyet + d.MonHoc.SoTietThucHanh,
                     Loai = d.DiemThang4,
                     KetQua = d.KetQua
+                  
                 })
                 .ToList();
 
@@ -49,7 +50,8 @@ namespace QuanLySinhVien
                 .Select(dtb => new DiemSinhVien
                 {
                     DiemTrungBinhHocTap = Math.Round(dtb.DiemTrungBinhHocTap, 2),
-                    SoTinChiTichLuy = dtb.SoTinChiTichLuy
+                    SoTinChiTichLuy = dtb.SoTinChiTichLuy,
+                    XepLoai = dtb.XepLoai
                 })
                 .ToList();
             dgvDiemTrungBinhHocTap.DataSource = diemTrungBinhHocTap;

@@ -19,6 +19,7 @@ namespace QuanLySinhVien
         private double diemTrungBinhHocTap;
         private int soTinChiTichLuy;
         private string ketQua;
+        private string xepLoai;
 
         public string MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string TenMonHoc { get => tenMonHoc; set => tenMonHoc = value; }
@@ -31,6 +32,7 @@ namespace QuanLySinhVien
         public double DiemTrungBinhHocTap { get => diemTrungBinhHocTap; set => diemTrungBinhHocTap = value; }
         public int SoTinChiTichLuy { get => soTinChiTichLuy; set => soTinChiTichLuy = value; }
         public string KetQua { get => ketQua; set => ketQua = value; }
+        public string XepLoai { get => xepLoai; set => xepLoai = value; }
 
         public DiemSinhVien(string maSinhVien,string tenSinhVien,string maMonHoc, string tenMonHoc, double diemTrungBinh, int soTinChi, int soTiet, string loai)
         {

@@ -20,8 +20,14 @@ namespace QuanLySinhVien
         public static List<Diem> DanhSachDiem { get; private set; } = new List<Diem>();
         public static List<TaiKhoanDangNhap> DanhSachTaiKhoan { get; private set; } = new List<TaiKhoanDangNhap>();
         public static TaiKhoanDangNhap TaiKhoanHienTai { get; set; }
-
-
+        public static int TinhTongSoTinChi()
+        {
+            return DanhSachMonHoc.Sum(mh => mh.SoTinChi);
+        }
+        public static double TinhSoTinChiToiThieu()
+        {
+            return TinhTongSoTinChi() * 0.9;
+        }
         //Sinh Vien
         public static void LoadSinhVien()
         {

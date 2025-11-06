@@ -8,6 +8,7 @@ namespace QuanLySinhVien
 {
     internal class SinhVien
     {
+        public double soTinChiToiThieu =KhoDuLieu.TinhSoTinChiToiThieu() ;
         private string maSinhVien;
         private string hoTen;
         private string gioiTinh;
@@ -17,6 +18,7 @@ namespace QuanLySinhVien
         private string soDienThoai;
         private double diemTrungBinhHocTap;
         private int soTinChiTichLuy;
+        private string xepLoai;
 
         private Lop lop;
         private CoVanHocTap coVan;
@@ -101,6 +103,34 @@ namespace QuanLySinhVien
         internal Lop Lop { get => lop; set => lop = value; }
         internal CoVanHocTap CoVan { get => coVan; set => coVan = value; }
         internal List<Diem> DanhSachDiem { get => danhSachDiem; set => danhSachDiem = value; }
+        public double DiemTrungBinhHocTap { get => TinhDiemTrungBinhHocTap(); }
+        public int SoTinChiTichLuy { get => TinhSoTinChiTichLuy(); }
+        public string XepLoai { get => tinhXepLoai(); }
+        public bool kiemTraSoTinChiTotNghiep()
+        {
+            if (SoTinChiTichLuy >= soTinChiToiThieu)
+                return true;
+            else
+                return false;
+        }
+        public string tinhXepLoai()
+        {
+            if(kiemTraSoTinChiTotNghiep() == false)
+            {
+                return "Chưa đủ tín chỉ để xét loại";
+            }
+            double dtb = DiemTrungBinhHocTap;
+            if (dtb >= 9)
+                return "Xuất sắc";
+            else if (dtb >= 8)
+                return "Giỏi";
+            else if (dtb >= 7)
+                return "Khá";
+            else if (dtb >= 5)
+                return "Trung bình";
+            else
+                return "Yếu";
+        }
         public int TinhSoTinChiTichLuy()
         {
             
@@ -123,8 +153,5 @@ namespace QuanLySinhVien
                     .Sum(d => d.DiemTongMonHoc) / tongTin;
                 return Math.Round(diemTrungBinh,2);
         }
-
-        public double DiemTrungBinhHocTap { get => TinhDiemTrungBinhHocTap(); }
-        public int SoTinChiTichLuy { get => TinhSoTinChiTichLuy(); }
     }
 }
