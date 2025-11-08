@@ -105,17 +105,17 @@ namespace QuanLySinhVien
         internal List<Diem> DanhSachDiem { get => danhSachDiem; set => danhSachDiem = value; }
         public double DiemTrungBinhHocTap { get => TinhDiemTrungBinhHocTap(); }
         public int SoTinChiTichLuy { get => TinhSoTinChiTichLuy(); }
-        public string XepLoai { get => tinhXepLoai(); }
-        public bool kiemTraSoTinChiTotNghiep()
+        public string XepLoai { get => TinhXepLoai(); }
+        public bool KiemTraSoTinChiTotNghiep()
         {
             if (SoTinChiTichLuy >= soTinChiToiThieu)
                 return true;
             else
                 return false;
         }
-        public string tinhXepLoai()
+        public string TinhXepLoai()
         {
-            if(kiemTraSoTinChiTotNghiep() == false)
+            if(KiemTraSoTinChiTotNghiep() == false)
             {
                 return "Chưa đủ tín chỉ để xét loại";
             }
@@ -155,3 +155,4 @@ namespace QuanLySinhVien
         }
     }
 }
+

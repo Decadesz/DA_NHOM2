@@ -157,7 +157,7 @@
             this.Controls.Add(this.btnMonHoc);
             this.Controls.Add(this.btnSinhVien);
             this.Name = "fGiaoDienNgoai";
-            this.Text = "fGiaoDienNgoai";
+            this.Text = "Quản lý";
             this.ResumeLayout(false);
 
         }

@@ -49,11 +49,28 @@ namespace QuanLySinhVien
             {
                 KhoDuLieu.TaiKhoanHienTai = taiKhoan;
                 MessageBox.Show($"Đăng nhập thành công! Xin chào {taiKhoan.TenDangNhap} ({taiKhoan.LoaiTaiKhoanDangNhap})","Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                    fGiaoDienNgoai f = new fGiaoDienNgoai();
+                if(taiKhoan.LoaiTaiKhoanDangNhap == "Phong Dao Tao")
+                {
+                    fSinhVien f = new fSinhVien();
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
+                }
+                else if(taiKhoan.LoaiTaiKhoanDangNhap == "Giang Vien")
+                {
+                    fQuanLyDiem f = new fQuanLyDiem();
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                }
+                else if (taiKhoan.LoaiTaiKhoanDangNhap == "Sinh Vien")
+                {
+                    fBangDiemSV f = new fBangDiemSV();
+                    this.Hide();
+                    f.ShowDialog();
+                    this.Show();
+                }
+
             }
             else
             {

@@ -363,15 +363,16 @@ namespace QuanLySinhVien
             cboTenCoVan.DisplayMember = "HoTen";
             cboTenCoVan.ValueMember = "MaCoVan";
         }
-        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fQuanLyTaiKhoan f = new fQuanLyTaiKhoan();
+            fQuanLyMonHoc f = new fQuanLyMonHoc();
             this.Hide();
             f.ShowDialog();
             this.Show();
         }
 
-        private void quảnLýLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýLớpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             fQuanLyLop f = new fQuanLyLop();
             this.Hide();
@@ -379,17 +380,9 @@ namespace QuanLySinhVien
             this.Show();
         }
 
-        private void quảnLýCVHTToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýCốVấnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fCoVanHocTap f = new fCoVanHocTap();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fQuanLyMonHoc f = new fQuanLyMonHoc();
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -403,9 +396,17 @@ namespace QuanLySinhVien
             this.Show();
         }
 
-        private void thôngTinChiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fThongTinChiTiet f = new fThongTinChiTiet();
+            fQuanLyTaiKhoan f = new fQuanLyTaiKhoan();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void bảngĐiểmSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fBangDiemSV f = new fBangDiemSV();
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -419,19 +420,18 @@ namespace QuanLySinhVien
             this.Show();
         }
 
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void bảngĐiểmSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fBangDiemSV f = new fBangDiemSV();
+            fThongTinChiTiet f = new fThongTinChiTiet();
             this.Hide();
             f.ShowDialog();
             this.Show();
         }
 
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
     }
 }

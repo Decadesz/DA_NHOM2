@@ -32,3 +32,4 @@ namespace QuanLySinhVien
         internal List<SinhVien> DanhSachSinhVien { get => danhSachSinhVien; set => danhSachSinhVien = value; }
     }
 }
+

@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).BeginInit();
@@ -75,6 +75,24 @@
             this.panel1.Size = new System.Drawing.Size(906, 100);
             this.panel1.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(496, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 99;
+            this.label10.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(614, 48);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 98;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(828, 77);
@@ -84,6 +102,13 @@
             this.btnLoad.Text = "Đọc";
             this.btnLoad.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(499, 48);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 97;
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(744, 77);
@@ -92,6 +117,18 @@
             this.btnSave.TabIndex = 34;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã lớp",
+            "Tên lớp"});
+            this.cboSearch.Location = new System.Drawing.Point(499, 21);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(121, 21);
+            this.cboSearch.TabIndex = 96;
             // 
             // btnRefresh
             // 
@@ -211,43 +248,6 @@
             this.SoLuong.ReadOnly = true;
             this.SoLuong.Width = 250;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(496, 5);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 99;
-            this.label10.Text = "Tìm kiếm";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(614, 48);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 98;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(499, 48);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtSearch.TabIndex = 97;
-            // 
-            // cboSearch
-            // 
-            this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Items.AddRange(new object[] {
-            "Tất cả",
-            "Mã lớp",
-            "Tên lớp"});
-            this.cboSearch.Location = new System.Drawing.Point(499, 21);
-            this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(121, 21);
-            this.cboSearch.TabIndex = 96;
-            // 
             // fQuanLyLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,7 +256,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyLop";
-            this.Text = "fQuanLyLop";
+            this.Text = "Quản lý lớp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

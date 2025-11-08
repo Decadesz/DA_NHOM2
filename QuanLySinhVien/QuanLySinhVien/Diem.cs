@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLySinhVien;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,12 +90,12 @@ namespace QuanLySinhVien
             this.DiemGiuaKy=diemGiuaKy;
             this.DiemCuoiKy=diemCuoiKy;
         }
-        public double tinhDiemTrungBinh()
+        public double TinhDiemTrungBinh()
         {
             return (diemLop * phanTramLop / 100) + (diemGiuaKy * phanTramGiuaKy / 100) + (diemCuoiKy * phanTramCuoiKy / 100);
            
         }
-        public string tinhDiemThangChu()
+        public string TinhDiemThangChu()
         {
             if (DiemTrungBinh >= 9)
             {
@@ -142,7 +143,7 @@ namespace QuanLySinhVien
         internal MonHoc MonHoc { get => monHoc; set => monHoc = value; }
         public double DiemTongMonHoc{ get => DiemTrungBinh * SoTinChiCuaMon; }
         public string KetQua { get => TinhKetQua();  }
-        public double DiemTrungBinh { get => tinhDiemTrungBinh(); }
-        public string DiemThangChu { get => tinhDiemThangChu(); }
+        public double DiemTrungBinh { get => TinhDiemTrungBinh(); }
+        public string DiemThangChu { get => TinhDiemThangChu(); }
     }
 }

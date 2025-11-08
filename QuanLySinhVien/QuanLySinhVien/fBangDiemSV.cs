@@ -56,5 +56,26 @@ namespace QuanLySinhVien
                 .ToList();
             dgvDiemTrungBinhHocTap.DataSource = diemTrungBinhHocTap;
         }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fDoiMatKhau f = new fDoiMatKhau();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThongTinChiTiet f= new fThongTinChiTiet();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
