@@ -17,7 +17,6 @@ C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fBangDiemSV.resources
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fThongTinChiTiet.resources
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fDoiMatKhau.resources
-C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.fGiaoDienNgoai.resources
 C:\Users\trinh\OneDrive\Desktop\clone\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe.config
 C:\Users\trinh\OneDrive\Desktop\clone\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
 C:\Users\trinh\OneDrive\Desktop\clone\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb

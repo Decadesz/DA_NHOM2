@@ -57,9 +57,12 @@ namespace QuanLySinhVien.BLL
             {
                 return false;
             }
-            if(!lopCu.MaLop.Equals(lopMoi.MaLop, StringComparison.CurrentCultureIgnoreCase) && KiemTraLopTonTai(lopMoi.MaLop)  )
+            if(lopCu.MaLop!=lopMoi.MaLop)
             {
-                return false;
+                if (KiemTraLopTonTai(lopMoi.MaLop))
+                {
+                    return false;
+                }
             }
             lopCu.MaLop = lopMoi.MaLop;
             lopCu.TenLop = lopMoi.TenLop;

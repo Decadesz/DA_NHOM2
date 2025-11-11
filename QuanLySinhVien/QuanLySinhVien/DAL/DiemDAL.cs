@@ -70,13 +70,6 @@ namespace QuanLySinhVien.DAL
                 }
             }
         }
-        public static int TinhTongSoTinChi()
-        {
-            return MonHocDAL.DanhSachMonHoc.Sum(mh => mh.SoTinChi);
-        }
-        public static double TinhSoTinChiToiThieu()
-        {
-            return TinhTongSoTinChi() * 0.9;
-        }
+
     }
 }

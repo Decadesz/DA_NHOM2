@@ -38,7 +38,7 @@ namespace QuanLySinhVien.BLL
             if (KiemTraMaSinhVienTonTai(sinhVien.MaSinhVien))
             {
                 
-                return false; // Mã sinh viên đã tồn tại
+                return false;
             }
             danhSachSinhVien.Add(sinhVien);
             return true;
@@ -49,9 +49,12 @@ namespace QuanLySinhVien.BLL
             {
                 return false;
             }
-            if (!sinhVienCu.MaSinhVien.Equals(sinhVienMoi.MaSinhVien, StringComparison.CurrentCultureIgnoreCase) && KiemTraMaSinhVienTonTai(sinhVienMoi.MaSinhVien))
+           if(sinhVienCu.MaSinhVien != sinhVienMoi.MaSinhVien)
             {
-                return false; 
+                if (KiemTraMaSinhVienTonTai(sinhVienMoi.MaSinhVien))
+                {
+                    return false;
+                }
             }
             sinhVienCu.MaSinhVien = sinhVienMoi.MaSinhVien;
             sinhVienCu.HoTen = sinhVienMoi.HoTen;

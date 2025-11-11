@@ -37,7 +37,7 @@ namespace QuanLySinhVien.BLL
         {
             if (KiemTraMaCoVanTonTai(coVan.MaCoVan))
             { 
-                return false; // Mã cố vấn đã tồn tại
+                return false; 
             }
             danhSachCoVan.Add(coVan);
             return true;
@@ -46,11 +46,14 @@ namespace QuanLySinhVien.BLL
         { 
             if (coVanCu == null)
             {
-                return false; // Cố vấn không tồn tại
+                return false; 
             }
-            if (!coVanCu.MaCoVan.Equals(coVanMoi.MaCoVan, StringComparison.CurrentCultureIgnoreCase) && KiemTraMaCoVanTonTai(coVanMoi.MaCoVan))
+            if(coVanCu.MaCoVan!=coVanMoi.MaCoVan)
             {
-                return false; // Mã cố vấn mới đã tồn tại
+                if (KiemTraMaCoVanTonTai(coVanMoi.MaCoVan))
+                {
+                    return false;
+                }
             }
             coVanCu.MaCoVan = coVanMoi.MaCoVan;
             coVanCu.HoTen = coVanMoi.HoTen;
@@ -65,7 +68,7 @@ namespace QuanLySinhVien.BLL
         {
             if (coVan == null)
             {
-                return false; // Cố vấn không tồn tại
+                return false; 
             }
             danhSachCoVan.Remove(coVan);
             return true;

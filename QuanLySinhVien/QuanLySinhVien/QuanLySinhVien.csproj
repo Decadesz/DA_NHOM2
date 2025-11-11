@@ -127,6 +127,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO\SinhVien.cs" />
     <Compile Include="DTO\TaiKhoanDangNhap.cs" />
+    <Compile Include="Tien ich\TienIch.cs" />
     <EmbeddedResource Include="GUI\fBangDiemSV.resx">
       <DependentUpon>fBangDiemSV.cs</DependentUpon>
     </EmbeddedResource>

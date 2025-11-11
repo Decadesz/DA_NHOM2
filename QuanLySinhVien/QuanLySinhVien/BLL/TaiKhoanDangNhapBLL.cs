@@ -37,7 +37,7 @@ namespace QuanLySinhVien.BLL
         {
             if (KiemTraTenDangNhapTonTai(taiKhoan.TenDangNhap))
             {
-                return false; // Tên đăng nhập đã tồn tại
+                return false; 
             }
             danhSachTaiKhoan.Add(taiKhoan);
             return true;
@@ -46,7 +46,7 @@ namespace QuanLySinhVien.BLL
         {
             if (taiKhoan == null)
             {
-                return false; // Tài khoản không tồn tại
+                return false; 
             }
             danhSachTaiKhoan.Remove(taiKhoan);
             return true;
@@ -55,11 +55,14 @@ namespace QuanLySinhVien.BLL
         {
             if (taiKhoanCu == null)
             {
-                return false; // Tài khoản không tồn tại
+                return false; 
             }
-            if (!taiKhoanCu.TenDangNhap.Equals(taiKhoanMoi.TenDangNhap, StringComparison.CurrentCultureIgnoreCase) && KiemTraTenDangNhapTonTai(taiKhoanMoi.TenDangNhap))
+            if(taiKhoanCu.TenDangNhap!=taiKhoanMoi.TenDangNhap)
             {
-                return false; // Tên đăng nhập mới đã tồn tại
+                if (KiemTraTenDangNhapTonTai(taiKhoanMoi.TenDangNhap))
+                {
+                    return false;
+                }
             }
             taiKhoanCu.TenDangNhap = taiKhoanMoi.TenDangNhap;
             taiKhoanCu.MatKhau = taiKhoanMoi.MatKhau;

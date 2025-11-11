@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using QuanLySinhVien.TienIchHayHo;
 namespace QuanLySinhVien
 {
     internal class SinhVien
     {
-        public double soTinChiToiThieu =DiemDAL.TinhSoTinChiToiThieu() ;
+        public double soTinChiToiThieu =TienIch.TinhSoTinChiToiThieu();
         private string maSinhVien;
         private string hoTen;
         private string gioiTinh;

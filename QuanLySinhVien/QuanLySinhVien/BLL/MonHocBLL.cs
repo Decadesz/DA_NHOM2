@@ -49,9 +49,12 @@ namespace QuanLySinhVien.BLL
             {
                 return false; 
             }
-            if (!monHocCu.MaMonHoc.Equals(monHocMoi.MaMonHoc, StringComparison.CurrentCultureIgnoreCase) && KiemTraMaMonHocTonTai(monHocMoi.MaMonHoc))
+            if(monHocCu.MaMonHoc!= monHocMoi.MaMonHoc)
             {
-                return false; 
+                if (KiemTraMaMonHocTonTai(monHocMoi.MaMonHoc))
+                {
+                    return false;
+                }
             }
             monHocCu.MaMonHoc = monHocMoi.MaMonHoc;
             monHocCu.TenMonHoc = monHocMoi.TenMonHoc;
