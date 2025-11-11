@@ -46,113 +46,115 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoVanHocTap.cs" />
-    <Compile Include="Diem.cs" />
-    <Compile Include="DiemSinhVien.cs" />
-    <Compile Include="fBangDiemSV.cs">
+    <Compile Include="BLL\CoVanBLL.cs" />
+    <Compile Include="BLL\DiemBLL.cs" />
+    <Compile Include="BLL\LopBLL.cs" />
+    <Compile Include="BLL\MonHocBLL.cs" />
+    <Compile Include="BLL\SinhVienBLL.cs" />
+    <Compile Include="BLL\TaiKhoanDangNhapBLL.cs" />
+    <Compile Include="DAL\CoVanHocTapDAL.cs" />
+    <Compile Include="DAL\DiemDAL.cs" />
+    <Compile Include="DAL\LopDAL.cs" />
+    <Compile Include="DAL\MonHocDAL.cs" />
+    <Compile Include="DAL\SinhVienDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDangNhapDAL.cs" />
+    <Compile Include="DTO\CoVanHocTap.cs" />
+    <Compile Include="DTO\Diem.cs" />
+    <Compile Include="DTO\DiemSinhVien.cs" />
+    <Compile Include="GUI\fBangDiemSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fBangDiemSV.Designer.cs">
+    <Compile Include="GUI\fBangDiemSV.Designer.cs">
       <DependentUpon>fBangDiemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCoVanHocTap.cs">
+    <Compile Include="GUI\fCoVanHocTap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fCoVanHocTap.Designer.cs">
+    <Compile Include="GUI\fCoVanHocTap.Designer.cs">
       <DependentUpon>fCoVanHocTap.cs</DependentUpon>
     </Compile>
-    <Compile Include="fDangNhap.cs">
+    <Compile Include="GUI\fDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDangNhap.Designer.cs">
+    <Compile Include="GUI\fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="fDoiMatKhau.cs">
+    <Compile Include="GUI\fDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDoiMatKhau.Designer.cs">
+    <Compile Include="GUI\fDoiMatKhau.Designer.cs">
       <DependentUpon>fDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="fGiaoDienNgoai.cs">
+    <Compile Include="GUI\fQuanLyDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fGiaoDienNgoai.Designer.cs">
-      <DependentUpon>fGiaoDienNgoai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fQuanLyDiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fQuanLyDiem.Designer.cs">
+    <Compile Include="GUI\fQuanLyDiem.Designer.cs">
       <DependentUpon>fQuanLyDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQuanLyLop.cs">
+    <Compile Include="GUI\fQuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyLop.Designer.cs">
+    <Compile Include="GUI\fQuanLyLop.Designer.cs">
       <DependentUpon>fQuanLyLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQuanLyMonHoc.cs">
+    <Compile Include="GUI\fQuanLyMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyMonHoc.Designer.cs">
+    <Compile Include="GUI\fQuanLyMonHoc.Designer.cs">
       <DependentUpon>fQuanLyMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQuanLyTaiKhoan.cs">
+    <Compile Include="GUI\fQuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQuanLyTaiKhoan.Designer.cs">
+    <Compile Include="GUI\fQuanLyTaiKhoan.Designer.cs">
       <DependentUpon>fQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="fSinhVien.cs">
+    <Compile Include="GUI\fSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fSinhVien.Designer.cs">
+    <Compile Include="GUI\fSinhVien.Designer.cs">
       <DependentUpon>fSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="fThongTinChiTiet.cs">
+    <Compile Include="GUI\fThongTinChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fThongTinChiTiet.Designer.cs">
+    <Compile Include="GUI\fThongTinChiTiet.Designer.cs">
       <DependentUpon>fThongTinChiTiet.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoDuLieu.cs" />
-    <Compile Include="Lop.cs" />
-    <Compile Include="MonHoc.cs" />
+    <Compile Include="DTO\Lop.cs" />
+    <Compile Include="DTO\MonHoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SinhVien.cs" />
-    <Compile Include="TaiKhoanDangNhap.cs" />
-    <EmbeddedResource Include="fBangDiemSV.resx">
+    <Compile Include="DTO\SinhVien.cs" />
+    <Compile Include="DTO\TaiKhoanDangNhap.cs" />
+    <EmbeddedResource Include="GUI\fBangDiemSV.resx">
       <DependentUpon>fBangDiemSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fCoVanHocTap.resx">
+    <EmbeddedResource Include="GUI\fCoVanHocTap.resx">
       <DependentUpon>fCoVanHocTap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fDangNhap.resx">
+    <EmbeddedResource Include="GUI\fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fDoiMatKhau.resx">
+    <EmbeddedResource Include="GUI\fDoiMatKhau.resx">
       <DependentUpon>fDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fGiaoDienNgoai.resx">
-      <DependentUpon>fGiaoDienNgoai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyDiem.resx">
+    <EmbeddedResource Include="GUI\fQuanLyDiem.resx">
       <DependentUpon>fQuanLyDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyLop.resx">
+    <EmbeddedResource Include="GUI\fQuanLyLop.resx">
       <DependentUpon>fQuanLyLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyMonHoc.resx">
+    <EmbeddedResource Include="GUI\fQuanLyMonHoc.resx">
       <DependentUpon>fQuanLyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQuanLyTaiKhoan.resx">
+    <EmbeddedResource Include="GUI\fQuanLyTaiKhoan.resx">
       <DependentUpon>fQuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fSinhVien.resx">
+    <EmbeddedResource Include="GUI\fSinhVien.resx">
       <DependentUpon>fSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fThongTinChiTiet.resx">
+    <EmbeddedResource Include="GUI\fThongTinChiTiet.resx">
       <DependentUpon>fThongTinChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

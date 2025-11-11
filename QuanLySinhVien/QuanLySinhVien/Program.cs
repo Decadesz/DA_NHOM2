@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using QuanLySinhVien.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +21,12 @@ namespace QuanLySinhVien
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            KhoDuLieu.LoadDuLieu();
+            CoVanHocTapDAL.LoadCoVan();
+            LopDAL.LoadLop();
+            MonHocDAL.LoadMonHoc();
+            SinhVienDAL.LoadSinhVien();
+            DiemDAL.LoadDiem();
+            TaiKhoanDangNhapDAL.LoadTaiKhoan();
             Application.Run(new fDangNhap());
         }
     }
