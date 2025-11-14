@@ -15,9 +15,9 @@ namespace QuanLySinhVien.DAL
             DanhSachLop.Clear();
             if (!File.Exists("danhSachLop.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("danhSachLop.txt"))
+            foreach (string line in File.ReadAllLines("danhSachLop.txt"))
             {
-                var parts = line.Split(',');
+                string [] parts = line.Split(',');
                 //phai >=3 vi can dung de luu so Luong
                 if (parts.Length >= 3)
                 {
@@ -33,7 +33,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("danhSachLop.txt"))
             {
-                foreach (var lop in DanhSachLop)
+                foreach (Lop lop in DanhSachLop)
                 {
                     writer.WriteLine($"{lop.MaLop},{lop.TenLop},{lop.SoLuong}");
                 }

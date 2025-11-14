@@ -16,9 +16,9 @@ namespace QuanLySinhVien.DAL
             DanhSachHocKy.Clear();
             if (!File.Exists("danhSachHocKy.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("danhSachHocKy.txt"))
+            foreach (string line in File.ReadAllLines("danhSachHocKy.txt"))
             {
-                var parts = line.Split(',');
+                string[] parts = line.Split(',');
                 if (parts.Length >= 3)
                 {
                     HocKy hocKy = new HocKy(
@@ -35,7 +35,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("danhSachHocKy.txt"))
             {
-                foreach (var hocKy in DanhSachHocKy)
+                foreach (HocKy hocKy in DanhSachHocKy)
                 {
                     writer.WriteLine($"{hocKy.MaHocKy},{hocKy.TenHocKy},{hocKy.NamHoc}");
                 }

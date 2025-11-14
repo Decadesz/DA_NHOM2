@@ -15,9 +15,9 @@ namespace QuanLySinhVien.DAL
             DanhSachSinhVien.Clear();
             if (!File.Exists("danhSachSinhVien.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("danhSachSinhVien.txt"))
+            foreach (string line in File.ReadAllLines("danhSachSinhVien.txt"))
             {
-                var parts = line.Split(',');
+                string[] parts = line.Split(',');
                 if (parts.Length >= 9)
                 {
                     //InvariantCulture để không cần quan tâm về định dạng ngày tháng của hệ thống trên máy khác
@@ -60,7 +60,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("danhSachSinhVien.txt"))
             {
-                foreach (var sv in DanhSachSinhVien)
+                foreach (SinhVien sv in DanhSachSinhVien)
                 {
                     writer.WriteLine($"{sv.MaSinhVien},{sv.HoTen},{sv.GioiTinh},{sv.NgaySinh.ToString("dd/MM/yyyy")},{sv.NgayNhapHoc.ToString("dd/MM/yyyy")},{sv.DiaChi},{sv.SoDienThoai},{sv.Lop?.MaLop},{sv.CoVan?.MaCoVan}");
                 }

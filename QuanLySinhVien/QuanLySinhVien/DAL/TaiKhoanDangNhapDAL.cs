@@ -16,9 +16,9 @@ namespace QuanLySinhVien.DAL
             DanhSachTaiKhoan.Clear();
             if (!File.Exists("taiKhoan.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("taiKhoan.txt"))
+            foreach (string line in File.ReadAllLines("taiKhoan.txt"))
             {
-                var parts = line.Split(',');
+                string[] parts = line.Split(',');
                 if (parts.Length >= 3)
                 {
                     TaiKhoanDangNhap tk = new TaiKhoanDangNhap(parts[0], parts[1], parts[2]);
@@ -30,7 +30,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("taiKhoan.txt"))
             {
-                foreach (var tk in DanhSachTaiKhoan)
+                foreach (TaiKhoanDangNhap tk in DanhSachTaiKhoan)
                 {
                     writer.WriteLine($"{tk.TenDangNhap},{tk.MatKhau},{tk.LoaiTaiKhoanDangNhap}");
                 }

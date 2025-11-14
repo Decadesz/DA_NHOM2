@@ -15,9 +15,9 @@ namespace QuanLySinhVien.DAL
             DanhSachMonHoc.Clear();
             if (!File.Exists("danhSachMonHoc.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("danhSachMonHoc.txt"))
+            foreach (string line in File.ReadAllLines("danhSachMonHoc.txt"))
             {
-                var parts = line.Split(',');
+                string[] parts = line.Split(',');
                 if (parts.Length >= 5)
                 {
                     MonHoc monHoc = new MonHoc(
@@ -36,7 +36,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("danhSachMonHoc.txt"))
             {
-                foreach (var mh in DanhSachMonHoc)
+                foreach (MonHoc mh in DanhSachMonHoc)
                 {
                     writer.WriteLine($"{mh.MaMonHoc},{mh.TenMonHoc},{mh.SoTinChi},{mh.SoTietLyThuyet},{mh.SoTietThucHanh}");
                 }

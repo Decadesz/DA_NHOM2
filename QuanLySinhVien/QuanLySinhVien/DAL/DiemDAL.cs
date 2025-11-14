@@ -17,9 +17,9 @@ namespace QuanLySinhVien.DAL
             DanhSachDiem.Clear();
             if (!File.Exists("danhSachDiem.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("danhSachDiem.txt"))
+            foreach (string line in File.ReadAllLines("danhSachDiem.txt"))
             {
-                var parts = line.Split(',');
+                string [] parts = line.Split(',');
                 if (parts.Length >= 9)
                 {
                     SinhVien sinhVien = SinhVienDAL.DanhSachSinhVien.FirstOrDefault(s => s.MaSinhVien == parts[0]);
@@ -77,7 +77,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("danhSachDiem.txt"))
             {
-                foreach (var diem in DanhSachDiem)
+                foreach (Diem diem in DanhSachDiem)
                 {
                     writer.WriteLine($"{diem.SinhVien?.MaSinhVien},{diem.MonHoc?.MaMonHoc},{diem.HocKy?.MaHocKy},{diem.PhanTramLop},{diem.PhanTramGiuaKy},{diem.PhanTramCuoiKy},{diem.DiemLop},{diem.DiemGiuaKy},{diem.DiemCuoiKy}");
                 }

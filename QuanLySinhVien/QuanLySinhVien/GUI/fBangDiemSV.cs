@@ -21,6 +21,7 @@ namespace QuanLySinhVien
             btnXemHetDiem.Click += BtnXemHetDiem_Click;
             dgvDiemTrungBinhHocTap.AutoGenerateColumns = false;
             dgvBangDiem.AutoGenerateColumns = false;
+            dgvDiemHocKy.AutoGenerateColumns = false;
         }
 
         private void BtnXemHetDiem_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace QuanLySinhVien
             string maSinhVien = txtMaSinhVien.Text.ToUpper();
             if (string.IsNullOrEmpty(maSinhVien))
             {
-                return;
+                MessageBox.Show("Vui lòng nhập mã sinh viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             List<DiemSinhVien> diemSinhVien = DiemDAL.DanhSachDiem
                 .Where(d => d.SinhVien.MaSinhVien == maSinhVien)
@@ -51,19 +52,27 @@ namespace QuanLySinhVien
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string maSinhVien = txtMaSinhVien.Text.ToUpper();
-            string tenHocKy=txtHocKy.Text;
+            string tenHocKy = txtHocKy.Text;
+            if (string.IsNullOrEmpty(maSinhVien))
+            {
+                MessageBox.Show("Vui lòng nhập mã sinh viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if(string.IsNullOrEmpty(tenHocKy))
+            {
+                MessageBox.Show("Vui lòng nhập học kỳ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             if (string.IsNullOrEmpty(maSinhVien))
             {
                 return;
             }
 
             List<DiemSinhVien> diemSinhVien = DiemDAL.DanhSachDiem
-                .Where(d => d.SinhVien.MaSinhVien == maSinhVien && d.HocKy.TenHocKy==tenHocKy)
+                .Where(d => d.SinhVien.MaSinhVien == maSinhVien && d.HocKy.TenHocKy == tenHocKy)
                 .Select(d => new DiemSinhVien
                 {
                     MaSinhVien = d.MaSinhVien,
-                    TenSinhVien=d.SinhVien.HoTen,
-                    MaMonHoc=d.MonHoc.MaMonHoc,
+                    TenSinhVien = d.SinhVien.HoTen,
+                    MaMonHoc = d.MonHoc.MaMonHoc,
                     TenMonHoc = d.TenMonHoc,
                     DiemTrungBinh = Math.Round(d.DiemTrungBinh, 2),
                     SoTinChi = d.MonHoc.SoTinChi,
@@ -85,17 +94,27 @@ namespace QuanLySinhVien
                 })
                 .ToList();
             dgvDiemTrungBinhHocTap.DataSource = diemTrungBinhHocTap;
-            List<DiemSinhVien> diemHocKy = DiemDAL.DanhSachDiem
+            List<Diem> diemGoc = DiemDAL.DanhSachDiem
                 .Where(d => d.SinhVien.MaSinhVien == maSinhVien && d.HocKy.TenHocKy == tenHocKy)
-                .GroupBy(d => d.HocKy.TenHocKy)
-                .Select(g => new DiemSinhVien
-                {
-                    SoTinChiTichLuy = g.Sum(d => d.MonHoc.SoTinChi),
-                    DiemTrungBinhHocTap = Math.Round(g.Average(d => d.DiemTrungBinh), 2)
-                })
                 .ToList();
+            if (diemGoc.Count == 0)
+            {
+                dgvDiemHocKy.DataSource = null;
+                return;
+            }
+            int tongTinChi = diemGoc.Sum(d => d.MonHoc.SoTinChi);
+            double tongDiem = diemGoc.Sum(d => d.DiemTrungBinh * d.MonHoc.SoTinChi);
+            List<DiemSinhVien> diemHocKy = new List<DiemSinhVien>
+            {
+                new DiemSinhVien
+                {
+                    SoTinChiTichLuy= tongTinChi,
+                    DiemTrungBinhHocTap = Math.Round(tongDiem / tongTinChi,2)
+                }
+            };
             dgvDiemHocKy.DataSource = diemHocKy;
         }
+
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {

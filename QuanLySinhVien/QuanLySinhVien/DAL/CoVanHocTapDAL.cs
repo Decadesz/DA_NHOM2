@@ -16,9 +16,9 @@ namespace QuanLySinhVien.DAL
             DanhSachCoVan.Clear();
             if (!File.Exists("danhSachCoVan.txt"))
                 return;
-            foreach (var line in File.ReadAllLines("danhSachCoVan.txt"))
+            foreach (string line in File.ReadAllLines("danhSachCoVan.txt"))
             {
-                var parts = line.Split(',');
+                string [] parts = line.Split(',');
                 if (parts.Length >= 7)
                 {
                     
@@ -41,7 +41,7 @@ namespace QuanLySinhVien.DAL
         {
             using (StreamWriter writer = new StreamWriter("danhSachCoVan.txt"))
             {
-                foreach (var cv in DanhSachCoVan)
+                foreach (CoVanHocTap cv in DanhSachCoVan)
                 {
                     writer.WriteLine($"{cv.MaCoVan},{cv.HoTen},{cv.NgaySinh.ToString("dd/MM/yyyy")},{cv.GioiTinh},{cv.DiaChi},{cv.SoDienThoai},{cv.Email}");
                 }
