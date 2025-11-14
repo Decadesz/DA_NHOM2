@@ -32,7 +32,6 @@ namespace QuanLySinhVien.DAL
                         parts[5],
                         parts[6],
                         new List<SinhVien>()
-
                         );
                     DanhSachCoVan.Add(coVan);
                 }

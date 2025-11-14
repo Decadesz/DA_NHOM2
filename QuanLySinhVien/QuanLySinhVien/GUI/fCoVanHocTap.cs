@@ -15,20 +15,20 @@ namespace QuanLySinhVien
     public partial class fCoVanHocTap : Form
     {
         private BindingSource bindingSource = new BindingSource();
-        private CoVanBLL coVanBLL = new CoVanBLL();
+        private CoVanHocTapBLL coVanBLL = new CoVanHocTapBLL();
         public fCoVanHocTap()
         {
             InitializeComponent();
-            caiDatDieuKhien();
-            lamMoi();
+            CaiDatDieuKhien();
+            LamMoi();
         }
-        private void sapXepCoVanTheoMa()
+        private void SapXepCoVanTheoMa()
         {
             coVanBLL.DanhSachCoVan.Sort((a, b) => string.Compare(a.MaCoVan, b.MaCoVan, StringComparison.CurrentCultureIgnoreCase));
         }
-        private void lamMoi()
+        private void LamMoi()
         {
-            sapXepCoVanTheoMa();
+            SapXepCoVanTheoMa();
             bindingSource.DataSource = null;
             bindingSource.DataSource = coVanBLL.DanhSachCoVan;
             dgvCoVan.Refresh();
@@ -50,17 +50,17 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvCoVan.DataSource = bindingSource;
         }
-        private void anXoaSua()
+        private void AnXoaSua()
         {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
         }
-        private void hienXoaSua()
+        private void HienXoaSua()
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
         }
-        private void caiDatDieuKhien()
+        private void CaiDatDieuKhien()
         {
 
             dgvCoVan.AutoGenerateColumns = false;
@@ -68,7 +68,7 @@ namespace QuanLySinhVien
             dgvCoVan.DataSource = bindingSource;
             if(coVanBLL.DanhSachCoVan.Count==0)
             {
-                anXoaSua();
+                AnXoaSua();
             }
             //event
             btnAdd.Click += BtnAdd_Click;
@@ -82,7 +82,7 @@ namespace QuanLySinhVien
             btnSearch.Click += BtnSearch_Click;
             cboSearch.SelectedIndex = 0;
         }
-        private bool kiemTraDauVao()
+        private bool KiemTraDauVao()
         {
             if(string.IsNullOrWhiteSpace(txtMaCoVan.Text))
             {
@@ -126,7 +126,7 @@ namespace QuanLySinhVien
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -152,15 +152,15 @@ namespace QuanLySinhVien
             {
                 MessageBox.Show("Đã thêm cố vấn mới!");
             }
-            hienXoaSua();
-            lamMoi();
+            HienXoaSua();
+            LamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             CoVanHocTap coVan=dgvCoVan.CurrentRow?.DataBoundItem as CoVanHocTap;
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -182,7 +182,7 @@ namespace QuanLySinhVien
             else
             {
                 MessageBox.Show("Đã sửa thông tin cố vấn!" ,"Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lamMoi();
+                LamMoi();
             }
             bindingSource.ResetBindings(false);
 
@@ -202,11 +202,11 @@ namespace QuanLySinhVien
                 else
                 {
                     MessageBox.Show("Đã xóa cố vấn!");
-                    lamMoi();
+                    LamMoi();
                 }
                 if (coVanBLL.DanhSachCoVan.Count == 0)
                 {
-                    anXoaSua();
+                    AnXoaSua();
                 }
                 bindingSource.ResetBindings(false);
             }    

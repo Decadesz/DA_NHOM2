@@ -20,13 +20,15 @@ namespace QuanLySinhVien.BLL
             this.danhSachDiem = danhSachDiem;
         }
         internal List<Diem> DanhSachDiem { get => danhSachDiem; }
-        public bool ThemDiem(Diem diem,SinhVien sinhVien,MonHoc monHoc)
+        public bool ThemDiem(Diem diem,SinhVien sinhVien,MonHoc monHoc,HocKy hocKy)
         {
             danhSachDiem.Add(diem);
             sinhVien.DanhSachDiem.Add(diem);
             monHoc.DanhSachDiem.Add(diem);
+            hocKy.DanhSachDiem.Add(diem);
             diem.SinhVien = sinhVien;
             diem.MonHoc = monHoc;
+            diem.HocKy = hocKy;
             return true;
         }
         public bool XoaDiem(Diem diem)
@@ -35,8 +37,13 @@ namespace QuanLySinhVien.BLL
             {
                 return false;
             }
+            if(diem.SinhVien == null || diem.MonHoc == null || diem.HocKy == null)
+            {
+                return false;
+            }
             diem.SinhVien.DanhSachDiem.Remove(diem);
             diem.MonHoc.DanhSachDiem.Remove(diem);
+            diem.HocKy.DanhSachDiem.Remove(diem);
             danhSachDiem.Remove(diem);
             return true;
 
@@ -57,6 +64,7 @@ namespace QuanLySinhVien.BLL
                 diemCu.DiemCuoiKy = diemMoi.DiemCuoiKy;
                 diemCu.SinhVien = diemMoi.SinhVien;
                 diemCu.MonHoc = diemMoi.MonHoc;
+                diemCu.HocKy = diemMoi.HocKy;
                 return true;
             } 
         }

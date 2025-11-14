@@ -21,6 +21,7 @@ namespace QuanLySinhVien
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            HocKyDAL.LoadHocKy();
             CoVanHocTapDAL.LoadCoVan();
             LopDAL.LoadLop();
             MonHocDAL.LoadMonHoc();

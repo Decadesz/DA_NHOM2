@@ -19,16 +19,16 @@ namespace QuanLySinhVien
         public fQuanLyLop()
         {
             InitializeComponent();
-            caiDatDieuKhien();
-            lamMoi();
+            CaiDatDieuKhien();
+            LamMoi();
         }
-        private void sapXepLopTheoMa()
+        private void SapXepLopTheoMa()
         {
             lopBLL.DanhSachLop.Sort((a, b) => string.Compare(a.MaLop, b.MaLop, StringComparison.CurrentCultureIgnoreCase));
         }
-        private void lamMoi()
+        private void LamMoi()
         {
-            sapXepLopTheoMa();
+            SapXepLopTheoMa();
             bindingSource.DataSource = null;
             bindingSource.DataSource = lopBLL.DanhSachLop;
             dgvLop.Refresh();
@@ -50,17 +50,17 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvLop.DataSource = bindingSource;
         }
-        private void anXoaSua()
+        private void AnXoaSua()
         {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
         }
-        private void hienXoaSua()
+        private void HienXoaSua()
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
         }
-        private void caiDatDieuKhien()
+        private void CaiDatDieuKhien()
         {
 
             dgvLop.AutoGenerateColumns = false;
@@ -68,7 +68,7 @@ namespace QuanLySinhVien
             dgvLop.DataSource = bindingSource;
             if(lopBLL.DanhSachLop.Count==0)
             {
-                anXoaSua();
+                AnXoaSua();
             }
             //event
             btnAdd.Click += BtnAdd_Click;
@@ -82,7 +82,7 @@ namespace QuanLySinhVien
             btnSearch.Click += BtnSearch_Click;
             cboSearch.SelectedIndex = 0;
         }
-        private bool kiemTraDauVao()
+        private bool KiemTraDauVao()
         {
             if(string.IsNullOrWhiteSpace(txtMaLop.Text))
             {
@@ -103,7 +103,7 @@ namespace QuanLySinhVien
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -118,8 +118,8 @@ namespace QuanLySinhVien
             else
             {
                 MessageBox.Show("Thêm lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                hienXoaSua();
-                lamMoi();
+                HienXoaSua();
+                LamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
@@ -128,7 +128,7 @@ namespace QuanLySinhVien
         {
             
             Lop lop = dgvLop.CurrentRow?.DataBoundItem as Lop;
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -142,7 +142,7 @@ namespace QuanLySinhVien
             else
             {
                 MessageBox.Show("Sửa lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lamMoi();
+                LamMoi();
             }
          
             bindingSource.ResetBindings(false);
@@ -167,9 +167,9 @@ namespace QuanLySinhVien
                     MessageBox.Show("Xóa lớp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (lopBLL.DanhSachLop.Count == 0)
                     {
-                        anXoaSua();
+                        AnXoaSua();
                     }
-                    lamMoi();
+                    LamMoi();
                     bindingSource.ResetBindings(false);
                     ClearInput();
                 }

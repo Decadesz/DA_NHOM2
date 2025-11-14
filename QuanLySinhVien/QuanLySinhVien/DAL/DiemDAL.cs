@@ -1,9 +1,11 @@
-﻿using System;
+﻿using QuanLySinhVien;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLySinhVien.DAL
 {
@@ -18,25 +20,28 @@ namespace QuanLySinhVien.DAL
             foreach (var line in File.ReadAllLines("danhSachDiem.txt"))
             {
                 var parts = line.Split(',');
-                if (parts.Length >= 8)
+                if (parts.Length >= 9)
                 {
                     SinhVien sinhVien = SinhVienDAL.DanhSachSinhVien.FirstOrDefault(s => s.MaSinhVien == parts[0]);
                     MonHoc monHoc = MonHocDAL.DanhSachMonHoc.FirstOrDefault(m => m.MaMonHoc == parts[1]);
+                    HocKy hocKy=HocKyDAL.DanhSachHocKy.FirstOrDefault(hk => hk.MaHocKy == parts[2]);
                     if (sinhVien != null && monHoc != null)
                     {
                         Diem diem = new Diem(
-                            int.Parse(parts[2]),
                             int.Parse(parts[3]),
                             int.Parse(parts[4]),
-                            double.Parse(parts[5]),
+                            int.Parse(parts[5]),
                             double.Parse(parts[6]),
                             double.Parse(parts[7]),
+                            double.Parse(parts[8]),
                             sinhVien,
-                            monHoc
+                            monHoc,
+                            hocKy
                             )
                         {
                             SinhVien = sinhVien,
-                            MonHoc = monHoc
+                            MonHoc = monHoc,
+                            HocKy = hocKy
                         };
                         DanhSachDiem.Add(diem);
                         if (sinhVien != null)
@@ -45,7 +50,7 @@ namespace QuanLySinhVien.DAL
                         }
                         else
                         {
-                            Console.WriteLine("Không tìm thấy sinh viên để thêm điểm!");
+                            MessageBox.Show("Không tìm thấy sinh viên để thêm điểm!");
                         }
                         if (monHoc != null)
                         {
@@ -53,7 +58,15 @@ namespace QuanLySinhVien.DAL
                         }
                         else
                         {
-                            Console.WriteLine("Không tìm thấy môn học để thêm điểm!");
+                            MessageBox.Show("Không tìm thấy môn học để thêm điểm!");
+                        }
+                        if(hocKy != null)
+                        {
+                            hocKy.DanhSachDiem.Add(diem);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy học kỳ để thêm điểm!");
                         }
 
                     }
@@ -66,7 +79,7 @@ namespace QuanLySinhVien.DAL
             {
                 foreach (var diem in DanhSachDiem)
                 {
-                    writer.WriteLine($"{diem.SinhVien?.MaSinhVien},{diem.MonHoc?.MaMonHoc},{diem.PhanTramLop},{diem.PhanTramGiuaKy},{diem.PhanTramCuoiKy},{diem.DiemLop},{diem.DiemGiuaKy},{diem.DiemCuoiKy}");
+                    writer.WriteLine($"{diem.SinhVien?.MaSinhVien},{diem.MonHoc?.MaMonHoc},{diem.HocKy?.MaHocKy},{diem.PhanTramLop},{diem.PhanTramGiuaKy},{diem.PhanTramCuoiKy},{diem.DiemLop},{diem.DiemGiuaKy},{diem.DiemCuoiKy}");
                 }
             }
         }

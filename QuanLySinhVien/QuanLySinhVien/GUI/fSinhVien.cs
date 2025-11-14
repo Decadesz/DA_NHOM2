@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using QuanLySinhVien.BLL;
 using QuanLySinhVien.DAL;
+using QuanLySinhVien.GUI;
 namespace QuanLySinhVien
 {
     public partial class fSinhVien : Form
@@ -19,30 +20,30 @@ namespace QuanLySinhVien
         public fSinhVien()
         {
             InitializeComponent();
-            caiDatDieuKhien();
+            CaiDatDieuKhien();
             napDuLieuComboBox();
-            lamMoi();
+            LamMoi();
 
         }
-        private void lamMoi()
+        private void LamMoi()
         {
-            sapXepSinhVienTheoMa();
-            sapXepSinhVienTheoLop();
+            SapXepSinhVienTheoMa();
+            SapXepSinhVienTheoLop();
             bindingSource.DataSource = null;
             bindingSource.DataSource = sinhVienBLL.DanhSachSinhVien;
             dgvSinhVien.Refresh();
         }
-        private void anXoaSua()
+        private void AnXoaSua()
         {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
         }
-        private void hienXoaSua()
+        private void HienXoaSua()
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
         }
-        private void caiDatDieuKhien()
+        private void CaiDatDieuKhien()
         {
 
             dgvSinhVien.AutoGenerateColumns = false;
@@ -50,7 +51,7 @@ namespace QuanLySinhVien
             dgvSinhVien.DataSource = bindingSource;
             if(sinhVienBLL.DanhSachSinhVien.Count==0)
             {
-                anXoaSua();
+                AnXoaSua();
             }
             cboSearch.SelectedIndex= 0;
             //event
@@ -64,12 +65,12 @@ namespace QuanLySinhVien
             btnSearch.Click += BtnSearch_Click;
             dgvSinhVien.SelectionChanged += DgvSinhVien_SelectionChanged;
         }
-        private void sapXepSinhVienTheoLop()
+        private void SapXepSinhVienTheoLop()
         {
             //phai dung dinh dang D23_TH01 khong duoc xai D23_TH1
             sinhVienBLL.DanhSachSinhVien.Sort((a, b) => string.Compare(a.TenLop, b.TenLop, StringComparison.Ordinal));
         }
-        private void sapXepSinhVienTheoMa()
+        private void SapXepSinhVienTheoMa()
         {
             sinhVienBLL.DanhSachSinhVien.Sort((a,b) => string.Compare(a.MaSinhVien,b.MaSinhVien, StringComparison.Ordinal));
         }
@@ -90,7 +91,7 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvSinhVien.DataSource = bindingSource;
         }
-        private bool kiemTraDauVao()
+        private bool KiemTraDauVao()
         {
             if(string.IsNullOrWhiteSpace(txtMaSinhVien.Text))
             {
@@ -144,7 +145,7 @@ namespace QuanLySinhVien
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -189,15 +190,15 @@ namespace QuanLySinhVien
                 }
                 MessageBox.Show("Thêm sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            hienXoaSua();
-            lamMoi();
+            HienXoaSua();
+            LamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
-            if (!kiemTraDauVao())
+            if (!KiemTraDauVao())
             {
                 return;
             }
@@ -244,7 +245,7 @@ namespace QuanLySinhVien
                     lopMoi.SoLuong++;
                 }
             }
-            lamMoi();
+            LamMoi();
             bindingSource.ResetBindings(false);
             
         }
@@ -264,20 +265,12 @@ namespace QuanLySinhVien
                 {
 
                     MessageBox.Show("Xóa sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (sinhVien.Lop != null)
-                    {
-                        sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);
-                    }
-                    if (sinhVien.CoVan != null)
-                    {
-                        sinhVien.CoVan.DanhSachSinhVien.Remove(sinhVien);
-                    }
                 }             
                 if(sinhVienBLL.DanhSachSinhVien.Count==0)
                 {
-                    anXoaSua();
+                    AnXoaSua();
                 }
-                lamMoi();
+                LamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
@@ -311,7 +304,7 @@ namespace QuanLySinhVien
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             napDuLieuComboBox();
-            lamMoi();
+            LamMoi();
             bindingSource.ResetBindings(false);   
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
@@ -423,5 +416,12 @@ namespace QuanLySinhVien
             Close();
         }
 
+        private void quảnLýHọcKỳToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQuanLyHocKy f = new fQuanLyHocKy();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

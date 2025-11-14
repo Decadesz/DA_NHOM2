@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\",
+  "WorkspaceRootPath": "C:\\Users\\trinh\\OneDrive\\Desktop\\clone\\test\\QuanLySinhVien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\laptrinh\\da_nhom2\\quanlysinhvien\\quanlysinhvien\\dto\\sinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\dto\\sinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\clone\\test\\quanlysinhvien\\quanlysinhvien\\gui\\fbangdiemsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\gui\\fbangdiemsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\quanlysinhvien\\gui\\fquanlydiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\gui\\fquanlydiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\quanlysinhvien\\tien ich\\tienich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\tien ich\\tienich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|c:\\users\\trinh\\onedrive\\desktop\\clone\\test\\quanlysinhvien\\quanlysinhvien\\gui\\fbangdiemsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9CE3205C-11E6-42E5-8C0A-CFE5AD9FE4A6}|QuanLySinhVien\\QuanLySinhVien.csproj|solutionrelative:quanlysinhvien\\gui\\fbangdiemsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,38 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SinhVien.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\DTO\\SinhVien.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\DTO\\SinhVien.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\DTO\\SinhVien.cs",
-              "RelativeToolTip": "QuanLySinhVien\\DTO\\SinhVien.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwIcAAAARAAAAAAAAAA==",
+              "Title": "fBangDiemSV.cs",
+              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\clone\\test\\QuanLySinhVien\\QuanLySinhVien\\GUI\\fBangDiemSV.cs",
+              "RelativeDocumentMoniker": "QuanLySinhVien\\GUI\\fBangDiemSV.cs",
+              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\clone\\test\\QuanLySinhVien\\QuanLySinhVien\\GUI\\fBangDiemSV.cs",
+              "RelativeToolTip": "QuanLySinhVien\\GUI\\fBangDiemSV.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T14:14:18.87Z",
+              "WhenOpened": "2025-11-14T16:41:10.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "fQuanLyDiem.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\GUI\\fQuanLyDiem.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\GUI\\fQuanLyDiem.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\GUI\\fQuanLyDiem.cs [Design]",
-              "RelativeToolTip": "QuanLySinhVien\\GUI\\fQuanLyDiem.cs [Design]",
+              "Title": "fBangDiemSV.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\clone\\test\\QuanLySinhVien\\QuanLySinhVien\\GUI\\fBangDiemSV.cs",
+              "RelativeDocumentMoniker": "QuanLySinhVien\\GUI\\fBangDiemSV.cs",
+              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\clone\\test\\QuanLySinhVien\\QuanLySinhVien\\GUI\\fBangDiemSV.cs [Design]",
+              "RelativeToolTip": "QuanLySinhVien\\GUI\\fBangDiemSV.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T14:14:09.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TienIch.cs",
-              "DocumentMoniker": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\Tien ich\\TienIch.cs",
-              "RelativeDocumentMoniker": "QuanLySinhVien\\Tien ich\\TienIch.cs",
-              "ToolTip": "C:\\Users\\trinh\\OneDrive\\Desktop\\laptrinh\\DA_NHOM2\\QuanLySinhVien\\QuanLySinhVien\\Tien ich\\TienIch.cs",
-              "RelativeToolTip": "QuanLySinhVien\\Tien ich\\TienIch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T14:13:12.257Z"
+              "WhenOpened": "2025-11-14T15:42:22.747Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -20,6 +20,24 @@ namespace QuanLySinhVien
         private string ketQua;
         private SinhVien sinhVien;
         private MonHoc monHoc;
+        private HocKy hocKy;
+        public string TenHocKy
+        {
+            get
+            {
+                if (HocKy != null)
+                {
+                    if (HocKy.TenHocKy != null)
+                        return HocKy.TenHocKy;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
         public string MaSinhVien
         {
             get
@@ -82,8 +100,9 @@ namespace QuanLySinhVien
             DiemCuoiKy = 0;
             sinhVien = new SinhVien();
             monHoc = new MonHoc();
+            hocKy=new HocKy();
         }
-        public Diem(int phanTramLop, int phanTramGiuaKy, int phanTramCuoiKy, double diemLop, double diemGiuaKy, double diemCuoiKy,SinhVien sinhVien,MonHoc monHoc)
+        public Diem(int phanTramLop, int phanTramGiuaKy, int phanTramCuoiKy, double diemLop, double diemGiuaKy, double diemCuoiKy,SinhVien sinhVien,MonHoc monHoc,HocKy hocKy)
         {
             this.PhanTramLop = phanTramLop;
             this.PhanTramGiuaKy = phanTramGiuaKy;
@@ -93,10 +112,11 @@ namespace QuanLySinhVien
             this.DiemCuoiKy=diemCuoiKy;
             this.sinhVien = sinhVien;
             this.monHoc = monHoc;
+            this.hocKy = hocKy;
         }
         public double TinhDiemTrungBinh()
         {
-            return (diemLop * phanTramLop / 100) + (diemGiuaKy * phanTramGiuaKy / 100) + (diemCuoiKy * phanTramCuoiKy / 100);
+            return Math.Round((diemLop * phanTramLop / 100) + (diemGiuaKy * phanTramGiuaKy / 100) + (diemCuoiKy * phanTramCuoiKy / 100),2);
            
         }
         public string TinhDiemThangChu()
@@ -149,5 +169,6 @@ namespace QuanLySinhVien
         public string KetQua { get => TinhKetQua();  }
         public double DiemTrungBinh { get => TinhDiemTrungBinh(); }
         public string DiemThangChu { get => TinhDiemThangChu(); }
+        internal HocKy HocKy { get => hocKy; set => hocKy = value; }
     }
 }

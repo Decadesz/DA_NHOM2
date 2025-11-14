@@ -18,19 +18,47 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             btnSearch.Click += BtnSearch_Click;
+            btnXemHetDiem.Click += BtnXemHetDiem_Click;
             dgvDiemTrungBinhHocTap.AutoGenerateColumns = false;
             dgvBangDiem.AutoGenerateColumns = false;
         }
-        private void BtnSearch_Click(object sender, EventArgs e)
+
+        private void BtnXemHetDiem_Click(object sender, EventArgs e)
         {
             string maSinhVien = txtMaSinhVien.Text.ToUpper();
             if (string.IsNullOrEmpty(maSinhVien))
             {
                 return;
             }
-
             List<DiemSinhVien> diemSinhVien = DiemDAL.DanhSachDiem
                 .Where(d => d.SinhVien.MaSinhVien == maSinhVien)
+                .Select(d => new DiemSinhVien
+                {
+                    MaSinhVien = d.MaSinhVien,
+                    TenSinhVien = d.SinhVien.HoTen,
+                    MaMonHoc = d.MonHoc.MaMonHoc,
+                    TenMonHoc = d.TenMonHoc,
+                    DiemTrungBinh = Math.Round(d.DiemTrungBinh, 2),
+                    SoTinChi = d.MonHoc.SoTinChi,
+                    SoTiet = d.MonHoc.SoTietLyThuyet + d.MonHoc.SoTietThucHanh,
+                    Loai = d.DiemThangChu,
+                    KetQua = d.KetQua,
+                    TenHocKy = d.HocKy.TenHocKy
+                })
+                .ToList();
+            dgvBangDiem.DataSource = diemSinhVien;
+        }
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string maSinhVien = txtMaSinhVien.Text.ToUpper();
+            string tenHocKy=txtHocKy.Text;
+            if (string.IsNullOrEmpty(maSinhVien))
+            {
+                return;
+            }
+
+            List<DiemSinhVien> diemSinhVien = DiemDAL.DanhSachDiem
+                .Where(d => d.SinhVien.MaSinhVien == maSinhVien && d.HocKy.TenHocKy==tenHocKy)
                 .Select(d => new DiemSinhVien
                 {
                     MaSinhVien = d.MaSinhVien,
@@ -41,8 +69,8 @@ namespace QuanLySinhVien
                     SoTinChi = d.MonHoc.SoTinChi,
                     SoTiet = d.MonHoc.SoTietLyThuyet + d.MonHoc.SoTietThucHanh,
                     Loai = d.DiemThangChu,
-                    KetQua = d.KetQua
-                  
+                    KetQua = d.KetQua,
+                    TenHocKy = d.HocKy.TenHocKy
                 })
                 .ToList();
 
@@ -57,6 +85,16 @@ namespace QuanLySinhVien
                 })
                 .ToList();
             dgvDiemTrungBinhHocTap.DataSource = diemTrungBinhHocTap;
+            List<DiemSinhVien> diemHocKy = DiemDAL.DanhSachDiem
+                .Where(d => d.SinhVien.MaSinhVien == maSinhVien && d.HocKy.TenHocKy == tenHocKy)
+                .GroupBy(d => d.HocKy.TenHocKy)
+                .Select(g => new DiemSinhVien
+                {
+                    SoTinChiTichLuy = g.Sum(d => d.MonHoc.SoTinChi),
+                    DiemTrungBinhHocTap = Math.Round(g.Average(d => d.DiemTrungBinh), 2)
+                })
+                .ToList();
+            dgvDiemHocKy.DataSource = diemHocKy;
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)

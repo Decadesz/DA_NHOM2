@@ -46,14 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\CoVanBLL.cs" />
+    <Compile Include="BLL\CoVanHocTapBLL.cs" />
     <Compile Include="BLL\DiemBLL.cs" />
+    <Compile Include="BLL\HocKyBLL.cs" />
     <Compile Include="BLL\LopBLL.cs" />
     <Compile Include="BLL\MonHocBLL.cs" />
     <Compile Include="BLL\SinhVienBLL.cs" />
     <Compile Include="BLL\TaiKhoanDangNhapBLL.cs" />
     <Compile Include="DAL\CoVanHocTapDAL.cs" />
     <Compile Include="DAL\DiemDAL.cs" />
+    <Compile Include="DAL\HocKyDAL.cs" />
     <Compile Include="DAL\LopDAL.cs" />
     <Compile Include="DAL\MonHocDAL.cs" />
     <Compile Include="DAL\SinhVienDAL.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="DTO\CoVanHocTap.cs" />
     <Compile Include="DTO\Diem.cs" />
     <Compile Include="DTO\DiemSinhVien.cs" />
+    <Compile Include="DTO\HocKy.cs" />
     <Compile Include="GUI\fBangDiemSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +93,12 @@
     </Compile>
     <Compile Include="GUI\fQuanLyDiem.Designer.cs">
       <DependentUpon>fQuanLyDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fQuanLyHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fQuanLyHocKy.Designer.cs">
+      <DependentUpon>fQuanLyHocKy.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\fQuanLyLop.cs">
       <SubType>Form</SubType>
@@ -142,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fQuanLyDiem.resx">
       <DependentUpon>fQuanLyDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fQuanLyHocKy.resx">
+      <DependentUpon>fQuanLyHocKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fQuanLyLop.resx">
       <DependentUpon>fQuanLyLop.cs</DependentUpon>

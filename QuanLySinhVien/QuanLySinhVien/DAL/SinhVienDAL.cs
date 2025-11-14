@@ -26,12 +26,12 @@ namespace QuanLySinhVien.DAL
                     Lop lop = LopDAL.DanhSachLop.FirstOrDefault(l => l.MaLop == parts[7]);
                     if (lop == null)
                     {
-                        lop = new Lop(parts[7], "khong ro");
+                        lop = new Lop(parts[7], "");
                     };
                     CoVanHocTap coVan = CoVanHocTapDAL.DanhSachCoVan.FirstOrDefault(c => c.MaCoVan == parts[8]);
                     if (coVan == null)
                     {
-                        coVan = new CoVanHocTap(parts[8], "khong ro", ngaySinh, "khong ro", "khong ro", "khong ro", "khong ro",null);
+                        coVan = new CoVanHocTap(parts[8], "", ngaySinh, "khong ro", "khong ro", "khong ro", "khong ro",null);
                     };
                     SinhVien sinhVien = new SinhVien(
                         parts[0],
@@ -49,7 +49,7 @@ namespace QuanLySinhVien.DAL
                     DanhSachSinhVien.Add(sinhVien);
                     //Thêm sinh viên vào danh sách của lớp và cố vấn học tập
                     lop.DanhSachSinhVien.Add(sinhVien);
-                    if (coVan.HoTen != "khong ro")
+                    if (coVan.HoTen != "")
                     {
                         coVan.DanhSachSinhVien.Add(sinhVien);
                     }

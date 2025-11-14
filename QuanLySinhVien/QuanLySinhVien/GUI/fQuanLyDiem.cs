@@ -20,25 +20,25 @@ namespace QuanLySinhVien
             InitializeComponent();
             caiDatDieuKhien();
             napDuLieuComboBox();
-            lamMoi();
+            LamMoi();
         }
-        private void sapXepDiemTheoMaSinhVien()
+        private void SapXepDiemTheoMaSinhVien()
         {
             diemBLL.DanhSachDiem.Sort((a, b) => string.Compare(a.MaSinhVien, b.MaSinhVien, StringComparison.CurrentCultureIgnoreCase));
         }
-        private void lamMoi()
+        private void LamMoi()
         {
-            sapXepDiemTheoMaSinhVien();
+            SapXepDiemTheoMaSinhVien();
             bindingSource.DataSource = null;
             bindingSource.DataSource = diemBLL.DanhSachDiem;
             dgvDiem.Refresh();
         }
-        private void anXoaSua()
+        private void AnXoaSua()
         {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
         }
-        private void hienXoaSua()
+        private void HienXoaSua()
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
@@ -51,7 +51,7 @@ namespace QuanLySinhVien
             dgvDiem.DataSource = bindingSource;
             if(diemBLL.DanhSachDiem.Count==0)
             {
-                anXoaSua();
+                AnXoaSua();
             }
             cboSearch.SelectedIndex = 0;
             //event
@@ -134,7 +134,9 @@ namespace QuanLySinhVien
             }
             SinhVien sinhVien=cboMaSinhVien.SelectedItem as SinhVien;
             MonHoc monHoc=cboTenMonHoc.SelectedItem as MonHoc;
-            if(sinhVien==null)
+            HocKy hocKy=cboTenHocKy.SelectedItem as HocKy;
+
+            if (sinhVien==null)
             {
                 MessageBox.Show("Vui lòng chọn sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -154,9 +156,11 @@ namespace QuanLySinhVien
                 double.Parse(txtDiemGiuaKy.Text),
                 double.Parse(txtDiemThi.Text),
                 sinhVien,
-                monHoc
+                monHoc,
+                hocKy
+
                 );
-            bool ketQuaThem = diemBLL.ThemDiem(diem,sinhVien,monHoc);
+            bool ketQuaThem = diemBLL.ThemDiem(diem,sinhVien,monHoc,hocKy);
             if (ketQuaThem == false)
             {
                 return;
@@ -165,8 +169,8 @@ namespace QuanLySinhVien
             {
                 MessageBox.Show("Đã thêm danh sách điểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            hienXoaSua();
-            lamMoi();
+            HienXoaSua();
+            LamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
@@ -175,6 +179,7 @@ namespace QuanLySinhVien
             Diem diem=dgvDiem.CurrentRow?.DataBoundItem as Diem;
             SinhVien sinhVien = cboMaSinhVien.SelectedItem as SinhVien;
             MonHoc monHoc = cboTenMonHoc.SelectedItem as MonHoc;
+            HocKy hocKy=cboTenHocKy.SelectedItem as HocKy;
             if (!kiemTraDauVao())
             {
                 return;
@@ -188,7 +193,8 @@ namespace QuanLySinhVien
                 double.Parse(txtDiemGiuaKy.Text),
                 double.Parse(txtDiemThi.Text),
                 sinhVien,
-                monHoc
+                monHoc,
+                hocKy
                 ));
             if (ketQuaSua == false)
             {
@@ -198,7 +204,7 @@ namespace QuanLySinhVien
             {
                 MessageBox.Show("đã sửa điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            lamMoi();
+            LamMoi();
             bindingSource.ResetBindings(false);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -219,9 +225,9 @@ namespace QuanLySinhVien
                 }
                 if (diemBLL.DanhSachDiem.Count==0)
                 {
-                    anXoaSua();
+                    AnXoaSua();
                 }
-                lamMoi();
+                LamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
@@ -264,6 +270,7 @@ namespace QuanLySinhVien
             }
             cboMaSinhVien.SelectedValue = diem.SinhVien.MaSinhVien;
             cboTenMonHoc.SelectedValue = diem.MonHoc.MaMonHoc;
+            cboTenHocKy.SelectedValue = diem.HocKy.MaHocKy;
             nudPhanTramLop.Value = diem.PhanTramLop;
             nudPhanTramGiuaKy.Value=diem.PhanTramGiuaKy;
             nudPhanTramCuoiKy.Value = diem.PhanTramCuoiKy;
@@ -280,6 +287,10 @@ namespace QuanLySinhVien
             cboMaSinhVien.DataSource = SinhVienDAL.DanhSachSinhVien;
             cboMaSinhVien.DisplayMember = "MaSinhVien";
             cboMaSinhVien.ValueMember = "MaSinhVien";
+
+            cboTenHocKy.DataSource = HocKyDAL.DanhSachHocKy;
+            cboTenHocKy.DisplayMember = "TenHocKy";
+            cboTenHocKy.ValueMember = "MaHocKy";
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)

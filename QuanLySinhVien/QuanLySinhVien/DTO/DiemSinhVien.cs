@@ -20,6 +20,7 @@ namespace QuanLySinhVien
         private int soTinChiTichLuy;
         private string ketQua;
         private string xepLoai;
+        private string tenHocKy;
 
         public string MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string TenMonHoc { get => tenMonHoc; set => tenMonHoc = value; }
@@ -33,8 +34,9 @@ namespace QuanLySinhVien
         public int SoTinChiTichLuy { get => soTinChiTichLuy; set => soTinChiTichLuy = value; }
         public string KetQua { get => ketQua; set => ketQua = value; }
         public string XepLoai { get => xepLoai; set => xepLoai = value; }
+        public string TenHocKy { get => tenHocKy; set => tenHocKy = value; }
 
-        public DiemSinhVien(string maSinhVien,string tenSinhVien,string maMonHoc, string tenMonHoc, double diemTrungBinh, int soTinChi, int soTiet, string loai)
+        public DiemSinhVien(string maSinhVien,string tenSinhVien,string maMonHoc, string tenMonHoc, double diemTrungBinh, int soTinChi, int soTiet, string loai,string tenHocKy)
         {
             this.MaSinhVien = maSinhVien;
             this.TenSinhVien= tenSinhVien;
@@ -44,6 +46,7 @@ namespace QuanLySinhVien
             this.SoTinChi = soTinChi;
             this.SoTiet = soTiet;
             this.Loai = loai;
+            this.tenHocKy = tenHocKy;
         }
         public DiemSinhVien()
         {
@@ -55,6 +58,7 @@ namespace QuanLySinhVien
             this.SoTinChi = 0;
             this.SoTiet = 0;
             this.Loai = "";
+            this.tenHocKy = "";
         }
     }
 }

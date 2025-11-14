@@ -20,7 +20,7 @@ namespace QuanLySinhVien
         public fQuanLyTaiKhoan()
         {
             InitializeComponent();
-            caiDatDieuKhien();
+            CaiDatDieuKhien();
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -40,17 +40,17 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvTaiKhoan.DataSource = bindingSource;
         }
-        private void anXoaSua()
+        private void AnXoaSua()
         {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
         }
-        private void hienXoaSua()
+        private void HienXoaSua()
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
         }
-        private void caiDatDieuKhien()
+        private void CaiDatDieuKhien()
         {
 
             dgvTaiKhoan.AutoGenerateColumns = false;
@@ -58,7 +58,7 @@ namespace QuanLySinhVien
             dgvTaiKhoan.DataSource = bindingSource;
             if(taiKhoanDangNhapBLL.DanhSachTaiKhoan.Count==0)
             {
-                anXoaSua();
+                AnXoaSua();
             }
             //event
             btnAdd.Click += BtnAdd_Click;
@@ -72,7 +72,7 @@ namespace QuanLySinhVien
             btnSearch.Click += BtnSearch_Click;
             cboSearch.SelectedIndex= 0;
         }
-        private bool kiemTraDauVao()
+        private bool KiemTraDauVao()
         {
             if (string.IsNullOrWhiteSpace(txtTenDangNhap.Text))
             {
@@ -94,7 +94,7 @@ namespace QuanLySinhVien
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (!kiemTraDauVao()) return;
+            if (!KiemTraDauVao()) return;
 
             
 
@@ -113,14 +113,14 @@ namespace QuanLySinhVien
             {
                 MessageBox.Show("Thêm tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            hienXoaSua();
+            HienXoaSua();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             TaiKhoanDangNhap taiKhoan = dgvTaiKhoan.CurrentRow?.DataBoundItem as TaiKhoanDangNhap;
-            if (!kiemTraDauVao())
+            if (!KiemTraDauVao())
             {
                 return;
             }
@@ -158,7 +158,7 @@ namespace QuanLySinhVien
                     MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (taiKhoanDangNhapBLL.DanhSachTaiKhoan.Count == 0)
                     {
-                        anXoaSua();
+                        AnXoaSua();
                     }
                     bindingSource.ResetBindings(false);
                     ClearInput();

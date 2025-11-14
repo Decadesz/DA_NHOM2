@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboTenHocKy = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,8 +65,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
+            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTinChiCuaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhanTramGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,9 +77,8 @@
             this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemCuoiKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemThang4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemThangChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KetQua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
@@ -88,6 +91,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cboTenHocKy);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.menuStrip2);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.btnSearch);
@@ -118,8 +123,25 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1236, 192);
+            this.panel1.Size = new System.Drawing.Size(1312, 192);
             this.panel1.TabIndex = 0;
+            // 
+            // cboTenHocKy
+            // 
+            this.cboTenHocKy.FormattingEnabled = true;
+            this.cboTenHocKy.Location = new System.Drawing.Point(469, 50);
+            this.cboTenHocKy.Name = "cboTenHocKy";
+            this.cboTenHocKy.Size = new System.Drawing.Size(121, 21);
+            this.cboTenHocKy.TabIndex = 107;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(397, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "Tên học kỳ:";
             // 
             // menuStrip2
             // 
@@ -127,7 +149,7 @@
             this.tàiKhoảnToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1236, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1312, 24);
             this.menuStrip2.TabIndex = 105;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -283,7 +305,7 @@
             // 
             // nudPhanTramGiuaKy
             // 
-            this.nudPhanTramGiuaKy.Location = new System.Drawing.Point(701, 51);
+            this.nudPhanTramGiuaKy.Location = new System.Drawing.Point(920, 48);
             this.nudPhanTramGiuaKy.Name = "nudPhanTramGiuaKy";
             this.nudPhanTramGiuaKy.Size = new System.Drawing.Size(91, 20);
             this.nudPhanTramGiuaKy.TabIndex = 70;
@@ -296,7 +318,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(600, 53);
+            this.label6.Location = new System.Drawing.Point(819, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 13);
             this.label6.TabIndex = 69;
@@ -304,7 +326,7 @@
             // 
             // nudPhanTramCuoiKy
             // 
-            this.nudPhanTramCuoiKy.Location = new System.Drawing.Point(873, 55);
+            this.nudPhanTramCuoiKy.Location = new System.Drawing.Point(1092, 52);
             this.nudPhanTramCuoiKy.Name = "nudPhanTramCuoiKy";
             this.nudPhanTramCuoiKy.Size = new System.Drawing.Size(108, 20);
             this.nudPhanTramCuoiKy.TabIndex = 66;
@@ -317,7 +339,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(798, 54);
+            this.label4.Location = new System.Drawing.Point(1017, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 65;
@@ -325,7 +347,7 @@
             // 
             // nudPhanTramLop
             // 
-            this.nudPhanTramLop.Location = new System.Drawing.Point(470, 51);
+            this.nudPhanTramLop.Location = new System.Drawing.Point(689, 48);
             this.nudPhanTramLop.Name = "nudPhanTramLop";
             this.nudPhanTramLop.Size = new System.Drawing.Size(120, 20);
             this.nudPhanTramLop.TabIndex = 64;
@@ -338,7 +360,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(389, 55);
+            this.label3.Location = new System.Drawing.Point(608, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 63;
@@ -404,7 +426,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 192);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1236, 258);
+            this.panel2.Size = new System.Drawing.Size(1312, 258);
             this.panel2.TabIndex = 1;
             // 
             // dgvDiem
@@ -415,6 +437,7 @@
             this.dgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSinhVien,
             this.TenMonHoc,
+            this.TenHocKy,
             this.SoTinChiCuaMon,
             this.PhanTramLop,
             this.PhanTramGiuaKy,
@@ -423,7 +446,7 @@
             this.DiemGiuaKy,
             this.DiemCuoiKy,
             this.DiemTrungBinh,
-            this.DiemThang4,
+            this.DiemThangChu,
             this.KetQua});
             this.dgvDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDiem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -432,7 +455,7 @@
             this.dgvDiem.Name = "dgvDiem";
             this.dgvDiem.RowHeadersVisible = false;
             this.dgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiem.Size = new System.Drawing.Size(1236, 252);
+            this.dgvDiem.Size = new System.Drawing.Size(1312, 252);
             this.dgvDiem.TabIndex = 1;
             this.dgvDiem.TabStop = false;
             // 
@@ -448,6 +471,12 @@
             this.TenMonHoc.HeaderText = "Tên môn học";
             this.TenMonHoc.Name = "TenMonHoc";
             this.TenMonHoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // TenHocKy
+            // 
+            this.TenHocKy.DataPropertyName = "TenHocKy";
+            this.TenHocKy.HeaderText = "Tên học kỳ";
+            this.TenHocKy.Name = "TenHocKy";
             // 
             // SoTinChiCuaMon
             // 
@@ -497,11 +526,11 @@
             this.DiemTrungBinh.HeaderText = "Điểm tổng kết";
             this.DiemTrungBinh.Name = "DiemTrungBinh";
             // 
-            // DiemThang4
+            // DiemThangChu
             // 
-            this.DiemThang4.DataPropertyName = "DiemThang4";
-            this.DiemThang4.HeaderText = "Điểm chữ";
-            this.DiemThang4.Name = "DiemThang4";
+            this.DiemThangChu.DataPropertyName = "DiemThangChu";
+            this.DiemThangChu.HeaderText = "Điểm chữ";
+            this.DiemThangChu.Name = "DiemThangChu";
             // 
             // KetQua
             // 
@@ -509,14 +538,11 @@
             this.KetQua.HeaderText = "Kết quả";
             this.KetQua.Name = "KetQua";
             // 
-            // khoDuLieuBindingSource
-            // 
-            // 
             // fQuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 450);
+            this.ClientSize = new System.Drawing.Size(1312, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fQuanLyDiem";
@@ -567,8 +593,16 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cboSearch;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cboTenHocKy;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHocKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChiCuaMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhanTramGiuaKy;
@@ -577,12 +611,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemCuoiKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTrungBinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThang4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThangChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn KetQua;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }

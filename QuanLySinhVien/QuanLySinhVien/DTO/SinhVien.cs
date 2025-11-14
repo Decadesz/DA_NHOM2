@@ -102,6 +102,7 @@ namespace QuanLySinhVien
         public double DiemTrungBinhHocTap { get => TinhDiemTrungBinhHocTap(); }
         public int SoTinChiTichLuy { get => TinhSoTinChiTichLuy(); }
         public string XepLoai { get => TinhXepLoai(); }
+
         public bool KiemTraSoTinChiTotNghiep()
         {
             if (SoTinChiTichLuy >= soTinChiToiThieu)

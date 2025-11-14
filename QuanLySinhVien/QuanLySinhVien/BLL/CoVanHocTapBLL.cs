@@ -8,14 +8,14 @@ using System.Windows.Forms;
 using QuanLySinhVien.DAL;
 namespace QuanLySinhVien.BLL
 {
-    internal class CoVanBLL
+    internal class CoVanHocTapBLL
     {
         private List<CoVanHocTap> danhSachCoVan;
-        public CoVanBLL()
+        public CoVanHocTapBLL()
         {
             this.danhSachCoVan = CoVanHocTapDAL.DanhSachCoVan;
         }
-        public CoVanBLL(List<CoVanHocTap> danhSachCoVan)
+        public CoVanHocTapBLL(List<CoVanHocTap> danhSachCoVan)
         {
             this.danhSachCoVan = danhSachCoVan;
         }

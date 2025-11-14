@@ -1,4 +1,3 @@
-CV1,Nguyễn Văn A,09/11/2025,Nam,2/12,0912312411,nva@gmail.com
-CV2,Nguyễn Văn B,09/11/2025,Nam,2/12,0912312411,nvb@gmail.com
-CV3,Nguyễn Văn C,22/10/2025,Nam,2/12,0912312411,nvc@gmail.com
-CV4,Nguyễn Văn D,08/11/2025,Nam,2/12,0912312411,nva@gmail.com
+CV01,Nguyễn Văn A,14/11/2025,Nam,2/12,09323913632,nva@gmail.com
+CV02,Nguyễn Văn B,14/11/2025,Nam,2/12,09323913632,nvb@gmail.com
+CV03,Nguyễn Văn C,14/11/2025,Nữ,2/12,09323913632,nva@gmail.com

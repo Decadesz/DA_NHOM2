@@ -74,6 +74,14 @@ namespace QuanLySinhVien.BLL
                 return false;
             }
             danhSachSinhVien.Remove(sinhVien);
+            if (sinhVien.Lop != null)
+            {
+                sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);
+            }
+            if (sinhVien.CoVan != null)
+            {
+                sinhVien.CoVan.DanhSachSinhVien.Remove(sinhVien);
+            }
             return true;
         }
         public List<SinhVien> TimKiemSinhVien(string tuKhoa)

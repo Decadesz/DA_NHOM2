@@ -19,16 +19,16 @@ namespace QuanLySinhVien
         public fQuanLyMonHoc()
         {
             InitializeComponent();
-            caiDatDieuKhien();
-            lamMoi();
+            CaiDatDieuKhien();
+            LamMoi();
         }
-        private void sapXepMonHocTheoMa()
+        private void SapXepMonHocTheoMa()
         {
             monHocBLL.DanhSachMonHoc.Sort((a, b) => string.Compare(a.MaMonHoc, b.MaMonHoc, StringComparison.CurrentCultureIgnoreCase));
         }
-        private void lamMoi()
+        private void LamMoi()
         {
-            sapXepMonHocTheoMa();
+            SapXepMonHocTheoMa();
             bindingSource.DataSource = null;
             bindingSource.DataSource = monHocBLL.DanhSachMonHoc;
             dgvMonHoc.Refresh();
@@ -51,17 +51,17 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvMonHoc.DataSource = bindingSource;
         }
-        private void anXoaSua()
+        private void AnXoaSua()
         {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
         }
-        private void hienXoaSua()
+        private void HienXoaSua()
         {
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
         }
-        private void caiDatDieuKhien()
+        private void CaiDatDieuKhien()
         {
 
             dgvMonHoc.AutoGenerateColumns = false;
@@ -69,7 +69,7 @@ namespace QuanLySinhVien
             dgvMonHoc.DataSource = bindingSource;
             if(monHocBLL.DanhSachMonHoc.Count==0)
             {
-                anXoaSua();
+                AnXoaSua();
             }
 
             //event
@@ -84,7 +84,7 @@ namespace QuanLySinhVien
             btnSearch.Click += BtnSearch_Click;
             cboSearch.SelectedIndex = 0;
         }
-        private bool kiemTraDauVao()
+        private bool KiemTraDauVao()
         {
             if (string.IsNullOrWhiteSpace(txtMaMonHoc.Text))
             {
@@ -109,7 +109,7 @@ namespace QuanLySinhVien
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -132,15 +132,15 @@ namespace QuanLySinhVien
             {
                 MessageBox.Show("Thêm môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            hienXoaSua();
-            lamMoi();
+            HienXoaSua();
+            LamMoi();
             bindingSource.ResetBindings(false);
             ClearInput();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             MonHoc monHoc = dgvMonHoc.CurrentRow?.DataBoundItem as MonHoc;
-            if(!kiemTraDauVao())
+            if(!KiemTraDauVao())
             {
                 return;
             }
@@ -161,7 +161,7 @@ namespace QuanLySinhVien
             {
                 MessageBox.Show("Cập nhật thông tin môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            lamMoi();
+            LamMoi();
             bindingSource.ResetBindings(false);
             
         }
@@ -184,9 +184,9 @@ namespace QuanLySinhVien
                 }
                 if (monHocBLL.DanhSachMonHoc.Count==0)
                 {
-                    anXoaSua();
+                    AnXoaSua();
                 }
-                lamMoi();
+                LamMoi();
                 bindingSource.ResetBindings(false);
                 ClearInput();
             }
@@ -206,7 +206,7 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            lamMoi();
+            LamMoi();
             bindingSource.ResetBindings(false);
         }
         private void DgvMonHoc_SelectionChanged(object sender, EventArgs e)

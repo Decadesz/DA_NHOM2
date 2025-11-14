@@ -1,7 +1,4 @@
-MH01,Nhập môn lập trình,3,45,0
-MH02,Thực hành nhập môn lập trình,1,0,30
-MH03,Kỹ thuật lập trình,3,45,0
-MH04,Thực hành kỹ thuật lập trình,1,0,30
-MH05,Nhập môn cấu trúc dữ liệu,3,45,0
-MH06,Thực hành cấu trúc dữ liệu,1,0,30
-MH07,Giáo dục thể chất 1,0,0,30
+MH01,Nhập môn lập trình,3,30,0
+MH02,Thực hành nhập môn lập trình,1,30,20
+MH03,Kỹ thuật lập trình,3,30,0
+MH04,Thực hành kỹ thuật lập trình,1,30,20
