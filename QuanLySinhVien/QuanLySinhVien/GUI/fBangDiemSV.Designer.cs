@@ -46,7 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTenHocKy = new System.Windows.Forms.Label();
             this.dgvDiemHocKy = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -222,7 +222,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblTenHocKy);
             this.panel2.Controls.Add(this.dgvDiemHocKy);
             this.panel2.Controls.Add(this.dgvDiemTrungBinhHocTap);
             this.panel2.Controls.Add(this.dgvBangDiem);
@@ -235,20 +235,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1042, 20);
+            this.label4.Location = new System.Drawing.Point(1051, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Điểm tổng các học kỳ:";
             // 
-            // label3
+            // lblTenHocKy
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1051, 229);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Điểm học kỳ:";
+            this.lblTenHocKy.AutoSize = true;
+            this.lblTenHocKy.Location = new System.Drawing.Point(1051, 229);
+            this.lblTenHocKy.Name = "lblTenHocKy";
+            this.lblTenHocKy.Size = new System.Drawing.Size(69, 13);
+            this.lblTenHocKy.TabIndex = 5;
+            this.lblTenHocKy.Text = "Điểm học kỳ:";
             // 
             // dgvDiemHocKy
             // 
@@ -333,7 +333,7 @@
             this.dgvBangDiem.ReadOnly = true;
             this.dgvBangDiem.RowHeadersVisible = false;
             this.dgvBangDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBangDiem.Size = new System.Drawing.Size(1004, 339);
+            this.dgvBangDiem.Size = new System.Drawing.Size(1004, 521);
             this.dgvBangDiem.TabIndex = 2;
             this.dgvBangDiem.TabStop = false;
             // 
@@ -464,7 +464,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHocKy;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTenHocKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnXemHetDiem;

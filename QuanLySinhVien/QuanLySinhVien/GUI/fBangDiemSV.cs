@@ -48,11 +48,21 @@ namespace QuanLySinhVien
                 })
                 .ToList();
             dgvBangDiem.DataSource = diemSinhVien;
+            List<DiemSinhVien> diemTrungBinhHocTap = SinhVienDAL.DanhSachSinhVien
+               .Where(dtb => dtb.MaSinhVien == maSinhVien)
+               .Select(dtb => new DiemSinhVien
+               {
+                   DiemTrungBinhHocTap = Math.Round(dtb.DiemTrungBinhHocTap, 2),
+                   SoTinChiTichLuy = dtb.SoTinChiTichLuy,
+                   XepLoai = dtb.XepLoai
+               })
+               .ToList();
+            dgvDiemTrungBinhHocTap.DataSource = diemTrungBinhHocTap;
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string maSinhVien = txtMaSinhVien.Text.ToUpper();
-            string tenHocKy = txtHocKy.Text;
+            string tenHocKy = txtHocKy.Text.ToUpper();
             if (string.IsNullOrEmpty(maSinhVien))
             {
                 MessageBox.Show("Vui lòng nhập mã sinh viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,6 +122,7 @@ namespace QuanLySinhVien
                     DiemTrungBinhHocTap = Math.Round(tongDiem / tongTinChi,2)
                 }
             };
+            lblTenHocKy.Text = "Học kỳ: " + tenHocKy;
             dgvDiemHocKy.DataSource = diemHocKy;
         }
 

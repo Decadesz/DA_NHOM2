@@ -253,6 +253,5 @@ namespace QuanLySinhVien
             txtEmail.Text = coVan.Email;
             txtDiaChi.Text = coVan.DiaChi;
         }
-
     }
 }

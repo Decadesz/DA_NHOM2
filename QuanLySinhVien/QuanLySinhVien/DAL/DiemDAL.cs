@@ -25,7 +25,7 @@ namespace QuanLySinhVien.DAL
                     SinhVien sinhVien = SinhVienDAL.DanhSachSinhVien.FirstOrDefault(s => s.MaSinhVien == parts[0]);
                     MonHoc monHoc = MonHocDAL.DanhSachMonHoc.FirstOrDefault(m => m.MaMonHoc == parts[1]);
                     HocKy hocKy=HocKyDAL.DanhSachHocKy.FirstOrDefault(hk => hk.MaHocKy == parts[2]);
-                    if (sinhVien != null && monHoc != null)
+                    if (sinhVien != null && monHoc != null && hocKy!=null)
                     {
                         Diem diem = new Diem(
                             int.Parse(parts[3]),

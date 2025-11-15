@@ -303,6 +303,7 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
+            SinhVienDAL.LoadSinhVien();
             napDuLieuComboBox();
             LamMoi();
             bindingSource.ResetBindings(false);   

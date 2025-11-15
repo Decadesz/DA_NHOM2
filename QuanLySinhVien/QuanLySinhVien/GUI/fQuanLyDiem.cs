@@ -258,6 +258,7 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
+            DiemDAL.LoadDiem();
             bindingSource.ResetBindings(false);
             ClearInput() ;
         }
