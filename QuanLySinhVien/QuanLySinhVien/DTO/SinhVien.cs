@@ -126,7 +126,7 @@ namespace QuanLySinhVien
             else if (dtb >= 5)
                 return "Trung bình";
             else
-                return "Yếu";
+                return "Chưa đủ tín chỉ để xét loại";
         }
         public int TinhSoTinChiTichLuy()
         {

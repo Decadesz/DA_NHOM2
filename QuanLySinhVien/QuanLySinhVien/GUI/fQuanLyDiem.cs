@@ -250,6 +250,11 @@ namespace QuanLySinhVien
             {
                 DiemDAL.LoadDiem();
                 MessageBox.Show("Đã tải danh sách điểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LamMoi();
+                if (diemBLL.DanhSachDiem.Count > 0)
+                {
+                    HienXoaSua();
+                }
             }
             catch (Exception ex)
             {

@@ -291,10 +291,15 @@ namespace QuanLySinhVien
         {
             try
             {
-               SinhVienDAL.LoadSinhVien();
-                bindingSource.ResetBindings(false);
+                SinhVienDAL.LoadSinhVien();
+                DiemDAL.LoadDiem();
+                LamMoi();
                 napDuLieuComboBox();
                 MessageBox.Show("Đã tải danh sách sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(sinhVienBLL.DanhSachSinhVien.Count > 0)
+                {
+                    HienXoaSua();
+                }
             }
             catch (Exception ex)
             {
@@ -303,7 +308,6 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            SinhVienDAL.LoadSinhVien();
             napDuLieuComboBox();
             LamMoi();
             bindingSource.ResetBindings(false);   

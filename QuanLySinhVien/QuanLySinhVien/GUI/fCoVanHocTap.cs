@@ -229,6 +229,11 @@ namespace QuanLySinhVien
             {
                 CoVanHocTapDAL.LoadCoVan();
                 MessageBox.Show("Đã tải danh sách cố vấn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LamMoi();
+                if (coVanBLL.DanhSachCoVan.Count > 0)
+                {
+                    HienXoaSua();
+                }
             }
             catch (Exception ex)
             {

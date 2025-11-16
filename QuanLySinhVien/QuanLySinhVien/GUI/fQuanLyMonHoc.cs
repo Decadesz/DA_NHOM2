@@ -200,9 +200,12 @@ namespace QuanLySinhVien
         private void BtnLoad_Click(object sender, EventArgs e)
         {
             MonHocDAL.LoadMonHoc();
-            bindingSource.DataSource = monHocBLL.DanhSachMonHoc;
-            bindingSource.ResetBindings(false);
+            LamMoi();
             MessageBox.Show("Đã tải lại danh sách môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(monHocBLL.DanhSachMonHoc.Count > 0)
+            {
+                HienXoaSua();
+            }
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {

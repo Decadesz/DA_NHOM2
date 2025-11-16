@@ -283,7 +283,7 @@
             this.DiemTrungBinhHocTap,
             this.SoTinChiTichLuy,
             this.XepLoai});
-            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(1054, 46);
+            this.dgvDiemTrungBinhHocTap.Location = new System.Drawing.Point(1054, 36);
             this.dgvDiemTrungBinhHocTap.Name = "dgvDiemTrungBinhHocTap";
             this.dgvDiemTrungBinhHocTap.ReadOnly = true;
             this.dgvDiemTrungBinhHocTap.Size = new System.Drawing.Size(337, 150);

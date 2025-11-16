@@ -192,13 +192,35 @@ namespace QuanLySinhVien.GUI
         {
             DAL.HocKyDAL.SaveHocKy();
             MessageBox.Show("Đã lưu danh sách học kỳ!");
+            try
+            {
+                DAL.HocKyDAL.SaveHocKy();
+                MessageBox.Show("Đã lưu danh sách học kỳ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu danh sách học kỳ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
         private void BtnLoad_Click(object sender, EventArgs e)
         {
-            DAL.HocKyDAL.LoadHocKy();
-            LamMoi();
-            bindingSource.ResetBindings(false);
-            MessageBox.Show("Đã tải lại danh sách học kỳ!");
+            try
+            {
+                DAL.HocKyDAL.LoadHocKy();
+                MessageBox.Show("Đã tải lại danh sách học kỳ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LamMoi();
+                if (hocKyBLL.DanhSachHocKy.Count > 0)
+                {
+                    HienXoaSua();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách học kỳ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {

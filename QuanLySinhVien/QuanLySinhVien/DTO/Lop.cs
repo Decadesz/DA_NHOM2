@@ -9,7 +9,7 @@ namespace QuanLySinhVien
     
     internal class Lop
     {
-        public const int siSoToiDa = 5;
+        public const int siSoToiDa = 1000;
         private string maLop;
         private string tenLop;
         private List<SinhVien> danhSachSinhVien;

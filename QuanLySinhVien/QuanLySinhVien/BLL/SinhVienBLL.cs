@@ -92,7 +92,8 @@ namespace QuanLySinhVien.BLL
                 sv.HoTen.ToUpper().Contains(tuKhoa) ||
                 sv.GioiTinh.ToUpper().Contains(tuKhoa) ||
                 sv.TenLop.ToUpper().Contains(tuKhoa) ||
-                sv.TenCoVan.ToUpper().Contains(tuKhoa)
+                sv.TenCoVan.ToUpper().Contains(tuKhoa)||
+                sv.XepLoai.ToUpper().Contains(tuKhoa)
             ).ToList();
         }
     }

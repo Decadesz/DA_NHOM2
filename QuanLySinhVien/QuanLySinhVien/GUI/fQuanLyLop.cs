@@ -194,10 +194,12 @@ namespace QuanLySinhVien
             try
             {
                 LopDAL.LoadLop();
-                bindingSource.DataSource = lopBLL.DanhSachLop;
-
-                bindingSource.ResetBindings(false);
+                LamMoi();
                 MessageBox.Show("Đã tải lại danh sách lớp!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (lopBLL.DanhSachLop.Count > 0)
+                {
+                    HienXoaSua();
+                }
             }
             catch (Exception ex)
             {

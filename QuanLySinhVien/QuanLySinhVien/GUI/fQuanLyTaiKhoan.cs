@@ -40,6 +40,12 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvTaiKhoan.DataSource = bindingSource;
         }
+        private void LamMoi()
+        {
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = taiKhoanDangNhapBLL.DanhSachTaiKhoan;
+            dgvTaiKhoan.Refresh();
+        }
         private void AnXoaSua()
         {
             btnEdit.Enabled = false;
@@ -182,9 +188,12 @@ namespace QuanLySinhVien
             try
             {
                 TaiKhoanDangNhapDAL.LoadTaiKhoan();
-                bindingSource.DataSource = taiKhoanDangNhapBLL.DanhSachTaiKhoan;
-                bindingSource.ResetBindings(false);
+                LamMoi();
                 MessageBox.Show("Đã tải lại danh sách tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(taiKhoanDangNhapBLL.DanhSachTaiKhoan.Count > 0)
+                {
+                    HienXoaSua();
+                }
             }
             catch (Exception ex)
             {
