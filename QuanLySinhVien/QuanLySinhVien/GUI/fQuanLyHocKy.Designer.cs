@@ -89,6 +89,7 @@
             this.txtNamHoc.Name = "txtNamHoc";
             this.txtNamHoc.Size = new System.Drawing.Size(100, 20);
             this.txtNamHoc.TabIndex = 15;
+            this.txtNamHoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamHoc_KeyPress);
             // 
             // label3
             // 

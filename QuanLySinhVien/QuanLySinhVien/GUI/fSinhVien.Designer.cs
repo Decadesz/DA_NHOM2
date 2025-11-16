@@ -30,6 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
+            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XepLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -73,15 +82,6 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenCoVan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XepLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -121,6 +121,60 @@
             this.dgvSinhVien.Size = new System.Drawing.Size(1113, 258);
             this.dgvSinhVien.TabIndex = 0;
             this.dgvSinhVien.TabStop = false;
+            // 
+            // MaSinhVien
+            // 
+            this.MaSinhVien.DataPropertyName = "MaSinhVien";
+            this.MaSinhVien.HeaderText = "Mã SV";
+            this.MaSinhVien.Name = "MaSinhVien";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên sinh viên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            // 
+            // NgayNhapHoc
+            // 
+            this.NgayNhapHoc.DataPropertyName = "NgayNhapHoc";
+            this.NgayNhapHoc.HeaderText = "Ngày nhập học";
+            this.NgayNhapHoc.Name = "NgayNhapHoc";
+            // 
+            // TenLop
+            // 
+            this.TenLop.DataPropertyName = "TenLop";
+            this.TenLop.HeaderText = "Tên lớp";
+            this.TenLop.Name = "TenLop";
+            // 
+            // TenCoVan
+            // 
+            this.TenCoVan.DataPropertyName = "TenCoVan";
+            this.TenCoVan.HeaderText = "Tên cố vấn";
+            this.TenCoVan.Name = "TenCoVan";
+            // 
+            // XepLoai
+            // 
+            this.XepLoai.DataPropertyName = "XepLoai";
+            this.XepLoai.HeaderText = "Xếp loại";
+            this.XepLoai.Name = "XepLoai";
             // 
             // panel2
             // 
@@ -207,6 +261,7 @@
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(100, 20);
             this.txtSoDienThoai.TabIndex = 31;
+            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienThoai_KeyPress);
             // 
             // label5
             // 
@@ -521,60 +576,6 @@
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-            // 
-            // MaSinhVien
-            // 
-            this.MaSinhVien.DataPropertyName = "MaSinhVien";
-            this.MaSinhVien.HeaderText = "Mã SV";
-            this.MaSinhVien.Name = "MaSinhVien";
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Tên sinh viên";
-            this.HoTen.Name = "HoTen";
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            // 
-            // NgayNhapHoc
-            // 
-            this.NgayNhapHoc.DataPropertyName = "NgayNhapHoc";
-            this.NgayNhapHoc.HeaderText = "Ngày nhập học";
-            this.NgayNhapHoc.Name = "NgayNhapHoc";
-            // 
-            // TenLop
-            // 
-            this.TenLop.DataPropertyName = "TenLop";
-            this.TenLop.HeaderText = "Tên lớp";
-            this.TenLop.Name = "TenLop";
-            // 
-            // TenCoVan
-            // 
-            this.TenCoVan.DataPropertyName = "TenCoVan";
-            this.TenCoVan.HeaderText = "Tên cố vấn";
-            this.TenCoVan.Name = "TenCoVan";
-            // 
-            // XepLoai
-            // 
-            this.XepLoai.DataPropertyName = "XepLoai";
-            this.XepLoai.HeaderText = "Xếp loại";
-            this.XepLoai.Name = "XepLoai";
             // 
             // fSinhVien
             // 

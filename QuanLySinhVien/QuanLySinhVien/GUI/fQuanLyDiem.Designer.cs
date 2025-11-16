@@ -65,7 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
-            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +78,7 @@
             this.DiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemThangChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KetQua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khoDuLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPhanTramGiuaKy)).BeginInit();
@@ -261,6 +261,7 @@
             this.txtDiemThi.Name = "txtDiemThi";
             this.txtDiemThi.Size = new System.Drawing.Size(80, 20);
             this.txtDiemThi.TabIndex = 76;
+            this.txtDiemThi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiemThi_KeyPress);
             // 
             // label8
             // 
@@ -277,6 +278,7 @@
             this.txtDiemGiuaKy.Name = "txtDiemGiuaKy";
             this.txtDiemGiuaKy.Size = new System.Drawing.Size(80, 20);
             this.txtDiemGiuaKy.TabIndex = 74;
+            this.txtDiemGiuaKy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiemGiuaKy_KeyPress);
             // 
             // label7
             // 
@@ -293,6 +295,7 @@
             this.txtDiemLop.Name = "txtDiemLop";
             this.txtDiemLop.Size = new System.Drawing.Size(100, 20);
             this.txtDiemLop.TabIndex = 72;
+            this.txtDiemLop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiemLop_KeyPress);
             // 
             // label5
             // 
