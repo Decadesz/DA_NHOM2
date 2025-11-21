@@ -57,3 +57,4 @@ C:\Users\trinh\OneDrive\Desktop\clone\test\QuanLySinhVien\QuanLySinhVien\obj\Deb
 C:\Users\trinh\OneDrive\Desktop\clone\test\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
 C:\Users\trinh\OneDrive\Desktop\clone\test\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb
 C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.fQuanLyHocKy.resources
+C:\Users\trinh\OneDrive\Desktop\laptrinh\DA_NHOM2\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.GUI.fThongKe.resources

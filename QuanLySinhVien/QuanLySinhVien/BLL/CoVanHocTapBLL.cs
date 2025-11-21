@@ -25,7 +25,6 @@ namespace QuanLySinhVien.BLL
         {
             if(danhSachCoVan.Any(cv => cv.MaCoVan.Equals(maCoVan, StringComparison.CurrentCultureIgnoreCase)))
             {
-                MessageBox.Show("Mã cố vấn đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             else

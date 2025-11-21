@@ -176,6 +176,7 @@ namespace QuanLySinhVien
             bool ketQuaThem=sinhVienBLL.ThemSinhVien(sinhVien);
             if (ketQuaThem == false)
             {
+                MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -224,6 +225,7 @@ namespace QuanLySinhVien
                 ));
             if(ketQuaSua==false)
             {
+                MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -309,7 +311,8 @@ namespace QuanLySinhVien
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             napDuLieuComboBox();
-            LamMoi();
+            SinhVienDAL.LoadSinhVien();
+            DiemDAL.LoadDiem();
             bindingSource.ResetBindings(false);   
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
@@ -435,6 +438,14 @@ namespace QuanLySinhVien
             {
                 e.Handled = true;
             }
+        }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThongKe f=new fThongKe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

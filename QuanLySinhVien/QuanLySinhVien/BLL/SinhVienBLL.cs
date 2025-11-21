@@ -25,7 +25,7 @@ namespace QuanLySinhVien.BLL
         {
             if( danhSachSinhVien.Any(sv => sv.MaSinhVien.Equals(maSinhVien, StringComparison.CurrentCultureIgnoreCase)))
             {
-                MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 return true;
             }
             else

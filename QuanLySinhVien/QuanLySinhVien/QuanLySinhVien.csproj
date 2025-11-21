@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +65,7 @@
     <Compile Include="DTO\Diem.cs" />
     <Compile Include="DTO\DiemSinhVien.cs" />
     <Compile Include="DTO\HocKy.cs" />
+    <Compile Include="DTO\ThongKe.cs" />
     <Compile Include="GUI\fBangDiemSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +126,12 @@
     <Compile Include="GUI\fSinhVien.Designer.cs">
       <DependentUpon>fSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\fThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fThongKe.Designer.cs">
+      <DependentUpon>fThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fThongTinChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fSinhVien.resx">
       <DependentUpon>fSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fThongKe.resx">
+      <DependentUpon>fThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fThongTinChiTiet.resx">
       <DependentUpon>fThongTinChiTiet.cs</DependentUpon>

@@ -126,6 +126,7 @@ namespace QuanLySinhVien
             bool ketQuaThem = monHocBLL.ThemMonHoc(monHoc);
             if (ketQuaThem == false)
             {
+                MessageBox.Show("Mã môn học đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -155,6 +156,7 @@ namespace QuanLySinhVien
                 ));
             if (ketQuaSua == false)
             {
+                MessageBox.Show("Mã môn học đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else

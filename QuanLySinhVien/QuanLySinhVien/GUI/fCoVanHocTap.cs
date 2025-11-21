@@ -145,7 +145,7 @@ namespace QuanLySinhVien
             bool ketQuaThem=coVanBLL.ThemCoVan(coVan);
             if (ketQuaThem==false)
             {
-
+                MessageBox.Show("Mã cố vấn đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -177,6 +177,7 @@ namespace QuanLySinhVien
                 ));
             if (ketQuaSua==false)
             {
+                MessageBox.Show("Mã cố vấn đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else

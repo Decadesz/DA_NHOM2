@@ -24,8 +24,7 @@ namespace QuanLySinhVien.BLL
         public bool KiemTraLopTonTai(string maLop)
         {
             if(danhSachLop.Any(l => l.MaLop.Equals(maLop, StringComparison.CurrentCultureIgnoreCase)))
-            {
-                MessageBox.Show("Mã lớp đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            { 
                 return true;
             }
             else

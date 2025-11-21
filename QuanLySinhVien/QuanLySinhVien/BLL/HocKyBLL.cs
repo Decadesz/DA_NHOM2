@@ -26,7 +26,6 @@ namespace QuanLySinhVien.BLL
         {
             if (danhSachHocKy.Any(mh => mh.MaHocKy.Equals(maHocKy, StringComparison.CurrentCultureIgnoreCase)))
             {
-                MessageBox.Show("Mã môn học đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             else

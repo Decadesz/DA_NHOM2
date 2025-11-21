@@ -113,6 +113,7 @@ namespace QuanLySinhVien
             bool ketQuaThem= lopBLL.ThemLop(lop);
             if (ketQuaThem == false)
             {
+                MessageBox.Show("Mã lớp đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -137,6 +138,7 @@ namespace QuanLySinhVien
                 txtTenLop.Text));
             if(ketQuaSua == false)
             {
+                MessageBox.Show("Mã lớp đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else

@@ -121,7 +121,7 @@ namespace QuanLySinhVien.GUI
             bool ketQuaThem = hocKyBLL.ThemHocKy(hocKy);
             if (ketQuaThem == false)
             {
-
+                MessageBox.Show("Mã học kỳ đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -154,6 +154,7 @@ namespace QuanLySinhVien.GUI
             bool ketQuaSua = hocKyBLL.SuaHocKy(hocKyCu, hocKyMoi);
             if (ketQuaSua == false)
             {
+                MessageBox.Show("Mã học kỳ đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -190,8 +191,6 @@ namespace QuanLySinhVien.GUI
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            DAL.HocKyDAL.SaveHocKy();
-            MessageBox.Show("Đã lưu danh sách học kỳ!");
             try
             {
                 DAL.HocKyDAL.SaveHocKy();
