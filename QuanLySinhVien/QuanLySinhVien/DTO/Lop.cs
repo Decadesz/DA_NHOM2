@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLySinhVien.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +10,16 @@ namespace QuanLySinhVien
     
     internal class Lop
     {
-        public const int siSoToiDa = 1000;
+        public const int siSoToiDa = 30;
         private string maLop;
         private string tenLop;
         private List<SinhVien> danhSachSinhVien;
         private int soLuong;
-        public Lop(string maLop, string tenLop)
+        public Lop(string maLop, string tenLop,List<SinhVien> danhSachSinhVien)
         {
             this.maLop = maLop;
             this.tenLop = tenLop;
-            danhSachSinhVien = new List<SinhVien>();
+            this.danhSachSinhVien = danhSachSinhVien;
         }
         public Lop()
         { 

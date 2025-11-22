@@ -242,7 +242,7 @@
             // cboTenMonHoc
             // 
             this.cboTenMonHoc.FormattingEnabled = true;
-            this.cboTenMonHoc.Location = new System.Drawing.Point(265, 51);
+            this.cboTenMonHoc.Location = new System.Drawing.Point(272, 49);
             this.cboTenMonHoc.Name = "cboTenMonHoc";
             this.cboTenMonHoc.Size = new System.Drawing.Size(121, 21);
             this.cboTenMonHoc.TabIndex = 80;
@@ -250,7 +250,7 @@
             // cboMaSinhVien
             // 
             this.cboMaSinhVien.FormattingEnabled = true;
-            this.cboMaSinhVien.Location = new System.Drawing.Point(78, 50);
+            this.cboMaSinhVien.Location = new System.Drawing.Point(80, 47);
             this.cboMaSinhVien.Name = "cboMaSinhVien";
             this.cboMaSinhVien.Size = new System.Drawing.Size(109, 21);
             this.cboMaSinhVien.TabIndex = 79;

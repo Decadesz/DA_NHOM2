@@ -313,7 +313,8 @@ namespace QuanLySinhVien
             napDuLieuComboBox();
             SinhVienDAL.LoadSinhVien();
             DiemDAL.LoadDiem();
-            bindingSource.ResetBindings(false);   
+            LamMoi();
+            bindingSource.ResetBindings(false);
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {
@@ -354,84 +355,6 @@ namespace QuanLySinhVien
             cboTenCoVan.DisplayMember = "HoTen";
             cboTenCoVan.ValueMember = "MaCoVan";
         }
-
-        private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fQuanLyMonHoc f = new fQuanLyMonHoc();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void quảnLýLớpToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            fQuanLyLop f = new fQuanLyLop();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void quảnLýCốVấnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fCoVanHocTap f = new fCoVanHocTap();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void quảnLýĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fQuanLyDiem f = new fQuanLyDiem();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fQuanLyTaiKhoan f = new fQuanLyTaiKhoan();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void bảngĐiểmSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fBangDiemSV f = new fBangDiemSV();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fDoiMatKhau f = new fDoiMatKhau();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fThongTinChiTiet f = new fThongTinChiTiet();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void quảnLýHọcKỳToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fQuanLyHocKy f = new fQuanLyHocKy();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
         private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -439,13 +362,89 @@ namespace QuanLySinhVien
                 e.Handled = true;
             }
         }
-
-        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quanLyMonHocToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fThongKe f=new fThongKe();
+            fQuanLyMonHoc f=new fQuanLyMonHoc();
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void quanLyLopToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            fQuanLyLop f = new fQuanLyLop();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void quanLyCoVanHocTapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fCoVanHocTap f = new fCoVanHocTap();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void quanLyDiemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQuanLyDiem f = new fQuanLyDiem();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void quanLyTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQuanLyTaiKhoan f = new fQuanLyTaiKhoan();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void quanLyHocKyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fQuanLyHocKy f = new fQuanLyHocKy();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void bangDiemSinhVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fBangDiemSV f = new fBangDiemSV();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void thongKeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThongKe f = new fThongKe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fDoiMatKhau f = new fDoiMatKhau();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void thongTinTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThongTinChiTiet f = new fThongTinChiTiet();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void dangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

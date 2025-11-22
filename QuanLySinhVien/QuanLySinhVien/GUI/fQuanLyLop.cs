@@ -109,7 +109,9 @@ namespace QuanLySinhVien
             }
 
             Lop lop = new Lop(txtMaLop.Text.ToUpper(),
-                                        txtTenLop.Text);
+                                        txtTenLop.Text,
+                                        new List<SinhVien>()
+                                        );
             bool ketQuaThem= lopBLL.ThemLop(lop);
             if (ketQuaThem == false)
             {
@@ -135,7 +137,9 @@ namespace QuanLySinhVien
             }
             bool ketQuaSua = lopBLL.SuaLop(lop, new Lop(
                 txtMaLop.Text.ToUpper(),
-                txtTenLop.Text));
+                txtTenLop.Text,
+                lop.DanhSachSinhVien
+                ));
             if(ketQuaSua == false)
             {
                 MessageBox.Show("Mã lớp đã tồn tại! Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -156,7 +160,7 @@ namespace QuanLySinhVien
                 return;
             }
             Lop lop = dgvLop.CurrentRow.DataBoundItem as Lop;
-            if (MessageBox.Show($"Xóa lớp{lop.TenLop }?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show($"Xóa lớp {lop.TenLop } ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 bool ketQuaXoa = lopBLL.XoaLop(lop);
                 if (ketQuaXoa == false)

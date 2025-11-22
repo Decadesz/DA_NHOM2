@@ -202,7 +202,7 @@ namespace QuanLySinhVien
             }
             else
             {
-                MessageBox.Show("đã sửa điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã sửa điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             LamMoi();
             bindingSource.ResetBindings(false);
@@ -211,7 +211,7 @@ namespace QuanLySinhVien
         {
             Diem diem = dgvDiem.CurrentRow?.DataBoundItem as Diem;
            
-            if(MessageBox.Show($"Xóa điểm của sinh viên {diem.SinhVien.HoTen} - môn{diem.MonHoc.TenMonHoc }?","Xác nhận",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show($"Xóa điểm của sinh viên {diem.SinhVien.HoTen} - môn: {diem.MonHoc.TenMonHoc }?","Xác nhận",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 bool ketQuaXoa = diemBLL.XoaDiem(diem);
                 if (ketQuaXoa == false)

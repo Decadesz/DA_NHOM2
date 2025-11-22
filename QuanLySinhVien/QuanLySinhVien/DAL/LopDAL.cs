@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLySinhVien.BLL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,16 +19,18 @@ namespace QuanLySinhVien.DAL
             foreach (string line in File.ReadAllLines("danhSachLop.txt"))
             {
                 string [] parts = line.Split(',');
-                //phai >=3 vi can dung de luu so Luong
-                if (parts.Length >= 3)
+                if (parts.Length >= 2)
                 {
                     Lop lop = new Lop(
                         parts[0],
-                        parts[1]
+                        parts[1],
+                        new List<SinhVien>()
                         );
                     DanhSachLop.Add(lop);
                 }
             }
+            SinhVienDAL.LoadSinhVien();
+            DiemDAL.LoadDiem();
         }
         public static void SaveLop()
         {

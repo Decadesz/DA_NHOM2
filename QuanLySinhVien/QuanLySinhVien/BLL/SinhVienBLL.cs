@@ -76,11 +76,17 @@ namespace QuanLySinhVien.BLL
             danhSachSinhVien.Remove(sinhVien);
             if (sinhVien.Lop != null)
             {
-                sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);
+                if (sinhVien.Lop.DanhSachSinhVien != null)
+                {
+                    sinhVien.Lop.DanhSachSinhVien.Remove(sinhVien);
+                }
             }
             if (sinhVien.CoVan != null)
             {
-                sinhVien.CoVan.DanhSachSinhVien.Remove(sinhVien);
+                if (sinhVien.CoVan.DanhSachSinhVien != null)
+                {
+                    sinhVien.CoVan.DanhSachSinhVien.Remove(sinhVien);
+                }
             }
             return true;
         }

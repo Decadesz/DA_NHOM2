@@ -13,6 +13,10 @@ namespace QuanLySinhVien.DAL
         public static void LoadSinhVien()
         {
             DanhSachSinhVien.Clear();
+            foreach (Lop lop in LopDAL.DanhSachLop)
+            {
+                lop.DanhSachSinhVien.Clear();
+            }
             if (!File.Exists("danhSachSinhVien.txt"))
                 return;
             foreach (string line in File.ReadAllLines("danhSachSinhVien.txt"))
@@ -26,7 +30,7 @@ namespace QuanLySinhVien.DAL
                     Lop lop = LopDAL.DanhSachLop.FirstOrDefault(l => l.MaLop == parts[7]);
                     if (lop == null)
                     {
-                        lop = new Lop(parts[7], "");
+                        lop = new Lop(parts[7], "",null);
                     };
                     CoVanHocTap coVan = CoVanHocTapDAL.DanhSachCoVan.FirstOrDefault(c => c.MaCoVan == parts[8]);
                     if (coVan == null)
@@ -48,7 +52,10 @@ namespace QuanLySinhVien.DAL
                     //Thêm sinh viên vào danh sách sinh viên chung
                     DanhSachSinhVien.Add(sinhVien);
                     //Thêm sinh viên vào danh sách của lớp và cố vấn học tập
-                    lop.DanhSachSinhVien.Add(sinhVien);
+                    if (lop.TenLop != "")
+                    {
+                        lop.DanhSachSinhVien.Add(sinhVien);
+                    }
                     if (coVan.HoTen != "")
                     {
                         coVan.DanhSachSinhVien.Add(sinhVien);
