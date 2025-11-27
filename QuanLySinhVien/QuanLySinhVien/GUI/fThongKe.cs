@@ -28,16 +28,16 @@ namespace QuanLySinhVien.GUI
             series.IsValueShownAsLabel = true;
             chartXepLoai.Legends[0].Enabled = true;
 
-            List<ThongKe> data = SinhVienDAL.DanhSachSinhVien
+            List<ThongKe> danhSachThongke = SinhVienDAL.DanhSachSinhVien
                 .GroupBy(sv => sv.XepLoai )
                 .Select(g => new ThongKe 
                 { XepLoai = g.Key,
                   SoLuong = g.Count() })
                 .ToList();
 
-            foreach (ThongKe item in data)
+            foreach (ThongKe tk in danhSachThongke)
             {
-                series.Points.AddXY(item.XepLoai, item.SoLuong);
+                series.Points.AddXY(tk.XepLoai, tk.SoLuong);
             }
             foreach (DataPoint p in series.Points)
             {
