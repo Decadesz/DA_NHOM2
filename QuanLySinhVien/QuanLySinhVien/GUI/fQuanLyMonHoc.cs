@@ -26,13 +26,6 @@ namespace QuanLySinhVien
         {
             monHocBLL.DanhSachMonHoc.Sort((a, b) => string.Compare(a.MaMonHoc, b.MaMonHoc, StringComparison.CurrentCultureIgnoreCase));
         }
-        private void LamMoi()
-        {
-            SapXepMonHocTheoMa();
-            bindingSource.DataSource = null;
-            bindingSource.DataSource = monHocBLL.DanhSachMonHoc;
-            dgvMonHoc.Refresh();
-        }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             CboSearch_Click(sender, e);
@@ -195,9 +188,16 @@ namespace QuanLySinhVien
             
         }
         private void BtnSave_Click(object sender, EventArgs e)
-        {
-            MonHocDAL.SaveMonHoc();
-            MessageBox.Show("Đã lưu danh sách môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        {   try
+            {
+                MonHocDAL.SaveMonHoc();
+                MessageBox.Show("Đã lưu danh sách môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi khi lưu danh sách môn học!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
         private void BtnLoad_Click(object sender, EventArgs e)
         {
@@ -213,6 +213,13 @@ namespace QuanLySinhVien
         {
             LamMoi();
             bindingSource.ResetBindings(false);
+        }
+        private void LamMoi()
+        {
+            SapXepMonHocTheoMa();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = monHocBLL.DanhSachMonHoc;
+            dgvMonHoc.Refresh();
         }
         private void DgvMonHoc_SelectionChanged(object sender, EventArgs e)
         {

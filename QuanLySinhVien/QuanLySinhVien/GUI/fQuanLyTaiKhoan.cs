@@ -40,12 +40,6 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvTaiKhoan.DataSource = bindingSource;
         }
-        private void LamMoi()
-        {
-            bindingSource.DataSource = null;
-            bindingSource.DataSource = taiKhoanDangNhapBLL.DanhSachTaiKhoan;
-            dgvTaiKhoan.Refresh();
-        }
         private void AnXoaSua()
         {
             btnEdit.Enabled = false;
@@ -204,6 +198,12 @@ namespace QuanLySinhVien
         {
             bindingSource.ResetBindings(false);
             ClearInput();
+        }
+        private void LamMoi()
+        {
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = taiKhoanDangNhapBLL.DanhSachTaiKhoan;
+            dgvTaiKhoan.Refresh();
         }
         private void DgvTaiKhoan_SelectionChanged(object sender, EventArgs e)
         {

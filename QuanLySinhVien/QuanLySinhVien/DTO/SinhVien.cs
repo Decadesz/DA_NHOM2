@@ -25,40 +25,7 @@ namespace QuanLySinhVien
         private Lop lop;
         private CoVanHocTap coVan;
         private List<Diem> danhSachDiem;
-        public string TenLop
-        {
-            get
-            {
-                if (Lop != null)
-                {
-                    if (Lop.TenLop != null)
-                        return Lop.TenLop;
-                    else
-                        return "";
-                }
-                else
-                {
-                    return "";
-                }
-            }
-        }
-        public string TenCoVan
-        {
-            get
-            {
-                if (CoVan != null)
-                {
-                    if (CoVan.HoTen != null)
-                        return CoVan.HoTen;
-                    else
-                        return "";
-                }
-                else
-                {
-                    return "";
-                }
-            }
-        }
+        
         public SinhVien()
         {
             MaSinhVien = "";
@@ -83,9 +50,7 @@ namespace QuanLySinhVien
             this.SoDienThoai = soDienThoai;
             this.Lop = lop;
             this.CoVan = coVan;
-            this.DanhSachDiem = danhSachDiem;
-           
-
+            this.DanhSachDiem = danhSachDiem;   
         }
 
         public string MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
@@ -139,8 +104,6 @@ namespace QuanLySinhVien
                     .Where(d => d.DiemTrungBinh >= 5 && d.MonHoc != null && d.DiemThangChu != "F")
                     .Sum(d => d.MonHoc.SoTinChi);
         }
-
-
         public double TinhDiemTrungBinhHocTap()
         {
                 int tongTin = SoTinChiTichLuy;
@@ -149,6 +112,40 @@ namespace QuanLySinhVien
                     .Where(d => d.DiemTrungBinh >= 5)
                     .Sum(d => d.DiemTongMonHoc) / tongTin;
                 return Math.Round(diemTrungBinh,2);
+        }
+        public string TenLop
+        {
+            get
+            {
+                if (Lop != null)
+                {
+                    if (Lop.TenLop != null)
+                        return Lop.TenLop;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string TenCoVan
+        {
+            get
+            {
+                if (CoVan != null)
+                {
+                    if (CoVan.HoTen != null)
+                        return CoVan.HoTen;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
         }
     }
 }

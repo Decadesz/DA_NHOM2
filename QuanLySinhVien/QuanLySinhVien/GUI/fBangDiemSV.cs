@@ -125,25 +125,22 @@ namespace QuanLySinhVien
             lblTenHocKy.Text = "Học kỳ: " + tenHocKy;
             dgvDiemHocKy.DataSource = diemHocKy;
         }
-
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fDoiMatKhau f = new fDoiMatKhau();
             this.Hide();
             f.ShowDialog();
             this.Show();
         }
-
-        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thongTinTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fThongTinChiTiet f= new fThongTinChiTiet();
+            fThongTinChiTiet f = new fThongTinChiTiet();
             this.Hide();
             f.ShowDialog();
             this.Show();
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dangXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }

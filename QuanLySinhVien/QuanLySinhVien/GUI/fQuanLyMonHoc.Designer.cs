@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvSinhVien = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
@@ -58,6 +50,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaMonHoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvSinhVien = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
             this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,12 +66,12 @@
             this.SoTietLyThuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTietThucHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTietThucHanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLyThuyet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTinChi)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
             this.SuspendLayout();
@@ -85,77 +85,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 132);
             this.panel1.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dgvSinhVien);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1025, 132);
-            this.panel3.TabIndex = 3;
-            // 
-            // dgvSinhVien
-            // 
-            this.dgvSinhVien.AllowUserToAddRows = false;
-            this.dgvSinhVien.AllowUserToDeleteRows = false;
-            this.dgvSinhVien.AllowUserToResizeColumns = false;
-            this.dgvSinhVien.AllowUserToResizeRows = false;
-            this.dgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7});
-            this.dgvSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvSinhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSinhVien.Location = new System.Drawing.Point(0, -196);
-            this.dgvSinhVien.MultiSelect = false;
-            this.dgvSinhVien.Name = "dgvSinhVien";
-            this.dgvSinhVien.ReadOnly = true;
-            this.dgvSinhVien.RowHeadersVisible = false;
-            this.dgvSinhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSinhVien.Size = new System.Drawing.Size(1025, 328);
-            this.dgvSinhVien.TabIndex = 1;
-            this.dgvSinhVien.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã cố vấn";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên cố vấn";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Ngày sinh";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giới tính";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Mã lớp";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
             // 
             // panel4
             // 
@@ -294,7 +223,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 48;
-            this.btnRefresh.Text = "Tải lại";
+            this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // btnEdit
@@ -355,6 +284,77 @@
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = "Mã môn học";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvSinhVien);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1025, 132);
+            this.panel3.TabIndex = 3;
+            // 
+            // dgvSinhVien
+            // 
+            this.dgvSinhVien.AllowUserToAddRows = false;
+            this.dgvSinhVien.AllowUserToDeleteRows = false;
+            this.dgvSinhVien.AllowUserToResizeColumns = false;
+            this.dgvSinhVien.AllowUserToResizeRows = false;
+            this.dgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSinhVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column7});
+            this.dgvSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvSinhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvSinhVien.Location = new System.Drawing.Point(0, -196);
+            this.dgvSinhVien.MultiSelect = false;
+            this.dgvSinhVien.Name = "dgvSinhVien";
+            this.dgvSinhVien.ReadOnly = true;
+            this.dgvSinhVien.RowHeadersVisible = false;
+            this.dgvSinhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSinhVien.Size = new System.Drawing.Size(1025, 328);
+            this.dgvSinhVien.TabIndex = 1;
+            this.dgvSinhVien.TabStop = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã cố vấn";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên cố vấn";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Ngày sinh";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giới tính";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Mã lớp";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // panel2
             // 
@@ -427,13 +427,13 @@
             this.Name = "fQuanLyMonHoc";
             this.Text = "Quản lý môn học";
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTietThucHanh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTietLyThuyet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTinChi)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).EndInit();
             this.ResumeLayout(false);

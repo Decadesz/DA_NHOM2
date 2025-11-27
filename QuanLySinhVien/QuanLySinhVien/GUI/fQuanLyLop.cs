@@ -26,13 +26,6 @@ namespace QuanLySinhVien
         {
             lopBLL.DanhSachLop.Sort((a, b) => string.Compare(a.MaLop, b.MaLop, StringComparison.CurrentCultureIgnoreCase));
         }
-        private void LamMoi()
-        {
-            SapXepLopTheoMa();
-            bindingSource.DataSource = null;
-            bindingSource.DataSource = lopBLL.DanhSachLop;
-            dgvLop.Refresh();
-        }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             CboSearch_Click(sender, e);
@@ -215,7 +208,15 @@ namespace QuanLySinhVien
         }
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
+            LamMoi();
             bindingSource.ResetBindings(false);
+        }
+        private void LamMoi()
+        {
+            SapXepLopTheoMa();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = lopBLL.DanhSachLop;
+            dgvLop.Refresh();
         }
         private void DgvLop_SelectionChanged(object sender, EventArgs e)
         {

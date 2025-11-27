@@ -83,15 +83,6 @@ namespace QuanLySinhVien
             bindingSource.DataSource = ketQua;
             dgvDiem.DataSource = bindingSource;
         }
-        private void ClearInput()
-        {
-            nudPhanTramLop.Value = 10;
-            nudPhanTramGiuaKy.Value = 30;
-            nudPhanTramCuoiKy.Value = 60;
-            txtDiemLop.Text = "0";
-            txtDiemGiuaKy.Text = "0";
-            txtDiemThi.Text = "0";
-        }
         private bool kiemTraDauVao()
         {
             if (string.IsNullOrWhiteSpace(txtDiemLop.Text))
@@ -132,7 +123,13 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            SinhVien sinhVien=cboMaSinhVien.SelectedItem as SinhVien;
+            
+            if (!SinhVienDAL.DanhSachSinhVien.Any(sv => sv.MaSinhVien.Equals(txtMaSinhVien.Text.ToUpper(), StringComparison.CurrentCultureIgnoreCase)))
+            {
+                MessageBox.Show("Mã sinh viên không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SinhVien sinhVien = SinhVienDAL.DanhSachSinhVien.FirstOrDefault(sv => sv.MaSinhVien.Equals(txtMaSinhVien.Text.ToUpper(), StringComparison.CurrentCultureIgnoreCase));
             MonHoc monHoc=cboTenMonHoc.SelectedItem as MonHoc;
             HocKy hocKy=cboTenHocKy.SelectedItem as HocKy;
 
@@ -177,7 +174,12 @@ namespace QuanLySinhVien
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             Diem diem=dgvDiem.CurrentRow?.DataBoundItem as Diem;
-            SinhVien sinhVien = cboMaSinhVien.SelectedItem as SinhVien;
+            if (!SinhVienDAL.DanhSachSinhVien.Any(sv => sv.MaSinhVien.Equals(txtMaSinhVien.Text.ToUpper(), StringComparison.CurrentCultureIgnoreCase)))
+            {
+                MessageBox.Show("Mã sinh viên không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SinhVien sinhVien = SinhVienDAL.DanhSachSinhVien.FirstOrDefault(sv => sv.MaSinhVien.Equals(txtMaSinhVien.Text.ToUpper(), StringComparison.CurrentCultureIgnoreCase));
             MonHoc monHoc = cboTenMonHoc.SelectedItem as MonHoc;
             HocKy hocKy=cboTenHocKy.SelectedItem as HocKy;
             if (!kiemTraDauVao())
@@ -267,6 +269,15 @@ namespace QuanLySinhVien
             bindingSource.ResetBindings(false);
             ClearInput() ;
         }
+        private void ClearInput()
+        {
+            nudPhanTramLop.Value = 10;
+            nudPhanTramGiuaKy.Value = 30;
+            nudPhanTramCuoiKy.Value = 60;
+            txtDiemLop.Text = "0";
+            txtDiemGiuaKy.Text = "0";
+            txtDiemThi.Text = "0";
+        }
         private void DgvDiem_SelectionChanged(object sender, EventArgs e)
         {
             Diem diem=dgvDiem.CurrentRow?.DataBoundItem as Diem;
@@ -274,7 +285,7 @@ namespace QuanLySinhVien
             {
                 return;
             }
-            cboMaSinhVien.SelectedValue = diem.SinhVien.MaSinhVien;
+            txtMaSinhVien.Text = diem.SinhVien.MaSinhVien;
             cboTenMonHoc.SelectedValue = diem.MonHoc.MaMonHoc;
             cboTenHocKy.SelectedValue = diem.HocKy.MaHocKy;
             nudPhanTramLop.Value = diem.PhanTramLop;
@@ -290,36 +301,10 @@ namespace QuanLySinhVien
             cboTenMonHoc.DisplayMember = "TenMonHoc";
             cboTenMonHoc.ValueMember = "MaMonHoc";
 
-            cboMaSinhVien.DataSource = SinhVienDAL.DanhSachSinhVien;
-            cboMaSinhVien.DisplayMember = "MaSinhVien";
-            cboMaSinhVien.ValueMember = "MaSinhVien";
-
             cboTenHocKy.DataSource = HocKyDAL.DanhSachHocKy;
             cboTenHocKy.DisplayMember = "TenHocKy";
             cboTenHocKy.ValueMember = "MaHocKy";
         }
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fDoiMatKhau f = new fDoiMatKhau();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fThongTinChiTiet f = new fThongTinChiTiet();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void txtDiemLop_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -342,6 +327,27 @@ namespace QuanLySinhVien
             {
                 e.Handled = true;
             }
+        }
+
+        private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fDoiMatKhau f = new fDoiMatKhau();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void thongTinTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThongTinChiTiet f = new fThongTinChiTiet();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void dangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close(); 
         }
     }
 }

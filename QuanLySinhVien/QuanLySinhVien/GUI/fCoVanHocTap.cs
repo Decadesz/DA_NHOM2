@@ -116,14 +116,6 @@ namespace QuanLySinhVien
             }
             return true;
         }
-        private void ClearInput()
-        {
-            txtMaCoVan.Text = "";
-            txtTenCoVan.Text = "";
-            txtSoDienThoai.Text = "";
-            txtEmail.Text = "";
-            txtDiaChi.Text = "";
-        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if(!KiemTraDauVao())
@@ -245,6 +237,14 @@ namespace QuanLySinhVien
         {
             bindingSource.ResetBindings(false);
             ClearInput();
+        }
+        private void ClearInput()
+        {
+            txtMaCoVan.Text = "";
+            txtTenCoVan.Text = "";
+            txtSoDienThoai.Text = "";
+            txtEmail.Text = "";
+            txtDiaChi.Text = "";
         }
         private void DgvCoVan_SelectionChanged(object sender, EventArgs e)
         {

@@ -92,12 +92,6 @@ namespace QuanLySinhVien.GUI
             }
             return true;
         }
-        private void ClearInput()
-        {
-            txtTenHocKy.Text = "";
-            txtMaHocKy.Text = "";
-            txtNamHoc.Text = "";
-        }
         private void LamMoi()
         {
             SapXepHocKyTheoMa();
@@ -225,6 +219,12 @@ namespace QuanLySinhVien.GUI
         {
             bindingSource.ResetBindings(false);
             ClearInput();
+        }
+        private void ClearInput()
+        {
+            txtTenHocKy.Text = "";
+            txtMaHocKy.Text = "";
+            txtNamHoc.Text = "";
         }
         private void DgvHocKy_SelectionChanged(object sender, EventArgs e)
         {

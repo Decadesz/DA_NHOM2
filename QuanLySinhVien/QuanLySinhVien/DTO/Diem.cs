@@ -21,75 +21,6 @@ namespace QuanLySinhVien
         private SinhVien sinhVien;
         private MonHoc monHoc;
         private HocKy hocKy;
-        public string TenHocKy
-        {
-            get
-            {
-                if (HocKy != null)
-                {
-                    if (HocKy.TenHocKy != null)
-                        return HocKy.TenHocKy;
-                    else
-                        return "";
-                }
-                else
-                {
-                    return "";
-                }
-            }
-        }
-        public string MaSinhVien
-        {
-            get
-            {
-                if (SinhVien != null)
-                {
-                    if (SinhVien.MaSinhVien != null)
-                        return SinhVien.MaSinhVien;
-                    else
-                        return "";
-                }
-                else
-                {
-                    return "";
-                }
-            }
-        }
-        public string TenMonHoc
-        {
-            get
-            {
-                if (MonHoc != null)
-                {
-                    if (MonHoc.TenMonHoc != null)
-                        return MonHoc.TenMonHoc;
-                    else
-                        return "";
-                }
-                else
-                {
-                    return "";
-                }
-            }
-        }
-        public int SoTinChiCuaMon
-        {
-            get
-            {
-                if (MonHoc != null)
-                {
-                    if (MonHoc.SoTinChi != 0)
-                        return MonHoc.SoTinChi;
-                    else
-                        return 0;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-        }
-        
         public Diem()
         {
             PhanTramLop = 0;
@@ -170,5 +101,74 @@ namespace QuanLySinhVien
         public double DiemTrungBinh { get => TinhDiemTrungBinh(); }
         public string DiemThangChu { get => TinhDiemThangChu(); }
         internal HocKy HocKy { get => hocKy; set => hocKy = value; }
+        public string TenHocKy
+        {
+            get
+            {
+                if (HocKy != null)
+                {
+                    if (HocKy.TenHocKy != null)
+                        return HocKy.TenHocKy;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string MaSinhVien
+        {
+            get
+            {
+                if (SinhVien != null)
+                {
+                    if (SinhVien.MaSinhVien != null)
+                        return SinhVien.MaSinhVien;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public string TenMonHoc
+        {
+            get
+            {
+                if (MonHoc != null)
+                {
+                    if (MonHoc.TenMonHoc != null)
+                        return MonHoc.TenMonHoc;
+                    else
+                        return "";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public int SoTinChiCuaMon
+        {
+            get
+            {
+                if (MonHoc != null)
+                {
+                    if (MonHoc.SoTinChi != 0)
+                        return MonHoc.SoTinChi;
+                    else
+                        return 0;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
     }
+
 }

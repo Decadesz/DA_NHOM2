@@ -25,14 +25,6 @@ namespace QuanLySinhVien
             LamMoi();
 
         }
-        private void LamMoi()
-        {
-            SapXepSinhVienTheoMa();
-            SapXepSinhVienTheoLop();
-            bindingSource.DataSource = null;
-            bindingSource.DataSource = sinhVienBLL.DanhSachSinhVien;
-            dgvSinhVien.Refresh();
-        }
         private void AnXoaSua()
         {
             btnEdit.Enabled = false;
@@ -315,6 +307,14 @@ namespace QuanLySinhVien
             DiemDAL.LoadDiem();
             LamMoi();
             bindingSource.ResetBindings(false);
+        }
+        private void LamMoi()
+        {
+            SapXepSinhVienTheoMa();
+            SapXepSinhVienTheoLop();
+            bindingSource.DataSource = null;
+            bindingSource.DataSource = sinhVienBLL.DanhSachSinhVien;
+            dgvSinhVien.Refresh();
         }
         private void DgvSinhVien_SelectionChanged(object sender, EventArgs e)
         {

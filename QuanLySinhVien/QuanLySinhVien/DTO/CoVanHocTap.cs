@@ -38,7 +38,6 @@ namespace QuanLySinhVien
             this.Email = email;
             this.danhSachSinhVien = danhSachSinhVien;
         }
-
         public string MaCoVan { get => maCoVan; set => maCoVan = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
