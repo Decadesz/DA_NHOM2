@@ -22,6 +22,10 @@ namespace QuanLySinhVien.BLL
         internal List<Diem> DanhSachDiem { get => danhSachDiem; }
         public bool ThemDiem(Diem diem,SinhVien sinhVien,MonHoc monHoc,HocKy hocKy)
         {
+            if(diem == null || sinhVien == null || monHoc == null || hocKy == null)
+            {
+                return false;
+            }
             danhSachDiem.Add(diem);
             sinhVien.DanhSachDiem.Add(diem);
             monHoc.DanhSachDiem.Add(diem);

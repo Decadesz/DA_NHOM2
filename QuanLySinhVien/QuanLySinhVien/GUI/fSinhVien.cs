@@ -57,6 +57,29 @@ namespace QuanLySinhVien
             btnSearch.Click += BtnSearch_Click;
             dgvSinhVien.SelectionChanged += DgvSinhVien_SelectionChanged;
         }
+        private void SapXepSinhVienTheoTen()
+        {
+            sinhVienBLL.DanhSachSinhVien.Sort((a, b) =>
+            {
+                string tenA = LayTenCuoi(a.HoTen);
+                string tenB = LayTenCuoi(b.HoTen);
+
+                int kq = string.Compare(tenA, tenB, StringComparison.OrdinalIgnoreCase);
+                if (kq != 0)
+                    return kq;
+                //Neu ten giong nhau thi so sanh ho va ten dem
+                return string.Compare(a.HoTen, b.HoTen, StringComparison.OrdinalIgnoreCase);
+            });
+        }
+
+        private string LayTenCuoi(string hoTen)
+        {
+            if (string.IsNullOrWhiteSpace(hoTen))
+                return "";
+
+            string[] parts = hoTen.Trim().Split(' ');
+            return parts[parts.Length - 1];
+        }
         private void SapXepSinhVienTheoLop()
         {
             //phai dung dinh dang D23_TH01 khong duoc xai D23_TH1
@@ -113,6 +136,11 @@ namespace QuanLySinhVien
             if(string.IsNullOrWhiteSpace(txtSoDienThoai.Text))
             {
                 MessageBox.Show("Số điện thoại không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if((txtSoDienThoai.Text).Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -310,7 +338,8 @@ namespace QuanLySinhVien
         }
         private void LamMoi()
         {
-            SapXepSinhVienTheoMa();
+            //SapXepSinhVienTheoMa();
+            SapXepSinhVienTheoTen();
             SapXepSinhVienTheoLop();
             bindingSource.DataSource = null;
             bindingSource.DataSource = sinhVienBLL.DanhSachSinhVien;
