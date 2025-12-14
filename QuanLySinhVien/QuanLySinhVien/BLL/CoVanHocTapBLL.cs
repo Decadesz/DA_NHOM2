@@ -69,6 +69,13 @@ namespace QuanLySinhVien.BLL
             {
                 return false; 
             }
+            foreach (SinhVien sv in SinhVienDAL.DanhSachSinhVien)
+            {
+                if (sv.CoVan== coVan)
+                {
+                    sv.CoVan = null;
+                }
+            }
             danhSachCoVan.Remove(coVan);
             return true;
         }

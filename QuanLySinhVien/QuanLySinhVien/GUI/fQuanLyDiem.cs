@@ -347,7 +347,33 @@ namespace QuanLySinhVien
 
         private void dangXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close(); 
+            string loaiTK = TaiKhoanDangNhapDAL.TaiKhoanHienTai.LoaiTaiKhoanDangNhap;
+
+            if (MessageBox.Show("Bạn có muốn lưu dữ liệu trước khi đăng xuất?", "Lưu dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                this.Close();
+                return;
+            }
+            try
+            {
+                if (loaiTK == "Giang Vien")
+                {
+                    DiemDAL.SaveDiem();
+                    MessageBox.Show("Đã lưu danh sách điểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Close();
+        }
+
+        private void fQuanLyDiem_Load(object sender, EventArgs e)
+        {
+            DiemDAL.LoadDiem();
+            bindingSource.ResetBindings(false);
+            ClearInput();
         }
     }
 }

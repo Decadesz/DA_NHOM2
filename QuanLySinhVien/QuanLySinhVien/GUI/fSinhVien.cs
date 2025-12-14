@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using QuanLySinhVien.BLL;
-using QuanLySinhVien.DAL;
-using QuanLySinhVien.GUI;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using System.IO;
+    using QuanLySinhVien.BLL;
+    using QuanLySinhVien.DAL;
+    using QuanLySinhVien.GUI;
 namespace QuanLySinhVien
 {
     public partial class fSinhVien : Form
     {
-        private BindingSource bindingSource =new BindingSource();
+        private BindingSource bindingSource = new BindingSource();
         private SinhVienBLL sinhVienBLL = new SinhVienBLL();
         public fSinhVien()
         {
@@ -41,11 +41,11 @@ namespace QuanLySinhVien
             dgvSinhVien.AutoGenerateColumns = false;
             bindingSource.DataSource = sinhVienBLL.DanhSachSinhVien;
             dgvSinhVien.DataSource = bindingSource;
-            if(sinhVienBLL.DanhSachSinhVien.Count==0)
+            if (sinhVienBLL.DanhSachSinhVien.Count == 0)
             {
                 AnXoaSua();
             }
-            cboSearch.SelectedIndex= 0;
+            cboSearch.SelectedIndex = 0;
             //event
             btnAdd.Click += BtnAdd_Click;
             btnDelete.Click += BtnDelete_Click;
@@ -87,58 +87,58 @@ namespace QuanLySinhVien
         }
         private void SapXepSinhVienTheoMa()
         {
-            sinhVienBLL.DanhSachSinhVien.Sort((a,b) => string.Compare(a.MaSinhVien,b.MaSinhVien, StringComparison.Ordinal));
+            sinhVienBLL.DanhSachSinhVien.Sort((a, b) => string.Compare(a.MaSinhVien, b.MaSinhVien, StringComparison.Ordinal));
         }
-        private void BtnSearch_Click(object sender,EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
             CboSearch_Click(sender, e);
         }
-        private void CboSearch_Click(object sender,EventArgs e)
+        private void CboSearch_Click(object sender, EventArgs e)
         {
-            string timKiem=txtSearch.Text.Trim().ToLower();
-            if(string.IsNullOrEmpty(timKiem) || cboSearch.SelectedIndex == 0)
+            string timKiem = txtSearch.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(timKiem) || cboSearch.SelectedIndex == 0)
             {
                 bindingSource.DataSource = sinhVienBLL.DanhSachSinhVien;
                 dgvSinhVien.DataSource = bindingSource;
                 return;
             }
-            List<SinhVien> ketQua=sinhVienBLL.TimKiemSinhVien(timKiem);
+            List<SinhVien> ketQua = sinhVienBLL.TimKiemSinhVien(timKiem);
             bindingSource.DataSource = ketQua;
             dgvSinhVien.DataSource = bindingSource;
         }
         private bool KiemTraDauVao()
         {
-            if(string.IsNullOrWhiteSpace(txtMaSinhVien.Text))
+            if (string.IsNullOrWhiteSpace(txtMaSinhVien.Text))
             {
                 MessageBox.Show("Mã sinh viên không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(string.IsNullOrWhiteSpace(txtTenSinhVien.Text))
+            if (string.IsNullOrWhiteSpace(txtTenSinhVien.Text))
             {
                 MessageBox.Show("Họ tên không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(dtpNgaySinh.Value >= DateTime.Now)
+            if (dtpNgaySinh.Value >= DateTime.Now)
             {
                 MessageBox.Show("Ngày sinh không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(string.IsNullOrWhiteSpace(txtDiaChi.Text))
+            if (string.IsNullOrWhiteSpace(txtDiaChi.Text))
             {
                 MessageBox.Show("Địa chỉ không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(dtpNgayNhapHoc.Value > DateTime.Now)
+            if (dtpNgayNhapHoc.Value > DateTime.Now)
             {
                 MessageBox.Show("Ngày nhập học không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if(string.IsNullOrWhiteSpace(txtSoDienThoai.Text))
+            if (string.IsNullOrWhiteSpace(txtSoDienThoai.Text))
             {
                 MessageBox.Show("Số điện thoại không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if((txtSoDienThoai.Text).Length != 10)
+            if ((txtSoDienThoai.Text).Length != 10)
             {
                 MessageBox.Show("Số điện thoại phải có 10 chữ số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -165,13 +165,13 @@ namespace QuanLySinhVien
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(!KiemTraDauVao())
+            if (!KiemTraDauVao())
             {
                 return;
             }
             string gioiTinh = radNam.Checked ? "Nam" : "Nữ";
             //ep kieu an toan
-            Lop lop =cboTenLop.SelectedItem as Lop;
+            Lop lop = cboTenLop.SelectedItem as Lop;
             CoVanHocTap coVan = cboTenCoVan.SelectedItem as CoVanHocTap;
             if (lop != null)
             {
@@ -181,7 +181,7 @@ namespace QuanLySinhVien
                     return;
                 }
             }
-            SinhVien sinhVien= new SinhVien(
+            SinhVien sinhVien = new SinhVien(
                 txtMaSinhVien.Text.ToUpper(),
                 txtTenSinhVien.Text,
                 gioiTinh,
@@ -193,7 +193,7 @@ namespace QuanLySinhVien
                 coVan,
                 new List<Diem>()
                 );
-            bool ketQuaThem=sinhVienBLL.ThemSinhVien(sinhVien);
+            bool ketQuaThem = sinhVienBLL.ThemSinhVien(sinhVien);
             if (ketQuaThem == false)
             {
                 MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -231,7 +231,7 @@ namespace QuanLySinhVien
                 MessageBox.Show("Lớp đã đạt sĩ số tối đa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            bool ketQuaSua = sinhVienBLL.SuaSinhVien(sinhVien, new SinhVien (
+            bool ketQuaSua = sinhVienBLL.SuaSinhVien(sinhVien, new SinhVien(
                 txtMaSinhVien.Text.ToUpper(),
                 txtTenSinhVien.Text,
                 radNam.Checked ? "Nam" : "Nữ",
@@ -243,7 +243,7 @@ namespace QuanLySinhVien
                 coVanMoi,
                 sinhVien.DanhSachDiem
                 ));
-            if(ketQuaSua==false)
+            if (ketQuaSua == false)
             {
                 MessageBox.Show("Mã sinh viên đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -269,12 +269,12 @@ namespace QuanLySinhVien
             }
             LamMoi();
             bindingSource.ResetBindings(false);
-            
+
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             SinhVien sinhVien = dgvSinhVien.CurrentRow?.DataBoundItem as SinhVien;
-            
+
             if (MessageBox.Show($"Bạn có chắc muốn xóa sinh viên {sinhVien.HoTen}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 bool ketQuaXoa = sinhVienBLL.XoaSinhVien(sinhVien);
@@ -287,8 +287,8 @@ namespace QuanLySinhVien
                 {
 
                     MessageBox.Show("Xóa sinh viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }             
-                if(sinhVienBLL.DanhSachSinhVien.Count==0)
+                }
+                if (sinhVienBLL.DanhSachSinhVien.Count == 0)
                 {
                     AnXoaSua();
                 }
@@ -318,7 +318,7 @@ namespace QuanLySinhVien
                 LamMoi();
                 napDuLieuComboBox();
                 MessageBox.Show("Đã tải danh sách sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if(sinhVienBLL.DanhSachSinhVien.Count > 0)
+                if (sinhVienBLL.DanhSachSinhVien.Count > 0)
                 {
                     HienXoaSua();
                 }
@@ -368,7 +368,7 @@ namespace QuanLySinhVien
             }
             cboTenCoVan.SelectedItem = sinhVien.CoVan;
             cboTenLop.SelectedItem = sinhVien.Lop;
-            
+
         }
         private void napDuLieuComboBox()
         {
@@ -393,7 +393,7 @@ namespace QuanLySinhVien
         }
         private void quanLyMonHocToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fQuanLyMonHoc f=new fQuanLyMonHoc();
+            fQuanLyMonHoc f = new fQuanLyMonHoc();
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -473,7 +473,38 @@ namespace QuanLySinhVien
 
         private void dangXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            string loaiTK = TaiKhoanDangNhapDAL.TaiKhoanHienTai.LoaiTaiKhoanDangNhap;
+
+            if (MessageBox.Show("Bạn có muốn lưu dữ liệu trước khi đăng xuất?","Lưu dữ liệu",MessageBoxButtons.YesNo,MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                this.Close();
+                return;
+            }
+            try
+            {
+                if (loaiTK == "Phong Dao Tao")
+                {
+                    HocKyDAL.SaveHocKy();
+                    CoVanHocTapDAL.SaveCoVan();
+                    LopDAL.SaveLop();
+                    MonHocDAL.SaveMonHoc();
+                    SinhVienDAL.SaveSinhVien();
+                    DiemDAL.SaveDiem();
+                    TaiKhoanDangNhapDAL.SaveTaiKhoan();
+
+                    MessageBox.Show("Đã lưu toàn bộ dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Close();
+        }
+
+        private void fSinhVien_Load(object sender, EventArgs e)
+        {
+            LamMoi();
         }
     }
 }
