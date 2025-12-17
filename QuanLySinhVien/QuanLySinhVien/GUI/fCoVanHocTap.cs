@@ -114,6 +114,11 @@ namespace QuanLySinhVien
                 MessageBox.Show("Ngày sinh không hợp lệ!","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if ((txtSoDienThoai.Text).Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void BtnAdd_Click(object sender, EventArgs e)

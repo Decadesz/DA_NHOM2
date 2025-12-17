@@ -115,6 +115,18 @@ namespace QuanLySinhVien
                 MessageBox.Show("Điểm cuối kỳ không được lớn hơn 10 hoặc nhỏ hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if (cboTenHocKy.SelectedItem == null)
+            {
+                MessageBox.Show("Chưa có học kỳ nào,hãy thêm học kỳ!", "Lỗi",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cboTenMonHoc.SelectedItem == null)
+            {
+                MessageBox.Show("Chưa chọn môn học nào,hãy nhập môn học!", "Lỗi",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             return true;
         }
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -138,12 +150,6 @@ namespace QuanLySinhVien
                 MessageBox.Show("Vui lòng chọn sinh viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if(monHoc==null)
-            {
-                MessageBox.Show("Vui lòng chọn môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-          
             Diem diem = new Diem
                 (
                 (int)nudPhanTramLop.Value,

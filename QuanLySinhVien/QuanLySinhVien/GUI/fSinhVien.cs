@@ -491,7 +491,6 @@ namespace QuanLySinhVien
                     SinhVienDAL.SaveSinhVien();
                     DiemDAL.SaveDiem();
                     TaiKhoanDangNhapDAL.SaveTaiKhoan();
-
                     MessageBox.Show("Đã lưu toàn bộ dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
