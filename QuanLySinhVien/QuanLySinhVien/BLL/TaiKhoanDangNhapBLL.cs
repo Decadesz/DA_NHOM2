@@ -69,12 +69,18 @@ namespace QuanLySinhVien.BLL
             taiKhoanCu.LoaiTaiKhoanDangNhap = taiKhoanMoi.LoaiTaiKhoanDangNhap;
             return true;
         }
-        public List<TaiKhoanDangNhap> TimTaiKhoan(string tuKhoa)
+        public List<TaiKhoanDangNhap> TimTaiKhoan(string tuKhoa,ComboBox cbo)
         {
             tuKhoa = tuKhoa.ToUpper();
-            return danhSachTaiKhoan.Where(mh =>
-                mh.TenDangNhap.ToUpper().Contains(tuKhoa)
-            ).ToList();
+            if (cbo.SelectedItem.ToString()=="Tên đăng nhập")
+            {
+                return danhSachTaiKhoan.Where(tk => tk.TenDangNhap.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            if(cbo.SelectedItem.ToString() == "Loại tài khoản")
+            {
+                return danhSachTaiKhoan.Where(tk => tk.LoaiTaiKhoanDangNhap.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            return danhSachTaiKhoan.ToList();
         }
     }
 }

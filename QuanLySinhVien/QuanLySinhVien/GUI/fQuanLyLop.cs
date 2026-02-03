@@ -39,7 +39,7 @@ namespace QuanLySinhVien
                 dgvLop.DataSource = bindingSource;
                 return;
             }
-            List<Lop> ketQua = lopBLL.TimLop(timKiem);
+            List<Lop> ketQua = lopBLL.TimLop(timKiem,cboSearch);
             bindingSource.DataSource = ketQua;
             dgvLop.DataSource = bindingSource;
         }

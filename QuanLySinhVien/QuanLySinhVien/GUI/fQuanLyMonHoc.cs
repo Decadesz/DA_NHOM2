@@ -39,7 +39,7 @@ namespace QuanLySinhVien
                 dgvMonHoc.DataSource = bindingSource;
                 return;
             }
-            List<MonHoc> ketQua = monHocBLL.TimKiemMonHoc(timKiem);
+            List<MonHoc> ketQua = monHocBLL.TimKiemMonHoc(timKiem,cboSearch);
 
             bindingSource.DataSource = ketQua;
             dgvMonHoc.DataSource = bindingSource;

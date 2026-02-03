@@ -102,7 +102,7 @@ namespace QuanLySinhVien
                 dgvSinhVien.DataSource = bindingSource;
                 return;
             }
-            List<SinhVien> ketQua = sinhVienBLL.TimKiemSinhVien(timKiem);
+            List<SinhVien> ketQua = sinhVienBLL.TimKiemSinhVien(timKiem,cboSearch);
             bindingSource.DataSource = ketQua;
             dgvSinhVien.DataSource = bindingSource;
         }
@@ -504,6 +504,11 @@ namespace QuanLySinhVien
         private void fSinhVien_Load(object sender, EventArgs e)
         {
             LamMoi();
+        }
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

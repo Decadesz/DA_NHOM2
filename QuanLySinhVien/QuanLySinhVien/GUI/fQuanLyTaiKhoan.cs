@@ -35,7 +35,7 @@ namespace QuanLySinhVien
                 dgvTaiKhoan.DataSource = bindingSource;
                 return;
             }
-            List<TaiKhoanDangNhap> ketQua = taiKhoanDangNhapBLL.TimTaiKhoan(timKiem);
+            List<TaiKhoanDangNhap> ketQua = taiKhoanDangNhapBLL.TimTaiKhoan(timKiem,cboSearch);
 
             bindingSource.DataSource = ketQua;
             dgvTaiKhoan.DataSource = bindingSource;

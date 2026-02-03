@@ -59,7 +59,7 @@ namespace QuanLySinhVien.GUI
                 dgvHocKy.DataSource = bindingSource;
                 return;
             }
-            List<HocKy> ketQua = hocKyBLL.TimKiemHocKy(timKiem);
+            List<HocKy> ketQua = hocKyBLL.TimKiemHocKy(timKiem,cboSearch);
             bindingSource.DataSource = ketQua;
             dgvHocKy.DataSource = bindingSource;
         }

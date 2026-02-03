@@ -46,7 +46,7 @@ namespace QuanLySinhVien
                 dgvCoVan.DataSource = bindingSource;
                 return;
             }
-            List<CoVanHocTap> ketQua = coVanBLL.TimKiemCoVan(timKiem);
+            List<CoVanHocTap> ketQua = coVanBLL.TimKiemCoVan(timKiem,cboSearch);
             bindingSource.DataSource = ketQua;
             dgvCoVan.DataSource = bindingSource;
         }

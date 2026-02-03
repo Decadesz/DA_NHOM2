@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLySinhVien.BLL
 {
@@ -72,13 +73,18 @@ namespace QuanLySinhVien.BLL
                 return true;
             } 
         }
-        public List<Diem> TimDiem(string tuKhoa)
+        public List<Diem> TimDiem(string tuKhoa,ComboBox cbo)
         {
             tuKhoa = tuKhoa.ToUpper();
-            return danhSachDiem.Where(d =>
-            d.MaSinhVien.ToUpper().Contains(tuKhoa) ||
-            d.TenMonHoc.ToUpper().Contains(tuKhoa)
-            ).ToList();
+            if(cbo.SelectedItem.ToString()=="Mã sinh viên")
+            {
+                return danhSachDiem.Where(d => d.SinhVien.MaSinhVien.ToUpper().Contains(tuKhoa)).ToList();  
+            }
+            if(cbo.SelectedItem.ToString() == "Tên môn học")
+            {
+                return danhSachDiem.Where(d => d.MonHoc.TenMonHoc.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            return danhSachDiem.ToList();
         }
     }
 }

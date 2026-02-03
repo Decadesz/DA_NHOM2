@@ -3,6 +3,7 @@ using QuanLySinhVien.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -90,17 +91,35 @@ namespace QuanLySinhVien.BLL
             }
             return true;
         }
-        public List<SinhVien> TimKiemSinhVien(string tuKhoa)
-        {
-            tuKhoa = tuKhoa.ToUpper();
-            return danhSachSinhVien.Where(sv =>
-                sv.MaSinhVien.ToUpper().Contains(tuKhoa) ||
-                sv.HoTen.ToUpper().Contains(tuKhoa) ||
-                sv.GioiTinh.ToUpper().Contains(tuKhoa) ||
-                sv.TenLop.ToUpper().Contains(tuKhoa) ||
-                sv.TenCoVan.ToUpper().Contains(tuKhoa)||
-                sv.XepLoai.ToUpper().Contains(tuKhoa)
-            ).ToList();
+        public List<SinhVien> TimKiemSinhVien(string tuKhoa,ComboBox cbo)
+        {        tuKhoa = tuKhoa.ToUpper();
+            if (cbo.SelectedItem.ToString() == "Mã sinh viên")
+            {
+                return danhSachSinhVien.Where(sv => sv.MaSinhVien.ToUpper().Contains(tuKhoa.ToUpper())).ToList();
+            }
+            if(cbo.SelectedItem.ToString() == "Tên sinh viên")
+            {
+                return danhSachSinhVien.Where(sv => sv.HoTen.ToUpper().Contains(tuKhoa.ToUpper())).ToList();
+            }
+            if(cbo.SelectedItem.ToString() == "Tên lớp")
+            {
+                return danhSachSinhVien.Where(sv => sv.Lop != null && sv.Lop.TenLop.ToUpper().Contains(tuKhoa.ToUpper())).ToList();
+            }
+            if(cbo.SelectedItem.ToString() == "Tên cố vấn")
+            {
+                return danhSachSinhVien.Where(sv => sv.CoVan != null && sv.CoVan.HoTen.ToUpper().Contains(tuKhoa.ToUpper())).ToList();
+            }
+            if(cbo.SelectedItem.ToString() == "Xếp loại")
+            {
+                return danhSachSinhVien.Where(sv => sv.XepLoai != null && sv.XepLoai.ToUpper().Contains(tuKhoa.ToUpper())).ToList();
+            }
+            if(cbo.SelectedItem.ToString()=="Giới tính")
+            {
+                return danhSachSinhVien.Where(sv => sv.GioiTinh != null && sv.GioiTinh.ToUpper().Contains(tuKhoa.ToUpper())).ToList();
+            }
+            return danhSachSinhVien.ToList();
+
+
         }
     }
 }

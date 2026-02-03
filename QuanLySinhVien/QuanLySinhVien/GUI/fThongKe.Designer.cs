@@ -58,7 +58,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartXepLoai.Series.Add(series1);
-            this.chartXepLoai.Size = new System.Drawing.Size(984, 554);
+            this.chartXepLoai.Size = new System.Drawing.Size(984, 484);
             this.chartXepLoai.TabIndex = 3;
             this.chartXepLoai.Text = "chart1";
             // 

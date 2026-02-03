@@ -71,13 +71,19 @@ namespace QuanLySinhVien.BLL
             danhSachMonHoc.Remove(monHoc);
             return true;
         }
-        public List<MonHoc> TimKiemMonHoc(string tuKhoa)
+        public List<MonHoc> TimKiemMonHoc(string tuKhoa,ComboBox cbo)
         {
             tuKhoa = tuKhoa.ToUpper();
-            return danhSachMonHoc.Where(mh =>
-                mh.MaMonHoc.ToUpper().Contains(tuKhoa) ||
-                mh.TenMonHoc.ToUpper().Contains(tuKhoa)
-            ).ToList();
+            if (cbo.SelectedItem.ToString() == "Mã môn học")
+            {
+                return danhSachMonHoc.Where(mh => mh.MaMonHoc.ToUpper().Contains(tuKhoa)).ToList();
+
+            }
+            if (cbo.SelectedItem.ToString() == "Tên môn học")
+            {
+                return danhSachMonHoc.Where(mh => mh.TenMonHoc.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            return danhSachMonHoc.ToList();
         }
     }
 }

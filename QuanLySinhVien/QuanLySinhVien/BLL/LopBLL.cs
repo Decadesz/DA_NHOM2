@@ -75,13 +75,18 @@ namespace QuanLySinhVien.BLL
             return true;
             
         }
-        public List<Lop> TimLop(string tuKhoa)
+        public List<Lop> TimLop(string tuKhoa,ComboBox cbo)
         {
             tuKhoa = tuKhoa.ToUpper();
-            return danhSachLop.Where(l =>
-            l.MaLop.ToUpper().Contains(tuKhoa) ||
-            l.TenLop.ToUpper().Contains(tuKhoa)
-            ).ToList();
+            if(cbo.SelectedItem.ToString()=="Mã Lớp")
+            {
+                return danhSachLop.Where(l => l.MaLop.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            if(cbo.SelectedItem.ToString()=="Tên Lớp")
+            {
+                return danhSachLop.Where(l => l.TenLop.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            return danhSachLop.ToList();
         }
     }
 }

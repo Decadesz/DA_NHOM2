@@ -79,13 +79,18 @@ namespace QuanLySinhVien.BLL
             danhSachCoVan.Remove(coVan);
             return true;
         }
-        public List<CoVanHocTap> TimKiemCoVan(string tuKhoa)
+        public List<CoVanHocTap> TimKiemCoVan(string tuKhoa,ComboBox cbo)
         {
             tuKhoa = tuKhoa.ToUpper();
-            return danhSachCoVan.Where(cv =>
-                cv.MaCoVan.ToUpper().Contains(tuKhoa)
-                || cv.HoTen.ToUpper().Contains(tuKhoa)
-            ).ToList();
+            if(cbo.SelectedItem.ToString()=="Mã cố vấn")
+            {
+                return danhSachCoVan.Where(cv => cv.MaCoVan.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            if(cbo.SelectedItem.ToString()=="Tên cố vấn")
+            {
+                return danhSachCoVan.Where(cv => cv.HoTen.ToUpper().Contains(tuKhoa)).ToList();
+            }
+            return danhSachCoVan.ToList();
         }
     }
 }

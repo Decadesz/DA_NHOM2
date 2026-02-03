@@ -78,7 +78,7 @@ namespace QuanLySinhVien
                 dgvDiem.DataSource = bindingSource;
                 return;
             }
-            List<Diem> ketQua = diemBLL.TimDiem(timKiem);
+            List<Diem> ketQua = diemBLL.TimDiem(timKiem,cboSearch);
 
             bindingSource.DataSource = ketQua;
             dgvDiem.DataSource = bindingSource;

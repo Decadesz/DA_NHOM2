@@ -281,6 +281,7 @@
             this.cboSearch.Name = "cboSearch";
             this.cboSearch.Size = new System.Drawing.Size(160, 24);
             this.cboSearch.TabIndex = 32;
+            this.cboSearch.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
             // txtSoDienThoai
             // 
